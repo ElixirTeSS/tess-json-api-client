@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique identifier of the event | [optional] 
 **title** | **String** | The title of the event | [optional] 
 **subtitle** | **String** | The subtitle of the event | [optional] 
 **url** | **String** | The URL where the actual event can be found. | [optional] 

@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/FacetedCollection', 'model/FacetedCollectionMeta'], factory);
+    define(['ApiClient', 'model/EventResource', 'model/FacetedCollection', 'model/FacetedCollectionMeta'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Event'), require('./FacetedCollection'), require('./FacetedCollectionMeta'));
+    module.exports = factory(require('../ApiClient'), require('./EventResource'), require('./FacetedCollection'), require('./FacetedCollectionMeta'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.EventCollection = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.Event, root.TessJsonApi.FacetedCollection, root.TessJsonApi.FacetedCollectionMeta);
+    root.TessJsonApi.EventCollection = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.EventResource, root.TessJsonApi.FacetedCollection, root.TessJsonApi.FacetedCollectionMeta);
   }
-}(this, function(ApiClient, Event, FacetedCollection, FacetedCollectionMeta) {
+}(this, function(ApiClient, EventResource, FacetedCollection, FacetedCollectionMeta) {
   'use strict';
 
 
@@ -72,7 +72,7 @@
       obj = obj || new exports();
       FacetedCollection.constructFromObject(data, obj);
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [Event]);
+        obj['data'] = ApiClient.convertToType(data['data'], [EventResource]);
       }
     }
     return obj;
@@ -82,7 +82,7 @@
   exports.prototype.constructor = exports;
 
   /**
-   * @member {Array.<module:model/Event>} data
+   * @member {Array.<module:model/EventResource>} data
    */
   exports.prototype['data'] = undefined;
 

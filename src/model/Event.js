@@ -81,7 +81,6 @@
 
 
 
-
   };
 
   /**
@@ -95,9 +94,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-      }
       if (data.hasOwnProperty('title')) {
         obj['title'] = ApiClient.convertToType(data['title'], 'String');
       }
@@ -177,11 +173,6 @@
     return obj;
   }
 
-  /**
-   * Unique identifier of the event
-   * @member {Number} id
-   */
-  exports.prototype['id'] = undefined;
   /**
    * The title of the event
    * @member {String} title

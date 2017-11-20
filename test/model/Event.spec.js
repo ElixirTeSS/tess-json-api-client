@@ -65,12 +65,6 @@
       //expect(instance).to.be.a(TessJsonApi.Event);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new TessJsonApi.Event();
-      //expect(instance).to.be();
-    });
-
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
       //var instane = new TessJsonApi.Event();
