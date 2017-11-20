@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
  - [TessJsonApi.FacetedCollectionMeta](docs/FacetedCollectionMeta.md)
  - [TessJsonApi.Links](docs/Links.md)
  - [TessJsonApi.PaginationLinks](docs/PaginationLinks.md)
+ - [TessJsonApi.Relationship](docs/Relationship.md)
  - [TessJsonApi.ScientificTopic](docs/ScientificTopic.md)
 
 
