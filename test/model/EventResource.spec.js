@@ -65,8 +65,14 @@
       //expect(instance).to.be.a(TessJsonApi.EventResource);
     });
 
-    it('should have the property links (base name: "links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property attributes (base name: "attributes")', function() {
+      // uncomment below and update the code to test the property attributes
+      //var instane = new TessJsonApi.EventResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property relationships (base name: "relationships")', function() {
+      // uncomment below and update the code to test the property relationships
       //var instane = new TessJsonApi.EventResource();
       //expect(instance).to.be();
     });

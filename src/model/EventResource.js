@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Links'], factory);
+    define(['ApiClient', 'model/ApiResource', 'model/EventAttributes', 'model/EventResourceRelationships', 'model/Links'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Links'));
+    module.exports = factory(require('../ApiClient'), require('./ApiResource'), require('./EventAttributes'), require('./EventResourceRelationships'), require('./Links'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.EventResource = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.Links);
+    root.TessJsonApi.EventResource = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ApiResource, root.TessJsonApi.EventAttributes, root.TessJsonApi.EventResourceRelationships, root.TessJsonApi.Links);
   }
-}(this, function(ApiClient, Links) {
+}(this, function(ApiClient, ApiResource, EventAttributes, EventResourceRelationships, Links) {
   'use strict';
 
 
@@ -52,9 +52,11 @@
    * Constructs a new <code>EventResource</code>.
    * @alias module:model/EventResource
    * @class
+   * @extends module:model/ApiResource
    */
   var exports = function() {
     var _this = this;
+    ApiResource.call(_this);
 
 
   };
@@ -69,18 +71,28 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-
-      if (data.hasOwnProperty('links')) {
-        obj['links'] = Links.constructFromObject(data['links']);
+      ApiResource.constructFromObject(data, obj);
+      if (data.hasOwnProperty('attributes')) {
+        obj['attributes'] = EventAttributes.constructFromObject(data['attributes']);
+      }
+      if (data.hasOwnProperty('relationships')) {
+        obj['relationships'] = EventResourceRelationships.constructFromObject(data['relationships']);
       }
     }
     return obj;
   }
 
+  exports.prototype = Object.create(ApiResource.prototype);
+  exports.prototype.constructor = exports;
+
   /**
-   * @member {module:model/Links} links
+   * @member {module:model/EventAttributes} attributes
    */
-  exports.prototype['links'] = undefined;
+  exports.prototype['attributes'] = undefined;
+  /**
+   * @member {module:model/EventResourceRelationships} relationships
+   */
+  exports.prototype['relationships'] = undefined;
 
 
 

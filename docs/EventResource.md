@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**Links**](Links.md) |  | [optional] 
+**attributes** | [**EventAttributes**](EventAttributes.md) |  | [optional] 
+**relationships** | [**EventResourceRelationships**](EventResourceRelationships.md) |  | [optional] 
 
 

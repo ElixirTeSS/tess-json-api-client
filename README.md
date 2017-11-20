@@ -82,14 +82,15 @@ Class | Method | HTTP request | Description
 
  - [TessJsonApi.ApiResource](docs/ApiResource.md)
  - [TessJsonApi.Event](docs/Event.md)
+ - [TessJsonApi.EventAttributes](docs/EventAttributes.md)
  - [TessJsonApi.EventCollection](docs/EventCollection.md)
  - [TessJsonApi.EventResource](docs/EventResource.md)
+ - [TessJsonApi.EventResourceRelationships](docs/EventResourceRelationships.md)
  - [TessJsonApi.Facet](docs/Facet.md)
  - [TessJsonApi.FacetedCollection](docs/FacetedCollection.md)
  - [TessJsonApi.FacetedCollectionMeta](docs/FacetedCollectionMeta.md)
  - [TessJsonApi.Links](docs/Links.md)
  - [TessJsonApi.PaginationLinks](docs/PaginationLinks.md)
- - [TessJsonApi.Relationship](docs/Relationship.md)
  - [TessJsonApi.ScientificTopic](docs/ScientificTopic.md)
 
 

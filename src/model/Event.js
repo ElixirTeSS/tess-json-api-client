@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ScientificTopic'], factory);
+    define(['ApiClient', 'model/EventResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ScientificTopic'));
+    module.exports = factory(require('../ApiClient'), require('./EventResource'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.Event = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ScientificTopic);
+    root.TessJsonApi.Event = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.EventResource);
   }
-}(this, function(ApiClient, ScientificTopic) {
+}(this, function(ApiClient, EventResource) {
   'use strict';
 
 
@@ -57,30 +57,6 @@
     var _this = this;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   };
 
   /**
@@ -94,210 +70,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('title')) {
-        obj['title'] = ApiClient.convertToType(data['title'], 'String');
-      }
-      if (data.hasOwnProperty('subtitle')) {
-        obj['subtitle'] = ApiClient.convertToType(data['subtitle'], 'String');
-      }
-      if (data.hasOwnProperty('url')) {
-        obj['url'] = ApiClient.convertToType(data['url'], 'String');
-      }
-      if (data.hasOwnProperty('organizer')) {
-        obj['organizer'] = ApiClient.convertToType(data['organizer'], 'String');
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
-      }
-      if (data.hasOwnProperty('start')) {
-        obj['start'] = ApiClient.convertToType(data['start'], 'Date');
-      }
-      if (data.hasOwnProperty('end')) {
-        obj['end'] = ApiClient.convertToType(data['end'], 'Date');
-      }
-      if (data.hasOwnProperty('sponsor')) {
-        obj['sponsor'] = ApiClient.convertToType(data['sponsor'], 'String');
-      }
-      if (data.hasOwnProperty('venue')) {
-        obj['venue'] = ApiClient.convertToType(data['venue'], 'String');
-      }
-      if (data.hasOwnProperty('city')) {
-        obj['city'] = ApiClient.convertToType(data['city'], 'String');
-      }
-      if (data.hasOwnProperty('country')) {
-        obj['country'] = ApiClient.convertToType(data['country'], 'String');
-      }
-      if (data.hasOwnProperty('county')) {
-        obj['county'] = ApiClient.convertToType(data['county'], 'String');
-      }
-      if (data.hasOwnProperty('postcode')) {
-        obj['postcode'] = ApiClient.convertToType(data['postcode'], 'String');
-      }
-      if (data.hasOwnProperty('latitude')) {
-        obj['latitude'] = ApiClient.convertToType(data['latitude'], 'String');
-      }
-      if (data.hasOwnProperty('longitude')) {
-        obj['longitude'] = ApiClient.convertToType(data['longitude'], 'String');
-      }
-      if (data.hasOwnProperty('created_at')) {
-        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
-      }
-      if (data.hasOwnProperty('updated_at')) {
-        obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-      }
-      if (data.hasOwnProperty('keywords')) {
-        obj['keywords'] = ApiClient.convertToType(data['keywords'], ['String']);
-      }
-      if (data.hasOwnProperty('event_types')) {
-        obj['event_types'] = ApiClient.convertToType(data['event_types'], ['String']);
-      }
-      if (data.hasOwnProperty('target_audience')) {
-        obj['target_audience'] = ApiClient.convertToType(data['target_audience'], ['String']);
-      }
-      if (data.hasOwnProperty('capacity')) {
-        obj['capacity'] = ApiClient.convertToType(data['capacity'], ['String']);
-      }
-      if (data.hasOwnProperty('eligibility')) {
-        obj['eligibility'] = ApiClient.convertToType(data['eligibility'], ['String']);
-      }
-      if (data.hasOwnProperty('contact')) {
-        obj['contact'] = ApiClient.convertToType(data['contact'], 'String');
-      }
-      if (data.hasOwnProperty('host_institutions')) {
-        obj['host_institutions'] = ApiClient.convertToType(data['host_institutions'], ['String']);
-      }
-      if (data.hasOwnProperty('scientific_topics')) {
-        obj['scientific_topics'] = ApiClient.convertToType(data['scientific_topics'], [ScientificTopic]);
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = EventResource.constructFromObject(data['data']);
       }
     }
     return obj;
   }
 
   /**
-   * The title of the event
-   * @member {String} title
+   * @member {module:model/EventResource} data
    */
-  exports.prototype['title'] = undefined;
-  /**
-   * The subtitle of the event
-   * @member {String} subtitle
-   */
-  exports.prototype['subtitle'] = undefined;
-  /**
-   * The URL where the actual event can be found.
-   * @member {String} url
-   */
-  exports.prototype['url'] = undefined;
-  /**
-   * The organization responsible for creating the event.
-   * @member {String} organizer
-   */
-  exports.prototype['organizer'] = undefined;
-  /**
-   * A succinct description of what the event is about.
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
-  /**
-   * The date and time the event starts on
-   * @member {Date} start
-   */
-  exports.prototype['start'] = undefined;
-  /**
-   * The date and time the event ends on.
-   * @member {Date} end
-   */
-  exports.prototype['end'] = undefined;
-  /**
-   * The person or organization that is sponsoring the event.
-   * @member {String} sponsor
-   */
-  exports.prototype['sponsor'] = undefined;
-  /**
-   * The name of the building the event will be hosted in
-   * @member {String} venue
-   */
-  exports.prototype['venue'] = undefined;
-  /**
-   * The city the event will be hosted in
-   * @member {String} city
-   */
-  exports.prototype['city'] = undefined;
-  /**
-   * The regional county the event will be hosted in
-   * @member {String} country
-   */
-  exports.prototype['country'] = undefined;
-  /**
-   * The name of country the event will be hosted in
-   * @member {String} county
-   */
-  exports.prototype['county'] = undefined;
-  /**
-   * The postcode of the venue hosting the event
-   * @member {String} postcode
-   */
-  exports.prototype['postcode'] = undefined;
-  /**
-   * The latitude co-ordinate of the event.
-   * @member {String} latitude
-   */
-  exports.prototype['latitude'] = undefined;
-  /**
-   * The longitude co-ordinate of the event.
-   * @member {String} longitude
-   */
-  exports.prototype['longitude'] = undefined;
-  /**
-   * The date the event was first created on TeSS
-   * @member {Date} created_at
-   */
-  exports.prototype['created_at'] = undefined;
-  /**
-   * The date the event was last updated on TeSS
-   * @member {Date} updated_at
-   */
-  exports.prototype['updated_at'] = undefined;
-  /**
-   * A series of freetext words used to describe an event.
-   * @member {Array.<String>} keywords
-   */
-  exports.prototype['keywords'] = undefined;
-  /**
-   * The category of the event. This could be a meeting or a course; or if unknown or neither, an event
-   * @member {Array.<String>} event_types
-   */
-  exports.prototype['event_types'] = undefined;
-  /**
-   * The intended audience of the event. This can includes things like scientific discpline and expertise level
-   * @member {Array.<String>} target_audience
-   */
-  exports.prototype['target_audience'] = undefined;
-  /**
-   * The number of people allowed to attend the event
-   * @member {Array.<String>} capacity
-   */
-  exports.prototype['capacity'] = undefined;
-  /**
-   * Various criteria require to participate in the event
-   * @member {Array.<String>} eligibility
-   */
-  exports.prototype['eligibility'] = undefined;
-  /**
-   * The name and/or contact details of a person or institution organizing the event
-   * @member {String} contact
-   */
-  exports.prototype['contact'] = undefined;
-  /**
-   * The institution physically hosting the event
-   * @member {Array.<String>} host_institutions
-   */
-  exports.prototype['host_institutions'] = undefined;
-  /**
-   * The classification of the event based on the EDAM ontologies scientific topics.
-   * @member {Array.<module:model/ScientificTopic>} scientific_topics
-   */
-  exports.prototype['scientific_topics'] = undefined;
+  exports.prototype['data'] = undefined;
 
 
 

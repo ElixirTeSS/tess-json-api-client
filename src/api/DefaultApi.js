@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EventCollection', 'model/EventResource'], factory);
+    define(['ApiClient', 'model/Event', 'model/EventCollection'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/EventCollection'), require('../model/EventResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/EventCollection'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.DefaultApi = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.EventCollection, root.TessJsonApi.EventResource);
+    root.TessJsonApi.DefaultApi = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.Event, root.TessJsonApi.EventCollection);
   }
-}(this, function(ApiClient, EventCollection, EventResource) {
+}(this, function(ApiClient, Event, EventCollection) {
   'use strict';
 
   /**
@@ -60,14 +60,14 @@
      * Callback function to receive the result of the eventSlugGet operation.
      * @callback module:api/DefaultApi~eventSlugGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/EventResource} data The data returned by the service call.
+     * @param {module:model/Event} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {String} slug The _slug_ id of an event e.g. python-training-2017
      * @param {module:api/DefaultApi~eventSlugGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/EventResource}
+     * data is of type: {@link module:model/Event}
      */
     this.eventSlugGet = function(slug, callback) {
       var postBody = null;
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/vnd.api+json'];
       var accepts = ['application/vnd.api+json'];
-      var returnType = EventResource;
+      var returnType = Event;
 
       return this.apiClient.callApi(
         '/event/{slug}', 'GET',

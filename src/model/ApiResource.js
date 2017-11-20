@@ -57,6 +57,8 @@
     var _this = this;
 
 
+
+
   };
 
   /**
@@ -70,6 +72,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
       if (data.hasOwnProperty('links')) {
         obj['links'] = Links.constructFromObject(data['links']);
       }
@@ -77,6 +85,14 @@
     return obj;
   }
 
+  /**
+   * @member {String} id
+   */
+  exports.prototype['id'] = undefined;
+  /**
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
   /**
    * @member {module:model/Links} links
    */

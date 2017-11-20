@@ -65,6 +65,18 @@
       //expect(instance).to.be.a(TessJsonApi.ApiResource);
     });
 
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new TessJsonApi.ApiResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new TessJsonApi.ApiResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property links (base name: "links")', function() {
       // uncomment below and update the code to test the property links
       //var instane = new TessJsonApi.ApiResource();

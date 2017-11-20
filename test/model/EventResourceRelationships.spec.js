@@ -39,7 +39,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TessJsonApi.Relationship();
+    instance = new TessJsonApi.EventResourceRelationships();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,22 +58,28 @@
       object[property] = value;
   }
 
-  describe('Relationship', function() {
-    it('should create an instance of Relationship', function() {
-      // uncomment below and update the code to test Relationship
-      //var instane = new TessJsonApi.Relationship();
-      //expect(instance).to.be.a(TessJsonApi.Relationship);
+  describe('EventResourceRelationships', function() {
+    it('should create an instance of EventResourceRelationships', function() {
+      // uncomment below and update the code to test EventResourceRelationships
+      //var instane = new TessJsonApi.EventResourceRelationships();
+      //expect(instance).to.be.a(TessJsonApi.EventResourceRelationships);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new TessJsonApi.Relationship();
+    it('should have the property user (base name: "user")', function() {
+      // uncomment below and update the code to test the property user
+      //var instane = new TessJsonApi.EventResourceRelationships();
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new TessJsonApi.Relationship();
+    it('should have the property contentProvider (base name: "content-provider")', function() {
+      // uncomment below and update the code to test the property contentProvider
+      //var instane = new TessJsonApi.EventResourceRelationships();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property nodes (base name: "nodes")', function() {
+      // uncomment below and update the code to test the property nodes
+      //var instane = new TessJsonApi.EventResourceRelationships();
       //expect(instance).to.be();
     });
 

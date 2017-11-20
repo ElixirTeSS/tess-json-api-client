@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="eventSlugGet"></a>
 # **eventSlugGet**
-> EventResource eventSlugGet(slug)
+> Event eventSlugGet(slug)
 
 
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EventResource**](EventResource.md)
+[**Event**](Event.md)
 
 ### Authorization
 

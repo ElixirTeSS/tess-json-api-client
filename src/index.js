@@ -25,12 +25,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResource', 'model/Event', 'model/EventCollection', 'model/EventResource', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/Links', 'model/PaginationLinks', 'model/Relationship', 'model/ScientificTopic', 'api/DefaultApi'], factory);
+    define(['ApiClient', 'model/ApiResource', 'model/Event', 'model/EventAttributes', 'model/EventCollection', 'model/EventResource', 'model/EventResourceRelationships', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/Links', 'model/PaginationLinks', 'model/ScientificTopic', 'api/DefaultApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ApiResource'), require('./model/Event'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/Links'), require('./model/PaginationLinks'), require('./model/Relationship'), require('./model/ScientificTopic'), require('./api/DefaultApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ApiResource'), require('./model/Event'), require('./model/EventAttributes'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/EventResourceRelationships'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/Links'), require('./model/PaginationLinks'), require('./model/ScientificTopic'), require('./api/DefaultApi'));
   }
-}(function(ApiClient, ApiResource, Event, EventCollection, EventResource, Facet, FacetedCollection, FacetedCollectionMeta, Links, PaginationLinks, Relationship, ScientificTopic, DefaultApi) {
+}(function(ApiClient, ApiResource, Event, EventAttributes, EventCollection, EventResource, EventResourceRelationships, Facet, FacetedCollection, FacetedCollectionMeta, Links, PaginationLinks, ScientificTopic, DefaultApi) {
   'use strict';
 
   /**
@@ -81,6 +81,11 @@
      */
     Event: Event,
     /**
+     * The EventAttributes model constructor.
+     * @property {module:model/EventAttributes}
+     */
+    EventAttributes: EventAttributes,
+    /**
      * The EventCollection model constructor.
      * @property {module:model/EventCollection}
      */
@@ -90,6 +95,11 @@
      * @property {module:model/EventResource}
      */
     EventResource: EventResource,
+    /**
+     * The EventResourceRelationships model constructor.
+     * @property {module:model/EventResourceRelationships}
+     */
+    EventResourceRelationships: EventResourceRelationships,
     /**
      * The Facet model constructor.
      * @property {module:model/Facet}
@@ -115,11 +125,6 @@
      * @property {module:model/PaginationLinks}
      */
     PaginationLinks: PaginationLinks,
-    /**
-     * The Relationship model constructor.
-     * @property {module:model/Relationship}
-     */
-    Relationship: Relationship,
     /**
      * The ScientificTopic model constructor.
      * @property {module:model/ScientificTopic}
