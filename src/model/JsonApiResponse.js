@@ -34,7 +34,7 @@
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.ApiResource = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.Links);
+    root.TessJsonApi.JsonApiResponse = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.Links);
   }
 }(this, function(ApiClient, Links) {
   'use strict';
@@ -43,14 +43,14 @@
 
 
   /**
-   * The ApiResource model module.
-   * @module model/ApiResource
+   * The JsonApiResponse model module.
+   * @module model/JsonApiResponse
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>ApiResource</code>.
-   * @alias module:model/ApiResource
+   * Constructs a new <code>JsonApiResponse</code>.
+   * @alias module:model/JsonApiResponse
    * @class
    */
   var exports = function() {
@@ -59,44 +59,60 @@
 
 
 
+
+
   };
 
   /**
-   * Constructs a <code>ApiResource</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>JsonApiResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ApiResource} obj Optional instance to populate.
-   * @return {module:model/ApiResource} The populated <code>ApiResource</code> instance.
+   * @param {module:model/JsonApiResponse} obj Optional instance to populate.
+   * @return {module:model/JsonApiResponse} The populated <code>JsonApiResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('errors')) {
+        obj['errors'] = ApiClient.convertToType(data['errors'], Object);
       }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      if (data.hasOwnProperty('meta')) {
+        obj['meta'] = ApiClient.convertToType(data['meta'], Object);
       }
       if (data.hasOwnProperty('links')) {
         obj['links'] = Links.constructFromObject(data['links']);
+      }
+      if (data.hasOwnProperty('included')) {
+        obj['included'] = ApiClient.convertToType(data['included'], Object);
+      }
+      if (data.hasOwnProperty('jsonapi')) {
+        obj['jsonapi'] = ApiClient.convertToType(data['jsonapi'], Object);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} id
+   * @member {Object} errors
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['errors'] = undefined;
   /**
-   * @member {String} type
+   * @member {Object} meta
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype['meta'] = undefined;
   /**
    * @member {module:model/Links} links
    */
   exports.prototype['links'] = undefined;
+  /**
+   * @member {Object} included
+   */
+  exports.prototype['included'] = undefined;
+  /**
+   * @member {Object} jsonapi
+   */
+  exports.prototype['jsonapi'] = undefined;
 
 
 

@@ -1,10 +1,10 @@
-# TessJsonApi.ApiResource
+# TessJsonApi.ResourceIdentifierObject
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
-**links** | [**Links**](Links.md) |  | [optional] 
+**meta** | **Object** |  | [optional] 
 
 

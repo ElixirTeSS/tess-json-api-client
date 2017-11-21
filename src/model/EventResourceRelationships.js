@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EventResourceRelationshipsNodes', 'model/EventResourceRelationshipsUser'], factory);
+    define(['ApiClient', 'model/MultiRelationshipObject', 'model/SingleRelationshipObject'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./EventResourceRelationshipsNodes'), require('./EventResourceRelationshipsUser'));
+    module.exports = factory(require('../ApiClient'), require('./MultiRelationshipObject'), require('./SingleRelationshipObject'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.EventResourceRelationships = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.EventResourceRelationshipsNodes, root.TessJsonApi.EventResourceRelationshipsUser);
+    root.TessJsonApi.EventResourceRelationships = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.MultiRelationshipObject, root.TessJsonApi.SingleRelationshipObject);
   }
-}(this, function(ApiClient, EventResourceRelationshipsNodes, EventResourceRelationshipsUser) {
+}(this, function(ApiClient, MultiRelationshipObject, SingleRelationshipObject) {
   'use strict';
 
 
@@ -73,28 +73,28 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('user')) {
-        obj['user'] = EventResourceRelationshipsUser.constructFromObject(data['user']);
+        obj['user'] = SingleRelationshipObject.constructFromObject(data['user']);
       }
       if (data.hasOwnProperty('content-provider')) {
-        obj['content-provider'] = EventResourceRelationshipsUser.constructFromObject(data['content-provider']);
+        obj['content-provider'] = SingleRelationshipObject.constructFromObject(data['content-provider']);
       }
       if (data.hasOwnProperty('nodes')) {
-        obj['nodes'] = EventResourceRelationshipsNodes.constructFromObject(data['nodes']);
+        obj['nodes'] = MultiRelationshipObject.constructFromObject(data['nodes']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/EventResourceRelationshipsUser} user
+   * @member {module:model/SingleRelationshipObject} user
    */
   exports.prototype['user'] = undefined;
   /**
-   * @member {module:model/EventResourceRelationshipsUser} content-provider
+   * @member {module:model/SingleRelationshipObject} content-provider
    */
   exports.prototype['content-provider'] = undefined;
   /**
-   * @member {module:model/EventResourceRelationshipsNodes} nodes
+   * @member {module:model/MultiRelationshipObject} nodes
    */
   exports.prototype['nodes'] = undefined;
 

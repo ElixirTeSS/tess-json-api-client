@@ -25,12 +25,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResource', 'model/Event', 'model/EventAttributes', 'model/EventCollection', 'model/EventResource', 'model/EventResourceRelationships', 'model/EventResourceRelationshipsNodes', 'model/EventResourceRelationshipsUser', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/Links', 'model/PaginationLinks', 'model/ScientificTopic', 'api/DefaultApi'], factory);
+    define(['ApiClient', 'model/Event', 'model/EventAttributes', 'model/EventCollection', 'model/EventResource', 'model/EventResourceRelationships', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/JsonApiResponse', 'model/Links', 'model/MultiRelationshipObject', 'model/PaginationLinks', 'model/ResourceIdentifierObject', 'model/ResourceObject', 'model/ScientificTopic', 'model/SingleRelationshipObject', 'api/DefaultApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ApiResource'), require('./model/Event'), require('./model/EventAttributes'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/EventResourceRelationships'), require('./model/EventResourceRelationshipsNodes'), require('./model/EventResourceRelationshipsUser'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/Links'), require('./model/PaginationLinks'), require('./model/ScientificTopic'), require('./api/DefaultApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Event'), require('./model/EventAttributes'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/EventResourceRelationships'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/JsonApiResponse'), require('./model/Links'), require('./model/MultiRelationshipObject'), require('./model/PaginationLinks'), require('./model/ResourceIdentifierObject'), require('./model/ResourceObject'), require('./model/ScientificTopic'), require('./model/SingleRelationshipObject'), require('./api/DefaultApi'));
   }
-}(function(ApiClient, ApiResource, Event, EventAttributes, EventCollection, EventResource, EventResourceRelationships, EventResourceRelationshipsNodes, EventResourceRelationshipsUser, Facet, FacetedCollection, FacetedCollectionMeta, Links, PaginationLinks, ScientificTopic, DefaultApi) {
+}(function(ApiClient, Event, EventAttributes, EventCollection, EventResource, EventResourceRelationships, Facet, FacetedCollection, FacetedCollectionMeta, JsonApiResponse, Links, MultiRelationshipObject, PaginationLinks, ResourceIdentifierObject, ResourceObject, ScientificTopic, SingleRelationshipObject, DefaultApi) {
   'use strict';
 
   /**
@@ -71,11 +71,6 @@
      */
     ApiClient: ApiClient,
     /**
-     * The ApiResource model constructor.
-     * @property {module:model/ApiResource}
-     */
-    ApiResource: ApiResource,
-    /**
      * The Event model constructor.
      * @property {module:model/Event}
      */
@@ -101,16 +96,6 @@
      */
     EventResourceRelationships: EventResourceRelationships,
     /**
-     * The EventResourceRelationshipsNodes model constructor.
-     * @property {module:model/EventResourceRelationshipsNodes}
-     */
-    EventResourceRelationshipsNodes: EventResourceRelationshipsNodes,
-    /**
-     * The EventResourceRelationshipsUser model constructor.
-     * @property {module:model/EventResourceRelationshipsUser}
-     */
-    EventResourceRelationshipsUser: EventResourceRelationshipsUser,
-    /**
      * The Facet model constructor.
      * @property {module:model/Facet}
      */
@@ -126,20 +111,45 @@
      */
     FacetedCollectionMeta: FacetedCollectionMeta,
     /**
+     * The JsonApiResponse model constructor.
+     * @property {module:model/JsonApiResponse}
+     */
+    JsonApiResponse: JsonApiResponse,
+    /**
      * The Links model constructor.
      * @property {module:model/Links}
      */
     Links: Links,
+    /**
+     * The MultiRelationshipObject model constructor.
+     * @property {module:model/MultiRelationshipObject}
+     */
+    MultiRelationshipObject: MultiRelationshipObject,
     /**
      * The PaginationLinks model constructor.
      * @property {module:model/PaginationLinks}
      */
     PaginationLinks: PaginationLinks,
     /**
+     * The ResourceIdentifierObject model constructor.
+     * @property {module:model/ResourceIdentifierObject}
+     */
+    ResourceIdentifierObject: ResourceIdentifierObject,
+    /**
+     * The ResourceObject model constructor.
+     * @property {module:model/ResourceObject}
+     */
+    ResourceObject: ResourceObject,
+    /**
      * The ScientificTopic model constructor.
      * @property {module:model/ScientificTopic}
      */
     ScientificTopic: ScientificTopic,
+    /**
+     * The SingleRelationshipObject model constructor.
+     * @property {module:model/SingleRelationshipObject}
+     */
+    SingleRelationshipObject: SingleRelationshipObject,
     /**
      * The DefaultApi service constructor.
      * @property {module:api/DefaultApi}

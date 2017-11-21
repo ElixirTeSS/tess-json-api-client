@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user** | [**EventResourceRelationshipsUser**](EventResourceRelationshipsUser.md) |  | [optional] 
-**contentProvider** | [**EventResourceRelationshipsUser**](EventResourceRelationshipsUser.md) |  | [optional] 
-**nodes** | [**EventResourceRelationshipsNodes**](EventResourceRelationshipsNodes.md) |  | [optional] 
+**user** | [**SingleRelationshipObject**](SingleRelationshipObject.md) |  | [optional] 
+**contentProvider** | [**SingleRelationshipObject**](SingleRelationshipObject.md) |  | [optional] 
+**nodes** | [**MultiRelationshipObject**](MultiRelationshipObject.md) |  | [optional] 
 
 

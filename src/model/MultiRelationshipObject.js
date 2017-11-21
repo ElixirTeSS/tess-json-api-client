@@ -25,62 +25,78 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResource'], factory);
+    define(['ApiClient', 'model/ResourceIdentifierObject'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ApiResource'));
+    module.exports = factory(require('../ApiClient'), require('./ResourceIdentifierObject'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.EventResourceRelationshipsUser = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ApiResource);
+    root.TessJsonApi.MultiRelationshipObject = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ResourceIdentifierObject);
   }
-}(this, function(ApiClient, ApiResource) {
+}(this, function(ApiClient, ResourceIdentifierObject) {
   'use strict';
 
 
 
 
   /**
-   * The EventResourceRelationshipsUser model module.
-   * @module model/EventResourceRelationshipsUser
+   * The MultiRelationshipObject model module.
+   * @module model/MultiRelationshipObject
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>EventResourceRelationshipsUser</code>.
-   * @alias module:model/EventResourceRelationshipsUser
+   * Constructs a new <code>MultiRelationshipObject</code>.
+   * @alias module:model/MultiRelationshipObject
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
+
+
   };
 
   /**
-   * Constructs a <code>EventResourceRelationshipsUser</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>MultiRelationshipObject</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/EventResourceRelationshipsUser} obj Optional instance to populate.
-   * @return {module:model/EventResourceRelationshipsUser} The populated <code>EventResourceRelationshipsUser</code> instance.
+   * @param {module:model/MultiRelationshipObject} obj Optional instance to populate.
+   * @return {module:model/MultiRelationshipObject} The populated <code>MultiRelationshipObject</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('links')) {
+        obj['links'] = ApiClient.convertToType(data['links'], Object);
+      }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiResource.constructFromObject(data['data']);
+        obj['data'] = ApiClient.convertToType(data['data'], [ResourceIdentifierObject]);
+      }
+      if (data.hasOwnProperty('meta')) {
+        obj['meta'] = ApiClient.convertToType(data['meta'], Object);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/ApiResource} data
+   * @member {Object} links
+   */
+  exports.prototype['links'] = undefined;
+  /**
+   * @member {Array.<module:model/ResourceIdentifierObject>} data
    */
   exports.prototype['data'] = undefined;
+  /**
+   * @member {Object} meta
+   */
+  exports.prototype['meta'] = undefined;
 
 
 

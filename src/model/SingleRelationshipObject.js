@@ -25,62 +25,78 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResource'], factory);
+    define(['ApiClient', 'model/ResourceIdentifierObject'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ApiResource'));
+    module.exports = factory(require('../ApiClient'), require('./ResourceIdentifierObject'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.EventResourceRelationshipsNodes = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ApiResource);
+    root.TessJsonApi.SingleRelationshipObject = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ResourceIdentifierObject);
   }
-}(this, function(ApiClient, ApiResource) {
+}(this, function(ApiClient, ResourceIdentifierObject) {
   'use strict';
 
 
 
 
   /**
-   * The EventResourceRelationshipsNodes model module.
-   * @module model/EventResourceRelationshipsNodes
+   * The SingleRelationshipObject model module.
+   * @module model/SingleRelationshipObject
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>EventResourceRelationshipsNodes</code>.
-   * @alias module:model/EventResourceRelationshipsNodes
+   * Constructs a new <code>SingleRelationshipObject</code>.
+   * @alias module:model/SingleRelationshipObject
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
+
+
   };
 
   /**
-   * Constructs a <code>EventResourceRelationshipsNodes</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>SingleRelationshipObject</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/EventResourceRelationshipsNodes} obj Optional instance to populate.
-   * @return {module:model/EventResourceRelationshipsNodes} The populated <code>EventResourceRelationshipsNodes</code> instance.
+   * @param {module:model/SingleRelationshipObject} obj Optional instance to populate.
+   * @return {module:model/SingleRelationshipObject} The populated <code>SingleRelationshipObject</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('links')) {
+        obj['links'] = ApiClient.convertToType(data['links'], Object);
+      }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [ApiResource]);
+        obj['data'] = ResourceIdentifierObject.constructFromObject(data['data']);
+      }
+      if (data.hasOwnProperty('meta')) {
+        obj['meta'] = ApiClient.convertToType(data['meta'], Object);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/ApiResource>} data
+   * @member {Object} links
+   */
+  exports.prototype['links'] = undefined;
+  /**
+   * @member {module:model/ResourceIdentifierObject} data
    */
   exports.prototype['data'] = undefined;
+  /**
+   * @member {Object} meta
+   */
+  exports.prototype['meta'] = undefined;
 
 
 

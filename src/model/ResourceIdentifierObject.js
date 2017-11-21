@@ -25,66 +25,78 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EventResource', 'model/JsonApiResponse', 'model/Links'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./EventResource'), require('./JsonApiResponse'), require('./Links'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.Event = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.EventResource, root.TessJsonApi.JsonApiResponse, root.TessJsonApi.Links);
+    root.TessJsonApi.ResourceIdentifierObject = factory(root.TessJsonApi.ApiClient);
   }
-}(this, function(ApiClient, EventResource, JsonApiResponse, Links) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The Event model module.
-   * @module model/Event
+   * The ResourceIdentifierObject model module.
+   * @module model/ResourceIdentifierObject
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>Event</code>.
-   * @alias module:model/Event
+   * Constructs a new <code>ResourceIdentifierObject</code>.
+   * @alias module:model/ResourceIdentifierObject
    * @class
-   * @extends module:model/JsonApiResponse
    */
   var exports = function() {
     var _this = this;
-    JsonApiResponse.call(_this);
+
+
+
 
   };
 
   /**
-   * Constructs a <code>Event</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ResourceIdentifierObject</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Event} obj Optional instance to populate.
-   * @return {module:model/Event} The populated <code>Event</code> instance.
+   * @param {module:model/ResourceIdentifierObject} obj Optional instance to populate.
+   * @return {module:model/ResourceIdentifierObject} The populated <code>ResourceIdentifierObject</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      JsonApiResponse.constructFromObject(data, obj);
-      if (data.hasOwnProperty('data')) {
-        obj['data'] = EventResource.constructFromObject(data['data']);
+
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('meta')) {
+        obj['meta'] = ApiClient.convertToType(data['meta'], Object);
       }
     }
     return obj;
   }
 
-  exports.prototype = Object.create(JsonApiResponse.prototype);
-  exports.prototype.constructor = exports;
-
   /**
-   * @member {module:model/EventResource} data
+   * @member {String} id
    */
-  exports.prototype['data'] = undefined;
+  exports.prototype['id'] = undefined;
+  /**
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * @member {Object} meta
+   */
+  exports.prototype['meta'] = undefined;
 
 
 

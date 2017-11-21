@@ -77,20 +77,22 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [TessJsonApi.ApiResource](docs/ApiResource.md)
  - [TessJsonApi.Event](docs/Event.md)
  - [TessJsonApi.EventAttributes](docs/EventAttributes.md)
  - [TessJsonApi.EventCollection](docs/EventCollection.md)
  - [TessJsonApi.EventResource](docs/EventResource.md)
  - [TessJsonApi.EventResourceRelationships](docs/EventResourceRelationships.md)
- - [TessJsonApi.EventResourceRelationshipsNodes](docs/EventResourceRelationshipsNodes.md)
- - [TessJsonApi.EventResourceRelationshipsUser](docs/EventResourceRelationshipsUser.md)
  - [TessJsonApi.Facet](docs/Facet.md)
  - [TessJsonApi.FacetedCollection](docs/FacetedCollection.md)
  - [TessJsonApi.FacetedCollectionMeta](docs/FacetedCollectionMeta.md)
+ - [TessJsonApi.JsonApiResponse](docs/JsonApiResponse.md)
  - [TessJsonApi.Links](docs/Links.md)
+ - [TessJsonApi.MultiRelationshipObject](docs/MultiRelationshipObject.md)
  - [TessJsonApi.PaginationLinks](docs/PaginationLinks.md)
+ - [TessJsonApi.ResourceIdentifierObject](docs/ResourceIdentifierObject.md)
+ - [TessJsonApi.ResourceObject](docs/ResourceObject.md)
  - [TessJsonApi.ScientificTopic](docs/ScientificTopic.md)
+ - [TessJsonApi.SingleRelationshipObject](docs/SingleRelationshipObject.md)
 
 
 ## Documentation for Authorization

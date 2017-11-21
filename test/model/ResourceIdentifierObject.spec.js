@@ -39,7 +39,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TessJsonApi.EventResourceRelationshipsUser();
+    instance = new TessJsonApi.ResourceIdentifierObject();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,16 +58,28 @@
       object[property] = value;
   }
 
-  describe('EventResourceRelationshipsUser', function() {
-    it('should create an instance of EventResourceRelationshipsUser', function() {
-      // uncomment below and update the code to test EventResourceRelationshipsUser
-      //var instane = new TessJsonApi.EventResourceRelationshipsUser();
-      //expect(instance).to.be.a(TessJsonApi.EventResourceRelationshipsUser);
+  describe('ResourceIdentifierObject', function() {
+    it('should create an instance of ResourceIdentifierObject', function() {
+      // uncomment below and update the code to test ResourceIdentifierObject
+      //var instane = new TessJsonApi.ResourceIdentifierObject();
+      //expect(instance).to.be.a(TessJsonApi.ResourceIdentifierObject);
     });
 
-    it('should have the property data (base name: "data")', function() {
-      // uncomment below and update the code to test the property data
-      //var instane = new TessJsonApi.EventResourceRelationshipsUser();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new TessJsonApi.ResourceIdentifierObject();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new TessJsonApi.ResourceIdentifierObject();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property meta (base name: "meta")', function() {
+      // uncomment below and update the code to test the property meta
+      //var instane = new TessJsonApi.ResourceIdentifierObject();
       //expect(instance).to.be();
     });
 

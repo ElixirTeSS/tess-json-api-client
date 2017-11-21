@@ -39,7 +39,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TessJsonApi.EventResourceRelationshipsNodes();
+    instance = new TessJsonApi.SingleRelationshipObject();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,16 +58,28 @@
       object[property] = value;
   }
 
-  describe('EventResourceRelationshipsNodes', function() {
-    it('should create an instance of EventResourceRelationshipsNodes', function() {
-      // uncomment below and update the code to test EventResourceRelationshipsNodes
-      //var instane = new TessJsonApi.EventResourceRelationshipsNodes();
-      //expect(instance).to.be.a(TessJsonApi.EventResourceRelationshipsNodes);
+  describe('SingleRelationshipObject', function() {
+    it('should create an instance of SingleRelationshipObject', function() {
+      // uncomment below and update the code to test SingleRelationshipObject
+      //var instane = new TessJsonApi.SingleRelationshipObject();
+      //expect(instance).to.be.a(TessJsonApi.SingleRelationshipObject);
+    });
+
+    it('should have the property links (base name: "links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new TessJsonApi.SingleRelationshipObject();
+      //expect(instance).to.be();
     });
 
     it('should have the property data (base name: "data")', function() {
       // uncomment below and update the code to test the property data
-      //var instane = new TessJsonApi.EventResourceRelationshipsNodes();
+      //var instane = new TessJsonApi.SingleRelationshipObject();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property meta (base name: "meta")', function() {
+      // uncomment below and update the code to test the property meta
+      //var instane = new TessJsonApi.SingleRelationshipObject();
       //expect(instance).to.be();
     });
 

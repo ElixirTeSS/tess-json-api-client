@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResource', 'model/EventAttributes', 'model/EventResourceRelationships', 'model/Links'], factory);
+    define(['ApiClient', 'model/EventAttributes', 'model/EventResourceRelationships', 'model/Links', 'model/ResourceObject'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ApiResource'), require('./EventAttributes'), require('./EventResourceRelationships'), require('./Links'));
+    module.exports = factory(require('../ApiClient'), require('./EventAttributes'), require('./EventResourceRelationships'), require('./Links'), require('./ResourceObject'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.EventResource = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ApiResource, root.TessJsonApi.EventAttributes, root.TessJsonApi.EventResourceRelationships, root.TessJsonApi.Links);
+    root.TessJsonApi.EventResource = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.EventAttributes, root.TessJsonApi.EventResourceRelationships, root.TessJsonApi.Links, root.TessJsonApi.ResourceObject);
   }
-}(this, function(ApiClient, ApiResource, EventAttributes, EventResourceRelationships, Links) {
+}(this, function(ApiClient, EventAttributes, EventResourceRelationships, Links, ResourceObject) {
   'use strict';
 
 
@@ -52,11 +52,11 @@
    * Constructs a new <code>EventResource</code>.
    * @alias module:model/EventResource
    * @class
-   * @extends module:model/ApiResource
+   * @extends module:model/ResourceObject
    */
   var exports = function() {
     var _this = this;
-    ApiResource.call(_this);
+    ResourceObject.call(_this);
 
 
   };
@@ -71,7 +71,7 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      ApiResource.constructFromObject(data, obj);
+      ResourceObject.constructFromObject(data, obj);
       if (data.hasOwnProperty('attributes')) {
         obj['attributes'] = EventAttributes.constructFromObject(data['attributes']);
       }
@@ -82,7 +82,7 @@
     return obj;
   }
 
-  exports.prototype = Object.create(ApiResource.prototype);
+  exports.prototype = Object.create(ResourceObject.prototype);
   exports.prototype.constructor = exports;
 
   /**
