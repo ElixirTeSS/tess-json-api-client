@@ -57,50 +57,6 @@
 
 
     /**
-     * Callback function to receive the result of the eventSlugGet operation.
-     * @callback module:api/DefaultApi~eventSlugGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Event} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * @param {String} slug The _slug_ id of an event e.g. python-training-2017
-     * @param {module:api/DefaultApi~eventSlugGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Event}
-     */
-    this.eventSlugGet = function(slug, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'slug' is set
-      if (slug == undefined || slug == null) {
-        throw new Error("Missing the required parameter 'slug' when calling eventSlugGet");
-      }
-
-
-      var pathParams = {
-        'slug': slug
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/vnd.api+json'];
-      var accepts = ['application/vnd.api+json'];
-      var returnType = Event;
-
-      return this.apiClient.callApi(
-        '/event/{slug}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the eventsGet operation.
      * @callback module:api/DefaultApi~eventsGetCallback
      * @param {String} error Error message, if any.
@@ -132,6 +88,50 @@
 
       return this.apiClient.callApi(
         '/events', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the eventsSlugGet operation.
+     * @callback module:api/DefaultApi~eventsSlugGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Event} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} slug The _slug_ id of an event e.g. python-training-2017
+     * @param {module:api/DefaultApi~eventsSlugGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Event}
+     */
+    this.eventsSlugGet = function(slug, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'slug' is set
+      if (slug == undefined || slug == null) {
+        throw new Error("Missing the required parameter 'slug' when calling eventsSlugGet");
+      }
+
+
+      var pathParams = {
+        'slug': slug
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/vnd.api+json'];
+      var accepts = ['application/vnd.api+json'];
+      var returnType = Event;
+
+      return this.apiClient.callApi(
+        '/events/{slug}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

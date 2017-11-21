@@ -54,9 +54,6 @@ var TessJsonApi = require('tess_json_api');
 
 var api = new TessJsonApi.DefaultApi()
 
-var slug = "slug_example"; // {String} The _slug_ id of an event e.g. python-training-2017
-
-
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -64,7 +61,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.eventSlugGet(slug, callback);
+api.eventsGet(callback);
 
 ```
 
@@ -74,8 +71,8 @@ All URIs are relative to *https://tess.oerc.ox.ac.uk*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*TessJsonApi.DefaultApi* | [**eventSlugGet**](docs/DefaultApi.md#eventSlugGet) | **GET** /event/{slug} | 
 *TessJsonApi.DefaultApi* | [**eventsGet**](docs/DefaultApi.md#eventsGet) | **GET** /events | 
+*TessJsonApi.DefaultApi* | [**eventsSlugGet**](docs/DefaultApi.md#eventsSlugGet) | **GET** /events/{slug} | 
 
 
 ## Documentation for Models

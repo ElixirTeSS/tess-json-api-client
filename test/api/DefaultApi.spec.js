@@ -59,20 +59,20 @@
   }
 
   describe('DefaultApi', function() {
-    describe('eventSlugGet', function() {
-      it('should call eventSlugGet successfully', function(done) {
-        //uncomment below and update the code to test eventSlugGet
-        //instance.eventSlugGet(pet, function(error) {
+    describe('eventsGet', function() {
+      it('should call eventsGet successfully', function(done) {
+        //uncomment below and update the code to test eventsGet
+        //instance.eventsGet(pet, function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('eventsGet', function() {
-      it('should call eventsGet successfully', function(done) {
-        //uncomment below and update the code to test eventsGet
-        //instance.eventsGet(pet, function(error) {
+    describe('eventsSlugGet', function() {
+      it('should call eventsSlugGet successfully', function(done) {
+        //uncomment below and update the code to test eventsSlugGet
+        //instance.eventsSlugGet(pet, function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
