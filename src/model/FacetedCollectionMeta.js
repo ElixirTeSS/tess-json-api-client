@@ -79,7 +79,7 @@
         obj['facets'] = ApiClient.convertToType(data['facets'], {'String': 'String'});
       }
       if (data.hasOwnProperty('available-facets')) {
-        obj['available-facets'] = ApiClient.convertToType(data['available-facets'], {'String': Facet});
+        obj['available-facets'] = ApiClient.convertToType(data['available-facets'], {'String': [Facet]});
       }
     }
     return obj;
@@ -98,7 +98,7 @@
   exports.prototype['facets'] = undefined;
   /**
    * The set of filters that are available to be applied to the collection.
-   * @member {Object.<String, module:model/Facet>} available-facets
+   * @member {Object.<String, Array.<module:model/Facet>>} available-facets
    */
   exports.prototype['available-facets'] = undefined;
 
