@@ -76,7 +76,7 @@
         obj['query'] = ApiClient.convertToType(data['query'], 'String');
       }
       if (data.hasOwnProperty('facets')) {
-        obj['facets'] = ApiClient.convertToType(data['facets'], {'String': 'String'});
+        obj['facets'] = ApiClient.convertToType(data['facets'], {'String': ['String']});
       }
       if (data.hasOwnProperty('available-facets')) {
         obj['available-facets'] = ApiClient.convertToType(data['available-facets'], {'String': [Facet]});
@@ -93,7 +93,7 @@
   exports.prototype['query'] = '';
   /**
    * The filters that are currently applied to the collection.
-   * @member {Object.<String, String>} facets
+   * @member {Object.<String, Array.<String>>} facets
    */
   exports.prototype['facets'] = undefined;
   /**

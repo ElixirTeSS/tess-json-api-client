@@ -27,11 +27,8 @@
     // AMD. Register as an anonymous module.
     define(['superagent'], factory);
   } else if (typeof module === 'object' && module.exports) {
-    // Finn: Tell superagent to parse JSON-API responses as JSON.
-    var sa = require('superagent');
-    sa.parse['application/vnd.api+json'] = JSON.parse;
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(sa);
+    module.exports = factory(require('superagent'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
