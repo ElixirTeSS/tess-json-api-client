@@ -83,6 +83,8 @@ Class | Method | HTTP request | Description
  - [TessJsonApi.EventCollection](docs/EventCollection.md)
  - [TessJsonApi.EventResource](docs/EventResource.md)
  - [TessJsonApi.EventResourceRelationships](docs/EventResourceRelationships.md)
+ - [TessJsonApi.EventResourceRelationshipsNodes](docs/EventResourceRelationshipsNodes.md)
+ - [TessJsonApi.EventResourceRelationshipsUser](docs/EventResourceRelationshipsUser.md)
  - [TessJsonApi.Facet](docs/Facet.md)
  - [TessJsonApi.FacetedCollection](docs/FacetedCollection.md)
  - [TessJsonApi.FacetedCollectionMeta](docs/FacetedCollectionMeta.md)

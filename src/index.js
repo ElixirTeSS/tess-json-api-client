@@ -25,12 +25,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResource', 'model/Event', 'model/EventAttributes', 'model/EventCollection', 'model/EventResource', 'model/EventResourceRelationships', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/Links', 'model/PaginationLinks', 'model/ScientificTopic', 'api/DefaultApi'], factory);
+    define(['ApiClient', 'model/ApiResource', 'model/Event', 'model/EventAttributes', 'model/EventCollection', 'model/EventResource', 'model/EventResourceRelationships', 'model/EventResourceRelationshipsNodes', 'model/EventResourceRelationshipsUser', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/Links', 'model/PaginationLinks', 'model/ScientificTopic', 'api/DefaultApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ApiResource'), require('./model/Event'), require('./model/EventAttributes'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/EventResourceRelationships'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/Links'), require('./model/PaginationLinks'), require('./model/ScientificTopic'), require('./api/DefaultApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ApiResource'), require('./model/Event'), require('./model/EventAttributes'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/EventResourceRelationships'), require('./model/EventResourceRelationshipsNodes'), require('./model/EventResourceRelationshipsUser'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/Links'), require('./model/PaginationLinks'), require('./model/ScientificTopic'), require('./api/DefaultApi'));
   }
-}(function(ApiClient, ApiResource, Event, EventAttributes, EventCollection, EventResource, EventResourceRelationships, Facet, FacetedCollection, FacetedCollectionMeta, Links, PaginationLinks, ScientificTopic, DefaultApi) {
+}(function(ApiClient, ApiResource, Event, EventAttributes, EventCollection, EventResource, EventResourceRelationships, EventResourceRelationshipsNodes, EventResourceRelationshipsUser, Facet, FacetedCollection, FacetedCollectionMeta, Links, PaginationLinks, ScientificTopic, DefaultApi) {
   'use strict';
 
   /**
@@ -100,6 +100,16 @@
      * @property {module:model/EventResourceRelationships}
      */
     EventResourceRelationships: EventResourceRelationships,
+    /**
+     * The EventResourceRelationshipsNodes model constructor.
+     * @property {module:model/EventResourceRelationshipsNodes}
+     */
+    EventResourceRelationshipsNodes: EventResourceRelationshipsNodes,
+    /**
+     * The EventResourceRelationshipsUser model constructor.
+     * @property {module:model/EventResourceRelationshipsUser}
+     */
+    EventResourceRelationshipsUser: EventResourceRelationshipsUser,
     /**
      * The Facet model constructor.
      * @property {module:model/Facet}

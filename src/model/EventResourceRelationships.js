@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResource'], factory);
+    define(['ApiClient', 'model/EventResourceRelationshipsNodes', 'model/EventResourceRelationshipsUser'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ApiResource'));
+    module.exports = factory(require('../ApiClient'), require('./EventResourceRelationshipsNodes'), require('./EventResourceRelationshipsUser'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.EventResourceRelationships = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ApiResource);
+    root.TessJsonApi.EventResourceRelationships = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.EventResourceRelationshipsNodes, root.TessJsonApi.EventResourceRelationshipsUser);
   }
-}(this, function(ApiClient, ApiResource) {
+}(this, function(ApiClient, EventResourceRelationshipsNodes, EventResourceRelationshipsUser) {
   'use strict';
 
 
@@ -73,28 +73,28 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('user')) {
-        obj['user'] = ApiResource.constructFromObject(data['user']);
+        obj['user'] = EventResourceRelationshipsUser.constructFromObject(data['user']);
       }
       if (data.hasOwnProperty('content-provider')) {
-        obj['content-provider'] = ApiResource.constructFromObject(data['content-provider']);
+        obj['content-provider'] = EventResourceRelationshipsUser.constructFromObject(data['content-provider']);
       }
       if (data.hasOwnProperty('nodes')) {
-        obj['nodes'] = ApiClient.convertToType(data['nodes'], [ApiResource]);
+        obj['nodes'] = EventResourceRelationshipsNodes.constructFromObject(data['nodes']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/ApiResource} user
+   * @member {module:model/EventResourceRelationshipsUser} user
    */
   exports.prototype['user'] = undefined;
   /**
-   * @member {module:model/ApiResource} content-provider
+   * @member {module:model/EventResourceRelationshipsUser} content-provider
    */
   exports.prototype['content-provider'] = undefined;
   /**
-   * @member {Array.<module:model/ApiResource>} nodes
+   * @member {module:model/EventResourceRelationshipsNodes} nodes
    */
   exports.prototype['nodes'] = undefined;
 

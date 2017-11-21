@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user** | [**ApiResource**](ApiResource.md) |  | [optional] 
-**contentProvider** | [**ApiResource**](ApiResource.md) |  | [optional] 
-**nodes** | [**[ApiResource]**](ApiResource.md) |  | [optional] 
+**user** | [**EventResourceRelationshipsUser**](EventResourceRelationshipsUser.md) |  | [optional] 
+**contentProvider** | [**EventResourceRelationshipsUser**](EventResourceRelationshipsUser.md) |  | [optional] 
+**nodes** | [**EventResourceRelationshipsNodes**](EventResourceRelationshipsNodes.md) |  | [optional] 
 
 
