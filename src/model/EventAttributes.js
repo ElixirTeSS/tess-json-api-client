@@ -155,7 +155,7 @@
         obj['target_audience'] = ApiClient.convertToType(data['target_audience'], ['String']);
       }
       if (data.hasOwnProperty('capacity')) {
-        obj['capacity'] = ApiClient.convertToType(data['capacity'], ['String']);
+        obj['capacity'] = ApiClient.convertToType(data['capacity'], 'Number');
       }
       if (data.hasOwnProperty('eligibility')) {
         obj['eligibility'] = ApiClient.convertToType(data['eligibility'], ['String']);
@@ -275,7 +275,7 @@
   exports.prototype['target_audience'] = undefined;
   /**
    * The number of people allowed to attend the event
-   * @member {Array.<String>} capacity
+   * @member {Number} capacity
    */
   exports.prototype['capacity'] = undefined;
   /**

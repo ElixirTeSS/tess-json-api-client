@@ -31,7 +31,7 @@
     var sa = require('superagent');
     sa.parse['application/vnd.api+json'] = JSON.parse;
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(a);
+    module.exports = factory(sa);
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {

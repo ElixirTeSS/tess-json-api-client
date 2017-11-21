@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **keywords** | **[String]** | A series of freetext words used to describe an event. | [optional] 
 **eventTypes** | **[String]** | The category of the event. This could be a meeting or a course; or if unknown or neither, an event | [optional] 
 **targetAudience** | **[String]** | The intended audience of the event. This can includes things like scientific discpline and expertise level | [optional] 
-**capacity** | **[String]** | The number of people allowed to attend the event | [optional] 
+**capacity** | **Number** | The number of people allowed to attend the event | [optional] 
 **eligibility** | **[String]** | Various criteria require to participate in the event | [optional] 
 **contact** | **String** | The name and/or contact details of a person or institution organizing the event | [optional] 
 **hostInstitutions** | **[String]** | The institution physically hosting the event | [optional] 
