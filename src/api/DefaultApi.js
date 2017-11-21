@@ -79,11 +79,14 @@
 
       var pathParams = {
       };
-      var queryParams = {
+      
+      // Hacked by Finn to merge arbitrary facet params
+      var queryParams = Object.assign({
         'q': opts['q'],
         'page_number': opts['pageNumber'],
         'page_size': opts['pageSize']
-      };
+      }, (opts['facets'] || {}));
+
       var headerParams = {
       };
       var formParams = {
