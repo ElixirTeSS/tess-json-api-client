@@ -71,6 +71,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property facets (base name: "facets")', function() {
+      // uncomment below and update the code to test the property facets
+      //var instane = new TessJsonApi.FacetedCollectionMeta();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property availableFacets (base name: "available-facets")', function() {
+      // uncomment below and update the code to test the property availableFacets
+      //var instane = new TessJsonApi.FacetedCollectionMeta();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -65,16 +65,24 @@
      */
 
     /**
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Search keywords.
+     * @param {Number} opts.pageNumber The page of the collection to view. (default to 1)
+     * @param {Number} opts.pageSize The number of results to return per page. (default to 30)
      * @param {module:api/DefaultApi~eventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EventCollection}
      */
-    this.eventsGet = function(callback) {
+    this.eventsGet = function(opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'q': opts['q'],
+        'page_number': opts['pageNumber'],
+        'page_size': opts['pageSize']
       };
       var headerParams = {
       };

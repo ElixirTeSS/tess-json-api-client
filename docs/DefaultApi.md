@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="eventsGet"></a>
 # **eventsGet**
-> EventCollection eventsGet()
+> EventCollection eventsGet(opts)
 
 
 
@@ -20,6 +20,12 @@ var TessJsonApi = require('tess_json_api');
 
 var apiInstance = new TessJsonApi.DefaultApi();
 
+var opts = { 
+  'q': "q_example", // String | Search keywords.
+  'pageNumber': 1, // Number | The page of the collection to view.
+  'pageSize': 30 // Number | The number of results to return per page.
+};
+
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -27,11 +33,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.eventsGet(callback);
+apiInstance.eventsGet(opts, callback);
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **q** | **String**| Search keywords. | [optional] 
+ **pageNumber** | **Number**| The page of the collection to view. | [optional] [default to 1]
+ **pageSize** | **Number**| The number of results to return per page. | [optional] [default to 30]
 
 ### Return type
 

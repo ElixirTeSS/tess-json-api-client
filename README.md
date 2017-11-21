@@ -54,6 +54,12 @@ var TessJsonApi = require('tess_json_api');
 
 var api = new TessJsonApi.DefaultApi()
 
+var opts = { 
+  'q': "q_example", // {String} Search keywords.
+  'pageNumber': 1, // {Number} The page of the collection to view.
+  'pageSize': 30 // {Number} The number of results to return per page.
+};
+
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -61,7 +67,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.eventsGet(callback);
+api.eventsGet(opts, callback);
 
 ```
 

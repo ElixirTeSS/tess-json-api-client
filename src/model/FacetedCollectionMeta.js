@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Facet'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Facet'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.FacetedCollectionMeta = factory(root.TessJsonApi.ApiClient);
+    root.TessJsonApi.FacetedCollectionMeta = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.Facet);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Facet) {
   'use strict';
 
 
@@ -57,6 +57,8 @@
     var _this = this;
 
 
+
+
   };
 
   /**
@@ -73,6 +75,12 @@
       if (data.hasOwnProperty('query')) {
         obj['query'] = ApiClient.convertToType(data['query'], 'String');
       }
+      if (data.hasOwnProperty('facets')) {
+        obj['facets'] = ApiClient.convertToType(data['facets'], {'String': 'String'});
+      }
+      if (data.hasOwnProperty('available-facets')) {
+        obj['available-facets'] = ApiClient.convertToType(data['available-facets'], {'String': Facet});
+      }
     }
     return obj;
   }
@@ -83,6 +91,16 @@
    * @default ''
    */
   exports.prototype['query'] = '';
+  /**
+   * The filters that are currently applied to the collection.
+   * @member {Object.<String, String>} facets
+   */
+  exports.prototype['facets'] = undefined;
+  /**
+   * The set of filters that are available to be applied to the collection.
+   * @member {Object.<String, module:model/Facet>} available-facets
+   */
+  exports.prototype['available-facets'] = undefined;
 
 
 
