@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EventResource', 'model/JsonApiResponse', 'model/Links'], factory);
+    define(['ApiClient', 'model/EventResource', 'model/JsonApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./EventResource'), require('./JsonApiResponse'), require('./Links'));
+    module.exports = factory(require('../ApiClient'), require('./EventResource'), require('./JsonApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.Event = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.EventResource, root.TessJsonApi.JsonApiResponse, root.TessJsonApi.Links);
+    root.TessJsonApi.Event = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.EventResource, root.TessJsonApi.JsonApiResponse);
   }
-}(this, function(ApiClient, EventResource, JsonApiResponse, Links) {
+}(this, function(ApiClient, EventResource, JsonApiResponse) {
   'use strict';
 
 

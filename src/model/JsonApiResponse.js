@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Links'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Links'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.JsonApiResponse = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.Links);
+    root.TessJsonApi.JsonApiResponse = factory(root.TessJsonApi.ApiClient);
   }
-}(this, function(ApiClient, Links) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -81,7 +81,7 @@
         obj['meta'] = ApiClient.convertToType(data['meta'], Object);
       }
       if (data.hasOwnProperty('links')) {
-        obj['links'] = Links.constructFromObject(data['links']);
+        obj['links'] = ApiClient.convertToType(data['links'], Object);
       }
       if (data.hasOwnProperty('included')) {
         obj['included'] = ApiClient.convertToType(data['included'], Object);
@@ -102,7 +102,7 @@
    */
   exports.prototype['meta'] = undefined;
   /**
-   * @member {module:model/Links} links
+   * @member {Object} links
    */
   exports.prototype['links'] = undefined;
   /**

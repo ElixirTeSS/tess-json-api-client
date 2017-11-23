@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **errors** | **Object** |  | [optional] 
 **meta** | **Object** |  | [optional] 
-**links** | [**Links**](Links.md) |  | [optional] 
+**links** | **Object** |  | [optional] 
 **included** | **Object** |  | [optional] 
 **jsonapi** | **Object** |  | [optional] 
 
