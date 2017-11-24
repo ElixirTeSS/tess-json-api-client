@@ -57,7 +57,8 @@ var api = new TessJsonApi.DefaultApi()
 var opts = { 
   'q': "q_example", // {String} Search keywords.
   'pageNumber': 1, // {Number} The page of the collection to view.
-  'pageSize': 30 // {Number} The number of results to return per page.
+  'pageSize': 30, // {Number} The number of results to return per page.
+  'sort': "sort_example" // {String} Field to sort by.
 };
 
 var callback = function(error, data, response) {
@@ -67,7 +68,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.eventsGet(opts, callback);
+api.contentProvidersGet(opts, callback);
 
 ```
 
@@ -77,28 +78,55 @@ All URIs are relative to *https://tess.oerc.ox.ac.uk*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*TessJsonApi.DefaultApi* | [**contentProvidersGet**](docs/DefaultApi.md#contentProvidersGet) | **GET** /content_providers | 
+*TessJsonApi.DefaultApi* | [**contentProvidersSlugGet**](docs/DefaultApi.md#contentProvidersSlugGet) | **GET** /content_providers/{slug} | 
 *TessJsonApi.DefaultApi* | [**eventsGet**](docs/DefaultApi.md#eventsGet) | **GET** /events | 
 *TessJsonApi.DefaultApi* | [**eventsSlugGet**](docs/DefaultApi.md#eventsSlugGet) | **GET** /events/{slug} | 
+*TessJsonApi.DefaultApi* | [**materialsGet**](docs/DefaultApi.md#materialsGet) | **GET** /materials | 
+*TessJsonApi.DefaultApi* | [**materialsSlugGet**](docs/DefaultApi.md#materialsSlugGet) | **GET** /materials/{slug} | 
+*TessJsonApi.DefaultApi* | [**usersGet**](docs/DefaultApi.md#usersGet) | **GET** /users | 
+*TessJsonApi.DefaultApi* | [**usersSlugGet**](docs/DefaultApi.md#usersSlugGet) | **GET** /users/{slug} | 
+*TessJsonApi.DefaultApi* | [**workflowsGet**](docs/DefaultApi.md#workflowsGet) | **GET** /workflows | 
+*TessJsonApi.DefaultApi* | [**workflowsSlugGet**](docs/DefaultApi.md#workflowsSlugGet) | **GET** /workflows/{slug} | 
 
 
 ## Documentation for Models
 
+ - [TessJsonApi.ContentProvider](docs/ContentProvider.md)
+ - [TessJsonApi.ContentProviderAttributes](docs/ContentProviderAttributes.md)
+ - [TessJsonApi.ContentProviderCollection](docs/ContentProviderCollection.md)
+ - [TessJsonApi.ContentProviderResource](docs/ContentProviderResource.md)
+ - [TessJsonApi.ContentProviderResourceRelationships](docs/ContentProviderResourceRelationships.md)
  - [TessJsonApi.Event](docs/Event.md)
  - [TessJsonApi.EventAttributes](docs/EventAttributes.md)
  - [TessJsonApi.EventCollection](docs/EventCollection.md)
  - [TessJsonApi.EventResource](docs/EventResource.md)
  - [TessJsonApi.EventResourceRelationships](docs/EventResourceRelationships.md)
+ - [TessJsonApi.ExternalResource](docs/ExternalResource.md)
  - [TessJsonApi.Facet](docs/Facet.md)
  - [TessJsonApi.FacetedCollection](docs/FacetedCollection.md)
  - [TessJsonApi.FacetedCollectionMeta](docs/FacetedCollectionMeta.md)
  - [TessJsonApi.JsonApiResponse](docs/JsonApiResponse.md)
  - [TessJsonApi.Links](docs/Links.md)
+ - [TessJsonApi.Material](docs/Material.md)
+ - [TessJsonApi.MaterialAttributes](docs/MaterialAttributes.md)
+ - [TessJsonApi.MaterialCollection](docs/MaterialCollection.md)
+ - [TessJsonApi.MaterialResource](docs/MaterialResource.md)
  - [TessJsonApi.MultiRelationshipObject](docs/MultiRelationshipObject.md)
  - [TessJsonApi.PaginationLinks](docs/PaginationLinks.md)
  - [TessJsonApi.ResourceIdentifierObject](docs/ResourceIdentifierObject.md)
  - [TessJsonApi.ResourceObject](docs/ResourceObject.md)
  - [TessJsonApi.ScientificTopic](docs/ScientificTopic.md)
  - [TessJsonApi.SingleRelationshipObject](docs/SingleRelationshipObject.md)
+ - [TessJsonApi.User](docs/User.md)
+ - [TessJsonApi.UserAttributes](docs/UserAttributes.md)
+ - [TessJsonApi.UserCollection](docs/UserCollection.md)
+ - [TessJsonApi.UserResource](docs/UserResource.md)
+ - [TessJsonApi.Workflow](docs/Workflow.md)
+ - [TessJsonApi.WorkflowAttributes](docs/WorkflowAttributes.md)
+ - [TessJsonApi.WorkflowCollection](docs/WorkflowCollection.md)
+ - [TessJsonApi.WorkflowResource](docs/WorkflowResource.md)
+ - [TessJsonApi.WorkflowResourceRelationships](docs/WorkflowResourceRelationships.md)
 
 
 ## Documentation for Authorization

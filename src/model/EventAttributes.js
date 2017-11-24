@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ScientificTopic'], factory);
+    define(['ApiClient', 'model/ExternalResource', 'model/ScientificTopic'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ScientificTopic'));
+    module.exports = factory(require('../ApiClient'), require('./ExternalResource'), require('./ScientificTopic'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.EventAttributes = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ScientificTopic);
+    root.TessJsonApi.EventAttributes = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ExternalResource, root.TessJsonApi.ScientificTopic);
   }
-}(this, function(ApiClient, ScientificTopic) {
+}(this, function(ApiClient, ExternalResource, ScientificTopic) {
   'use strict';
 
 
@@ -81,6 +81,8 @@
 
 
 
+
+
   };
 
   /**
@@ -94,6 +96,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('slug')) {
+        obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
+      }
       if (data.hasOwnProperty('title')) {
         obj['title'] = ApiClient.convertToType(data['title'], 'String');
       }
@@ -169,17 +174,25 @@
       if (data.hasOwnProperty('scientific_topics')) {
         obj['scientific_topics'] = ApiClient.convertToType(data['scientific_topics'], [ScientificTopic]);
       }
+      if (data.hasOwnProperty('external_resources')) {
+        obj['external_resources'] = ApiClient.convertToType(data['external_resources'], [ExternalResource]);
+      }
     }
     return obj;
   }
 
   /**
-   * The title of the event
+   * The \"friendly\" identifier of the event.
+   * @member {String} slug
+   */
+  exports.prototype['slug'] = undefined;
+  /**
+   * The title of the event.
    * @member {String} title
    */
   exports.prototype['title'] = undefined;
   /**
-   * The subtitle of the event
+   * The subtitle of the event.
    * @member {String} subtitle
    */
   exports.prototype['subtitle'] = undefined;
@@ -199,12 +212,12 @@
    */
   exports.prototype['description'] = undefined;
   /**
-   * The date and time the event starts on
+   * The date and time at which the event starts.
    * @member {Date} start
    */
   exports.prototype['start'] = undefined;
   /**
-   * The date and time the event ends on.
+   * The date and time at which the event ends.
    * @member {Date} end
    */
   exports.prototype['end'] = undefined;
@@ -214,27 +227,27 @@
    */
   exports.prototype['sponsor'] = undefined;
   /**
-   * The name of the building the event will be hosted in
+   * The name of the building where the event will be hosted.
    * @member {String} venue
    */
   exports.prototype['venue'] = undefined;
   /**
-   * The city the event will be hosted in
+   * The city the where event will be hosted.
    * @member {String} city
    */
   exports.prototype['city'] = undefined;
   /**
-   * The regional county the event will be hosted in
+   * The regional where county the event will be hosted.
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
   /**
-   * The name of country the event will be hosted in
+   * The name of country where the event will be hosted.
    * @member {String} county
    */
   exports.prototype['county'] = undefined;
   /**
-   * The postcode of the venue hosting the event
+   * The postcode of the venue hosting the event.
    * @member {String} postcode
    */
   exports.prototype['postcode'] = undefined;
@@ -249,12 +262,12 @@
    */
   exports.prototype['longitude'] = undefined;
   /**
-   * The date the event was first created on TeSS
+   * The date the event was first created on TeSS.
    * @member {Date} created_at
    */
   exports.prototype['created_at'] = undefined;
   /**
-   * The date the event was last updated on TeSS
+   * The date the event was last updated on TeSS.
    * @member {Date} updated_at
    */
   exports.prototype['updated_at'] = undefined;
@@ -264,32 +277,32 @@
    */
   exports.prototype['keywords'] = undefined;
   /**
-   * The category of the event. This could be a meeting or a course; or if unknown or neither, an event
+   * The category of the event. This could be a meeting or a course; or if unknown or neither, an event.
    * @member {Array.<String>} event_types
    */
   exports.prototype['event_types'] = undefined;
   /**
-   * The intended audience of the event. This can includes things like scientific discpline and expertise level
+   * The intended audience of the event. This can includes things like scientific discpline and expertise level.
    * @member {Array.<String>} target_audience
    */
   exports.prototype['target_audience'] = undefined;
   /**
-   * The number of people allowed to attend the event
+   * The number of people allowed to attend the event.
    * @member {Number} capacity
    */
   exports.prototype['capacity'] = undefined;
   /**
-   * Various criteria require to participate in the event
+   * Various criteria require to participate in the event.
    * @member {Array.<String>} eligibility
    */
   exports.prototype['eligibility'] = undefined;
   /**
-   * The name and/or contact details of a person or institution organizing the event
+   * The name and/or contact details of a person or institution organizing the event.
    * @member {String} contact
    */
   exports.prototype['contact'] = undefined;
   /**
-   * The institution physically hosting the event
+   * The institution physically hosting the event.
    * @member {Array.<String>} host_institutions
    */
   exports.prototype['host_institutions'] = undefined;
@@ -298,6 +311,11 @@
    * @member {Array.<module:model/ScientificTopic>} scientific_topics
    */
   exports.prototype['scientific_topics'] = undefined;
+  /**
+   * A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything.
+   * @member {Array.<module:model/ExternalResource>} external_resources
+   */
+  exports.prototype['external_resources'] = undefined;
 
 
 

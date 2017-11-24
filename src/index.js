@@ -25,12 +25,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/EventAttributes', 'model/EventCollection', 'model/EventResource', 'model/EventResourceRelationships', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/JsonApiResponse', 'model/Links', 'model/MultiRelationshipObject', 'model/PaginationLinks', 'model/ResourceIdentifierObject', 'model/ResourceObject', 'model/ScientificTopic', 'model/SingleRelationshipObject', 'api/DefaultApi'], factory);
+    define(['ApiClient', 'model/ContentProvider', 'model/ContentProviderAttributes', 'model/ContentProviderCollection', 'model/ContentProviderResource', 'model/ContentProviderResourceRelationships', 'model/Event', 'model/EventAttributes', 'model/EventCollection', 'model/EventResource', 'model/EventResourceRelationships', 'model/ExternalResource', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/JsonApiResponse', 'model/Links', 'model/Material', 'model/MaterialAttributes', 'model/MaterialCollection', 'model/MaterialResource', 'model/MultiRelationshipObject', 'model/PaginationLinks', 'model/ResourceIdentifierObject', 'model/ResourceObject', 'model/ScientificTopic', 'model/SingleRelationshipObject', 'model/User', 'model/UserAttributes', 'model/UserCollection', 'model/UserResource', 'model/Workflow', 'model/WorkflowAttributes', 'model/WorkflowCollection', 'model/WorkflowResource', 'model/WorkflowResourceRelationships', 'api/DefaultApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Event'), require('./model/EventAttributes'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/EventResourceRelationships'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/JsonApiResponse'), require('./model/Links'), require('./model/MultiRelationshipObject'), require('./model/PaginationLinks'), require('./model/ResourceIdentifierObject'), require('./model/ResourceObject'), require('./model/ScientificTopic'), require('./model/SingleRelationshipObject'), require('./api/DefaultApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ContentProvider'), require('./model/ContentProviderAttributes'), require('./model/ContentProviderCollection'), require('./model/ContentProviderResource'), require('./model/ContentProviderResourceRelationships'), require('./model/Event'), require('./model/EventAttributes'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/EventResourceRelationships'), require('./model/ExternalResource'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/JsonApiResponse'), require('./model/Links'), require('./model/Material'), require('./model/MaterialAttributes'), require('./model/MaterialCollection'), require('./model/MaterialResource'), require('./model/MultiRelationshipObject'), require('./model/PaginationLinks'), require('./model/ResourceIdentifierObject'), require('./model/ResourceObject'), require('./model/ScientificTopic'), require('./model/SingleRelationshipObject'), require('./model/User'), require('./model/UserAttributes'), require('./model/UserCollection'), require('./model/UserResource'), require('./model/Workflow'), require('./model/WorkflowAttributes'), require('./model/WorkflowCollection'), require('./model/WorkflowResource'), require('./model/WorkflowResourceRelationships'), require('./api/DefaultApi'));
   }
-}(function(ApiClient, Event, EventAttributes, EventCollection, EventResource, EventResourceRelationships, Facet, FacetedCollection, FacetedCollectionMeta, JsonApiResponse, Links, MultiRelationshipObject, PaginationLinks, ResourceIdentifierObject, ResourceObject, ScientificTopic, SingleRelationshipObject, DefaultApi) {
+}(function(ApiClient, ContentProvider, ContentProviderAttributes, ContentProviderCollection, ContentProviderResource, ContentProviderResourceRelationships, Event, EventAttributes, EventCollection, EventResource, EventResourceRelationships, ExternalResource, Facet, FacetedCollection, FacetedCollectionMeta, JsonApiResponse, Links, Material, MaterialAttributes, MaterialCollection, MaterialResource, MultiRelationshipObject, PaginationLinks, ResourceIdentifierObject, ResourceObject, ScientificTopic, SingleRelationshipObject, User, UserAttributes, UserCollection, UserResource, Workflow, WorkflowAttributes, WorkflowCollection, WorkflowResource, WorkflowResourceRelationships, DefaultApi) {
   'use strict';
 
   /**
@@ -71,6 +71,31 @@
      */
     ApiClient: ApiClient,
     /**
+     * The ContentProvider model constructor.
+     * @property {module:model/ContentProvider}
+     */
+    ContentProvider: ContentProvider,
+    /**
+     * The ContentProviderAttributes model constructor.
+     * @property {module:model/ContentProviderAttributes}
+     */
+    ContentProviderAttributes: ContentProviderAttributes,
+    /**
+     * The ContentProviderCollection model constructor.
+     * @property {module:model/ContentProviderCollection}
+     */
+    ContentProviderCollection: ContentProviderCollection,
+    /**
+     * The ContentProviderResource model constructor.
+     * @property {module:model/ContentProviderResource}
+     */
+    ContentProviderResource: ContentProviderResource,
+    /**
+     * The ContentProviderResourceRelationships model constructor.
+     * @property {module:model/ContentProviderResourceRelationships}
+     */
+    ContentProviderResourceRelationships: ContentProviderResourceRelationships,
+    /**
      * The Event model constructor.
      * @property {module:model/Event}
      */
@@ -96,6 +121,11 @@
      */
     EventResourceRelationships: EventResourceRelationships,
     /**
+     * The ExternalResource model constructor.
+     * @property {module:model/ExternalResource}
+     */
+    ExternalResource: ExternalResource,
+    /**
      * The Facet model constructor.
      * @property {module:model/Facet}
      */
@@ -120,6 +150,26 @@
      * @property {module:model/Links}
      */
     Links: Links,
+    /**
+     * The Material model constructor.
+     * @property {module:model/Material}
+     */
+    Material: Material,
+    /**
+     * The MaterialAttributes model constructor.
+     * @property {module:model/MaterialAttributes}
+     */
+    MaterialAttributes: MaterialAttributes,
+    /**
+     * The MaterialCollection model constructor.
+     * @property {module:model/MaterialCollection}
+     */
+    MaterialCollection: MaterialCollection,
+    /**
+     * The MaterialResource model constructor.
+     * @property {module:model/MaterialResource}
+     */
+    MaterialResource: MaterialResource,
     /**
      * The MultiRelationshipObject model constructor.
      * @property {module:model/MultiRelationshipObject}
@@ -150,6 +200,51 @@
      * @property {module:model/SingleRelationshipObject}
      */
     SingleRelationshipObject: SingleRelationshipObject,
+    /**
+     * The User model constructor.
+     * @property {module:model/User}
+     */
+    User: User,
+    /**
+     * The UserAttributes model constructor.
+     * @property {module:model/UserAttributes}
+     */
+    UserAttributes: UserAttributes,
+    /**
+     * The UserCollection model constructor.
+     * @property {module:model/UserCollection}
+     */
+    UserCollection: UserCollection,
+    /**
+     * The UserResource model constructor.
+     * @property {module:model/UserResource}
+     */
+    UserResource: UserResource,
+    /**
+     * The Workflow model constructor.
+     * @property {module:model/Workflow}
+     */
+    Workflow: Workflow,
+    /**
+     * The WorkflowAttributes model constructor.
+     * @property {module:model/WorkflowAttributes}
+     */
+    WorkflowAttributes: WorkflowAttributes,
+    /**
+     * The WorkflowCollection model constructor.
+     * @property {module:model/WorkflowCollection}
+     */
+    WorkflowCollection: WorkflowCollection,
+    /**
+     * The WorkflowResource model constructor.
+     * @property {module:model/WorkflowResource}
+     */
+    WorkflowResource: WorkflowResource,
+    /**
+     * The WorkflowResourceRelationships model constructor.
+     * @property {module:model/WorkflowResourceRelationships}
+     */
+    WorkflowResourceRelationships: WorkflowResourceRelationships,
     /**
      * The DefaultApi service constructor.
      * @property {module:api/DefaultApi}

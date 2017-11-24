@@ -59,6 +59,26 @@
   }
 
   describe('DefaultApi', function() {
+    describe('contentProvidersGet', function() {
+      it('should call contentProvidersGet successfully', function(done) {
+        //uncomment below and update the code to test contentProvidersGet
+        //instance.contentProvidersGet(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('contentProvidersSlugGet', function() {
+      it('should call contentProvidersSlugGet successfully', function(done) {
+        //uncomment below and update the code to test contentProvidersSlugGet
+        //instance.contentProvidersSlugGet(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('eventsGet', function() {
       it('should call eventsGet successfully', function(done) {
         //uncomment below and update the code to test eventsGet
@@ -73,6 +93,66 @@
       it('should call eventsSlugGet successfully', function(done) {
         //uncomment below and update the code to test eventsSlugGet
         //instance.eventsSlugGet(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('materialsGet', function() {
+      it('should call materialsGet successfully', function(done) {
+        //uncomment below and update the code to test materialsGet
+        //instance.materialsGet(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('materialsSlugGet', function() {
+      it('should call materialsSlugGet successfully', function(done) {
+        //uncomment below and update the code to test materialsSlugGet
+        //instance.materialsSlugGet(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('usersGet', function() {
+      it('should call usersGet successfully', function(done) {
+        //uncomment below and update the code to test usersGet
+        //instance.usersGet(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('usersSlugGet', function() {
+      it('should call usersSlugGet successfully', function(done) {
+        //uncomment below and update the code to test usersSlugGet
+        //instance.usersSlugGet(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('workflowsGet', function() {
+      it('should call workflowsGet successfully', function(done) {
+        //uncomment below and update the code to test workflowsGet
+        //instance.workflowsGet(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('workflowsSlugGet', function() {
+      it('should call workflowsSlugGet successfully', function(done) {
+        //uncomment below and update the code to test workflowsSlugGet
+        //instance.workflowsSlugGet(pet, function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

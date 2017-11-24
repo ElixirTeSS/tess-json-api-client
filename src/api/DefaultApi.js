@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/EventCollection'], factory);
+    define(['ApiClient', 'model/ContentProvider', 'model/ContentProviderCollection', 'model/Event', 'model/EventCollection', 'model/Material', 'model/MaterialCollection', 'model/User', 'model/UserCollection', 'model/Workflow', 'model/WorkflowCollection'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/EventCollection'));
+    module.exports = factory(require('../ApiClient'), require('../model/ContentProvider'), require('../model/ContentProviderCollection'), require('../model/Event'), require('../model/EventCollection'), require('../model/Material'), require('../model/MaterialCollection'), require('../model/User'), require('../model/UserCollection'), require('../model/Workflow'), require('../model/WorkflowCollection'));
   } else {
     // Browser globals (root is window)
     if (!root.TessJsonApi) {
       root.TessJsonApi = {};
     }
-    root.TessJsonApi.DefaultApi = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.Event, root.TessJsonApi.EventCollection);
+    root.TessJsonApi.DefaultApi = factory(root.TessJsonApi.ApiClient, root.TessJsonApi.ContentProvider, root.TessJsonApi.ContentProviderCollection, root.TessJsonApi.Event, root.TessJsonApi.EventCollection, root.TessJsonApi.Material, root.TessJsonApi.MaterialCollection, root.TessJsonApi.User, root.TessJsonApi.UserCollection, root.TessJsonApi.Workflow, root.TessJsonApi.WorkflowCollection);
   }
-}(this, function(ApiClient, Event, EventCollection) {
+}(this, function(ApiClient, ContentProvider, ContentProviderCollection, Event, EventCollection, Material, MaterialCollection, User, UserCollection, Workflow, WorkflowCollection) {
   'use strict';
 
   /**
@@ -57,6 +57,98 @@
 
 
     /**
+     * Callback function to receive the result of the contentProvidersGet operation.
+     * @callback module:api/DefaultApi~contentProvidersGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ContentProviderCollection} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Search keywords.
+     * @param {Number} opts.pageNumber The page of the collection to view. (default to 1)
+     * @param {Number} opts.pageSize The number of results to return per page. (default to 30)
+     * @param {String} opts.sort Field to sort by.
+     * @param {module:api/DefaultApi~contentProvidersGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ContentProviderCollection}
+     */
+    this.contentProvidersGet = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      // Hacked by Finn to merge arbitrary facet params
+      var queryParams = Object.assign({
+        'q': opts['q'],
+        'page_number': opts['pageNumber'],
+        'page_size': opts['pageSize'],
+        'sort': opts['sort']
+      }, (opts['facets'] || {}));
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/vnd.api+json'];
+      var accepts = ['application/vnd.api+json'];
+      var returnType = ContentProviderCollection;
+
+      return this.apiClient.callApi(
+        '/content_providers', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the contentProvidersSlugGet operation.
+     * @callback module:api/DefaultApi~contentProvidersSlugGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ContentProvider} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} slug The _slug_ id of an content provider e.g. goblet
+     * @param {module:api/DefaultApi~contentProvidersSlugGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ContentProvider}
+     */
+    this.contentProvidersSlugGet = function(slug, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'slug' is set
+      if (slug == undefined || slug == null) {
+        throw new Error("Missing the required parameter 'slug' when calling contentProvidersSlugGet");
+      }
+
+
+      var pathParams = {
+        'slug': slug
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/vnd.api+json'];
+      var accepts = ['application/vnd.api+json'];
+      var returnType = ContentProvider;
+
+      return this.apiClient.callApi(
+        '/content_providers/{slug}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the eventsGet operation.
      * @callback module:api/DefaultApi~eventsGetCallback
      * @param {String} error Error message, if any.
@@ -69,6 +161,7 @@
      * @param {String} opts.q Search keywords.
      * @param {Number} opts.pageNumber The page of the collection to view. (default to 1)
      * @param {Number} opts.pageSize The number of results to return per page. (default to 30)
+     * @param {String} opts.sort Field to sort by.
      * @param {module:api/DefaultApi~eventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EventCollection}
      */
@@ -84,7 +177,8 @@
       var queryParams = Object.assign({
         'q': opts['q'],
         'page_number': opts['pageNumber'],
-        'page_size': opts['pageSize']
+        'page_size': opts['pageSize'],
+        'sort': opts['sort']
       }, (opts['facets'] || {}));
 
       var headerParams = {
@@ -143,6 +237,271 @@
 
       return this.apiClient.callApi(
         '/events/{slug}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the materialsGet operation.
+     * @callback module:api/DefaultApi~materialsGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/MaterialCollection} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Search keywords.
+     * @param {Number} opts.pageNumber The page of the collection to view. (default to 1)
+     * @param {Number} opts.pageSize The number of results to return per page. (default to 30)
+     * @param {String} opts.sort Field to sort by.
+     * @param {module:api/DefaultApi~materialsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/MaterialCollection}
+     */
+    this.materialsGet = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      // Hacked by Finn to merge arbitrary facet params
+      var queryParams = Object.assign({
+        'q': opts['q'],
+        'page_number': opts['pageNumber'],
+        'page_size': opts['pageSize'],
+        'sort': opts['sort']
+      }, (opts['facets'] || {}));
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/vnd.api+json'];
+      var accepts = ['application/vnd.api+json'];
+      var returnType = MaterialCollection;
+
+      return this.apiClient.callApi(
+        '/materials', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the materialsSlugGet operation.
+     * @callback module:api/DefaultApi~materialsSlugGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Material} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} slug The _slug_ id of an material e.g. python-tutorial
+     * @param {module:api/DefaultApi~materialsSlugGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Material}
+     */
+    this.materialsSlugGet = function(slug, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'slug' is set
+      if (slug == undefined || slug == null) {
+        throw new Error("Missing the required parameter 'slug' when calling materialsSlugGet");
+      }
+
+
+      var pathParams = {
+        'slug': slug
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/vnd.api+json'];
+      var accepts = ['application/vnd.api+json'];
+      var returnType = Material;
+
+      return this.apiClient.callApi(
+        '/materials/{slug}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the usersGet operation.
+     * @callback module:api/DefaultApi~usersGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserCollection} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:api/DefaultApi~usersGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserCollection}
+     */
+    this.usersGet = function(callback) {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/vnd.api+json'];
+      var accepts = ['application/vnd.api+json'];
+      var returnType = UserCollection;
+
+      return this.apiClient.callApi(
+        '/users', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the usersSlugGet operation.
+     * @callback module:api/DefaultApi~usersSlugGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} slug The _slug_ id of an user e.g. niall.beard
+     * @param {module:api/DefaultApi~usersSlugGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/User}
+     */
+    this.usersSlugGet = function(slug, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'slug' is set
+      if (slug == undefined || slug == null) {
+        throw new Error("Missing the required parameter 'slug' when calling usersSlugGet");
+      }
+
+
+      var pathParams = {
+        'slug': slug
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/vnd.api+json'];
+      var accepts = ['application/vnd.api+json'];
+      var returnType = User;
+
+      return this.apiClient.callApi(
+        '/users/{slug}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workflowsGet operation.
+     * @callback module:api/DefaultApi~workflowsGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WorkflowCollection} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Search keywords.
+     * @param {Number} opts.pageNumber The page of the collection to view. (default to 1)
+     * @param {Number} opts.pageSize The number of results to return per page. (default to 30)
+     * @param {String} opts.sort Field to sort by.
+     * @param {module:api/DefaultApi~workflowsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WorkflowCollection}
+     */
+    this.workflowsGet = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      // Hacked by Finn to merge arbitrary facet params
+      var queryParams = Object.assign({
+        'q': opts['q'],
+        'page_number': opts['pageNumber'],
+        'page_size': opts['pageSize'],
+        'sort': opts['sort']
+      }, (opts['facets'] || {}));
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/vnd.api+json'];
+      var accepts = ['application/vnd.api+json'];
+      var returnType = WorkflowCollection;
+
+      return this.apiClient.callApi(
+        '/workflows', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workflowsSlugGet operation.
+     * @callback module:api/DefaultApi~workflowsSlugGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Workflow} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} slug The _slug_ id of an workflow e.g. ember
+     * @param {module:api/DefaultApi~workflowsSlugGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Workflow}
+     */
+    this.workflowsSlugGet = function(slug, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'slug' is set
+      if (slug == undefined || slug == null) {
+        throw new Error("Missing the required parameter 'slug' when calling workflowsSlugGet");
+      }
+
+
+      var pathParams = {
+        'slug': slug
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/vnd.api+json'];
+      var accepts = ['application/vnd.api+json'];
+      var returnType = Workflow;
+
+      return this.apiClient.callApi(
+        '/workflows/{slug}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

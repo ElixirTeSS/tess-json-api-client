@@ -65,6 +65,12 @@
       //expect(instance).to.be.a(TessJsonApi.EventAttributes);
     });
 
+    it('should have the property slug (base name: "slug")', function() {
+      // uncomment below and update the code to test the property slug
+      //var instane = new TessJsonApi.EventAttributes();
+      //expect(instance).to.be();
+    });
+
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
       //var instane = new TessJsonApi.EventAttributes();
@@ -211,6 +217,12 @@
 
     it('should have the property scientificTopics (base name: "scientific_topics")', function() {
       // uncomment below and update the code to test the property scientificTopics
+      //var instane = new TessJsonApi.EventAttributes();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property externalResources (base name: "external_resources")', function() {
+      // uncomment below and update the code to test the property externalResources
       //var instane = new TessJsonApi.EventAttributes();
       //expect(instance).to.be();
     });
