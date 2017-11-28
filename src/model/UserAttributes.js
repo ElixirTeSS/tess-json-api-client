@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -83,11 +83,11 @@
       if (data.hasOwnProperty('surname')) {
         obj['surname'] = ApiClient.convertToType(data['surname'], 'String');
       }
-      if (data.hasOwnProperty('created_at')) {
-        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+      if (data.hasOwnProperty('created-at')) {
+        obj['created-at'] = ApiClient.convertToType(data['created-at'], 'Date');
       }
-      if (data.hasOwnProperty('updated_at')) {
-        obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+      if (data.hasOwnProperty('updated-at')) {
+        obj['updated-at'] = ApiClient.convertToType(data['updated-at'], 'Date');
       }
     }
     return obj;
@@ -110,14 +110,14 @@
   exports.prototype['surname'] = undefined;
   /**
    * The date the user registered on TeSS.
-   * @member {Date} created_at
+   * @member {Date} created-at
    */
-  exports.prototype['created_at'] = undefined;
+  exports.prototype['created-at'] = undefined;
   /**
    * The date the user last updated their profile on TeSS.
-   * @member {Date} updated_at
+   * @member {Date} updated-at
    */
-  exports.prototype['updated_at'] = undefined;
+  exports.prototype['updated-at'] = undefined;
 
 
 

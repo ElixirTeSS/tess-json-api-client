@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -161,13 +161,13 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
+    it('should have the property createdAt (base name: "created-at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new TessJsonApi.EventAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updated_at")', function() {
+    it('should have the property updatedAt (base name: "updated-at")', function() {
       // uncomment below and update the code to test the property updatedAt
       //var instane = new TessJsonApi.EventAttributes();
       //expect(instance).to.be();
@@ -179,13 +179,13 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property eventTypes (base name: "event_types")', function() {
+    it('should have the property eventTypes (base name: "event-types")', function() {
       // uncomment below and update the code to test the property eventTypes
       //var instane = new TessJsonApi.EventAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property targetAudience (base name: "target_audience")', function() {
+    it('should have the property targetAudience (base name: "target-audience")', function() {
       // uncomment below and update the code to test the property targetAudience
       //var instane = new TessJsonApi.EventAttributes();
       //expect(instance).to.be();
@@ -209,19 +209,19 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property hostInstitutions (base name: "host_institutions")', function() {
+    it('should have the property hostInstitutions (base name: "host-institutions")', function() {
       // uncomment below and update the code to test the property hostInstitutions
       //var instane = new TessJsonApi.EventAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property scientificTopics (base name: "scientific_topics")', function() {
+    it('should have the property scientificTopics (base name: "scientific-topics")', function() {
       // uncomment below and update the code to test the property scientificTopics
       //var instane = new TessJsonApi.EventAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property externalResources (base name: "external_resources")', function() {
+    it('should have the property externalResources (base name: "external-resources")', function() {
       // uncomment below and update the code to test the property externalResources
       //var instane = new TessJsonApi.EventAttributes();
       //expect(instance).to.be();

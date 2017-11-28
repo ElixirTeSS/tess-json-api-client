@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **authors** | **[String]** | A list of people who wrote or helped write the material. | [optional] 
 **contributors** | **[String]** | Any person who was not the author but contributed in some way. Maybe they produced some software used, reviewed the paper, or helped inspire the author. | [optional] 
 **targetAudience** | **[String]** | The audience the material was intended for. | [optional] 
-**scientificTopics** | [**[ScientificTopic]**](ScientificTopic.md) | The classification of the workflow based on the EDAM ontologies scientific topics. | [optional] 
+**scientificTopics** | [**[ScientificTopic]**](ScientificTopic.md) | The classification of the event based on the EDAM ontology&#39;s scientific topics. | [optional] 
 **externalResources** | [**[ExternalResource]**](ExternalResource.md) | A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything. | [optional] 
 
 

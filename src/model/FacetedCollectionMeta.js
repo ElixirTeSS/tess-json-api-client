@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -59,6 +59,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('results-count')) {
+        obj['results-count'] = ApiClient.convertToType(data['results-count'], 'Number');
+      }
       if (data.hasOwnProperty('query')) {
         obj['query'] = ApiClient.convertToType(data['query'], 'String');
       }
@@ -85,6 +89,11 @@
     return obj;
   }
 
+  /**
+   * The total number of results in the collection.
+   * @member {Number} results-count
+   */
+  exports.prototype['results-count'] = undefined;
   /**
    * Search keywords.
    * @member {String} query

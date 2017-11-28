@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -25,16 +25,16 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ContentProvider', 'model/ContentProviderAttributes', 'model/ContentProviderCollection', 'model/ContentProviderResource', 'model/ContentProviderResourceRelationships', 'model/Event', 'model/EventAttributes', 'model/EventCollection', 'model/EventResource', 'model/EventResourceRelationships', 'model/ExternalResource', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/JsonApiResponse', 'model/Links', 'model/Material', 'model/MaterialAttributes', 'model/MaterialCollection', 'model/MaterialResource', 'model/MultiRelationshipObject', 'model/PaginationLinks', 'model/ResourceIdentifierObject', 'model/ResourceObject', 'model/ScientificTopic', 'model/SingleRelationshipObject', 'model/User', 'model/UserAttributes', 'model/UserCollection', 'model/UserResource', 'model/Workflow', 'model/WorkflowAttributes', 'model/WorkflowCollection', 'model/WorkflowResource', 'model/WorkflowResourceRelationships', 'api/DefaultApi'], factory);
+    define(['ApiClient', 'model/ContentProvider', 'model/ContentProviderAttributes', 'model/ContentProviderCollection', 'model/ContentProviderResource', 'model/ContentProviderResourceRelationships', 'model/Event', 'model/EventAttributes', 'model/EventCollection', 'model/EventResource', 'model/EventResourceRelationships', 'model/ExternalResource', 'model/Facet', 'model/FacetedCollection', 'model/FacetedCollectionMeta', 'model/JsonApiResponse', 'model/Links', 'model/Material', 'model/MaterialAttributes', 'model/MaterialCollection', 'model/MaterialResource', 'model/MultiRelationshipObject', 'model/PaginationLinks', 'model/ResourceIdentifierObject', 'model/ResourceObject', 'model/ScientificTopic', 'model/SingleRelationshipObject', 'model/User', 'model/UserAttributes', 'model/UserCollection', 'model/UserResource', 'model/Workflow', 'model/WorkflowAttributes', 'model/WorkflowCollection', 'model/WorkflowResource', 'model/WorkflowResourceRelationships', 'api/ContentProvidersApi', 'api/EventsApi', 'api/MaterialsApi', 'api/UsersApi', 'api/WorkflowsApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ContentProvider'), require('./model/ContentProviderAttributes'), require('./model/ContentProviderCollection'), require('./model/ContentProviderResource'), require('./model/ContentProviderResourceRelationships'), require('./model/Event'), require('./model/EventAttributes'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/EventResourceRelationships'), require('./model/ExternalResource'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/JsonApiResponse'), require('./model/Links'), require('./model/Material'), require('./model/MaterialAttributes'), require('./model/MaterialCollection'), require('./model/MaterialResource'), require('./model/MultiRelationshipObject'), require('./model/PaginationLinks'), require('./model/ResourceIdentifierObject'), require('./model/ResourceObject'), require('./model/ScientificTopic'), require('./model/SingleRelationshipObject'), require('./model/User'), require('./model/UserAttributes'), require('./model/UserCollection'), require('./model/UserResource'), require('./model/Workflow'), require('./model/WorkflowAttributes'), require('./model/WorkflowCollection'), require('./model/WorkflowResource'), require('./model/WorkflowResourceRelationships'), require('./api/DefaultApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ContentProvider'), require('./model/ContentProviderAttributes'), require('./model/ContentProviderCollection'), require('./model/ContentProviderResource'), require('./model/ContentProviderResourceRelationships'), require('./model/Event'), require('./model/EventAttributes'), require('./model/EventCollection'), require('./model/EventResource'), require('./model/EventResourceRelationships'), require('./model/ExternalResource'), require('./model/Facet'), require('./model/FacetedCollection'), require('./model/FacetedCollectionMeta'), require('./model/JsonApiResponse'), require('./model/Links'), require('./model/Material'), require('./model/MaterialAttributes'), require('./model/MaterialCollection'), require('./model/MaterialResource'), require('./model/MultiRelationshipObject'), require('./model/PaginationLinks'), require('./model/ResourceIdentifierObject'), require('./model/ResourceObject'), require('./model/ScientificTopic'), require('./model/SingleRelationshipObject'), require('./model/User'), require('./model/UserAttributes'), require('./model/UserCollection'), require('./model/UserResource'), require('./model/Workflow'), require('./model/WorkflowAttributes'), require('./model/WorkflowCollection'), require('./model/WorkflowResource'), require('./model/WorkflowResourceRelationships'), require('./api/ContentProvidersApi'), require('./api/EventsApi'), require('./api/MaterialsApi'), require('./api/UsersApi'), require('./api/WorkflowsApi'));
   }
-}(function(ApiClient, ContentProvider, ContentProviderAttributes, ContentProviderCollection, ContentProviderResource, ContentProviderResourceRelationships, Event, EventAttributes, EventCollection, EventResource, EventResourceRelationships, ExternalResource, Facet, FacetedCollection, FacetedCollectionMeta, JsonApiResponse, Links, Material, MaterialAttributes, MaterialCollection, MaterialResource, MultiRelationshipObject, PaginationLinks, ResourceIdentifierObject, ResourceObject, ScientificTopic, SingleRelationshipObject, User, UserAttributes, UserCollection, UserResource, Workflow, WorkflowAttributes, WorkflowCollection, WorkflowResource, WorkflowResourceRelationships, DefaultApi) {
+}(function(ApiClient, ContentProvider, ContentProviderAttributes, ContentProviderCollection, ContentProviderResource, ContentProviderResourceRelationships, Event, EventAttributes, EventCollection, EventResource, EventResourceRelationships, ExternalResource, Facet, FacetedCollection, FacetedCollectionMeta, JsonApiResponse, Links, Material, MaterialAttributes, MaterialCollection, MaterialResource, MultiRelationshipObject, PaginationLinks, ResourceIdentifierObject, ResourceObject, ScientificTopic, SingleRelationshipObject, User, UserAttributes, UserCollection, UserResource, Workflow, WorkflowAttributes, WorkflowCollection, WorkflowResource, WorkflowResourceRelationships, ContentProvidersApi, EventsApi, MaterialsApi, UsersApi, WorkflowsApi) {
   'use strict';
 
   /**
-   * Testing_the_JSON_API_API_for_TeSS_.<br>
+   * An_implementation_of_the_API_for_ELIXIRs_TeSS_following_JSON_API__httpjsonapi_org_standards_.<br>
    * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -246,10 +246,30 @@
      */
     WorkflowResourceRelationships: WorkflowResourceRelationships,
     /**
-     * The DefaultApi service constructor.
-     * @property {module:api/DefaultApi}
+     * The ContentProvidersApi service constructor.
+     * @property {module:api/ContentProvidersApi}
      */
-    DefaultApi: DefaultApi
+    ContentProvidersApi: ContentProvidersApi,
+    /**
+     * The EventsApi service constructor.
+     * @property {module:api/EventsApi}
+     */
+    EventsApi: EventsApi,
+    /**
+     * The MaterialsApi service constructor.
+     * @property {module:api/MaterialsApi}
+     */
+    MaterialsApi: MaterialsApi,
+    /**
+     * The UsersApi service constructor.
+     * @property {module:api/UsersApi}
+     */
+    UsersApi: UsersApi,
+    /**
+     * The WorkflowsApi service constructor.
+     * @property {module:api/WorkflowsApi}
+     */
+    WorkflowsApi: WorkflowsApi
   };
 
   return exports;

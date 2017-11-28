@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -77,19 +77,19 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
+    it('should have the property createdAt (base name: "created-at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new TessJsonApi.ExternalResource();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updated_at")', function() {
+    it('should have the property updatedAt (base name: "updated-at")', function() {
       // uncomment below and update the code to test the property updatedAt
       //var instane = new TessJsonApi.ExternalResource();
       //expect(instance).to.be();
     });
 
-    it('should have the property apiUrl (base name: "api_url")', function() {
+    it('should have the property apiUrl (base name: "api-url")', function() {
       // uncomment below and update the code to test the property apiUrl
       //var instane = new TessJsonApi.ExternalResource();
       //expect(instance).to.be();

@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -83,13 +83,13 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property shortDescription (base name: "short_description")', function() {
+    it('should have the property shortDescription (base name: "short-description")', function() {
       // uncomment below and update the code to test the property shortDescription
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property longDescription (base name: "long_description")', function() {
+    it('should have the property longDescription (base name: "long-description")', function() {
       // uncomment below and update the code to test the property longDescription
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();
@@ -101,25 +101,25 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteUpdatedDate (base name: "remote_updated_date")', function() {
+    it('should have the property remoteUpdatedDate (base name: "remote-updated-date")', function() {
       // uncomment below and update the code to test the property remoteUpdatedDate
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteCreatedDate (base name: "remote_created_date")', function() {
+    it('should have the property remoteCreatedDate (base name: "remote-created-date")', function() {
       // uncomment below and update the code to test the property remoteCreatedDate
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
+    it('should have the property createdAt (base name: "created-at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updated_at")', function() {
+    it('should have the property updatedAt (base name: "updated-at")', function() {
       // uncomment below and update the code to test the property updatedAt
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();
@@ -137,7 +137,7 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property difficultyLevel (base name: "difficulty_level")', function() {
+    it('should have the property difficultyLevel (base name: "difficulty-level")', function() {
       // uncomment below and update the code to test the property difficultyLevel
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();
@@ -155,19 +155,19 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property targetAudience (base name: "target_audience")', function() {
+    it('should have the property targetAudience (base name: "target-audience")', function() {
       // uncomment below and update the code to test the property targetAudience
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property scientificTopics (base name: "scientific_topics")', function() {
+    it('should have the property scientificTopics (base name: "scientific-topics")', function() {
       // uncomment below and update the code to test the property scientificTopics
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property externalResources (base name: "external_resources")', function() {
+    it('should have the property externalResources (base name: "external-resources")', function() {
       // uncomment below and update the code to test the property externalResources
       //var instane = new TessJsonApi.MaterialAttributes();
       //expect(instance).to.be();

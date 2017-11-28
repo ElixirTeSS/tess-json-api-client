@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -63,6 +63,12 @@
       // uncomment below and update the code to test FacetedCollectionMeta
       //var instane = new TessJsonApi.FacetedCollectionMeta();
       //expect(instance).to.be.a(TessJsonApi.FacetedCollectionMeta);
+    });
+
+    it('should have the property resultsCount (base name: "results-count")', function() {
+      // uncomment below and update the code to test the property resultsCount
+      //var instane = new TessJsonApi.FacetedCollectionMeta();
+      //expect(instance).to.be();
     });
 
     it('should have the property query (base name: "query")', function() {

@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -81,14 +81,14 @@
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
       }
-      if (data.hasOwnProperty('created_at')) {
-        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+      if (data.hasOwnProperty('created-at')) {
+        obj['created-at'] = ApiClient.convertToType(data['created-at'], 'Date');
       }
-      if (data.hasOwnProperty('updated_at')) {
-        obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+      if (data.hasOwnProperty('updated-at')) {
+        obj['updated-at'] = ApiClient.convertToType(data['updated-at'], 'Date');
       }
-      if (data.hasOwnProperty('api_url')) {
-        obj['api_url'] = ApiClient.convertToType(data['api_url'], 'String');
+      if (data.hasOwnProperty('api-url')) {
+        obj['api-url'] = ApiClient.convertToType(data['api-url'], 'String');
       }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -109,19 +109,19 @@
   exports.prototype['url'] = undefined;
   /**
    * The date the association was created between this resource and the external resource within TeSS.
-   * @member {Date} created_at
+   * @member {Date} created-at
    */
-  exports.prototype['created_at'] = undefined;
+  exports.prototype['created-at'] = undefined;
   /**
    * The date the association was last update between this resource and the external resource within TeSS.
-   * @member {Date} updated_at
+   * @member {Date} updated-at
    */
-  exports.prototype['updated_at'] = undefined;
+  exports.prototype['updated-at'] = undefined;
   /**
    * A URL that resolves to more information about the external resource represented in a common exchange format (e.g. JSON or XML)
-   * @member {String} api_url
+   * @member {String} api-url
    */
-  exports.prototype['api_url'] = undefined;
+  exports.prototype['api-url'] = undefined;
   /**
    * The type of external resource. This can be 'tool', 'database, policy or standard' for bio.tools and bio.sharing respectively or any other resource type name for other external resources.
    * @member {String} type

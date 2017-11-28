@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -89,17 +89,17 @@
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
       }
-      if (data.hasOwnProperty('image_url')) {
-        obj['image_url'] = ApiClient.convertToType(data['image_url'], 'String');
+      if (data.hasOwnProperty('image-url')) {
+        obj['image-url'] = ApiClient.convertToType(data['image-url'], 'String');
       }
       if (data.hasOwnProperty('keywords')) {
         obj['keywords'] = ApiClient.convertToType(data['keywords'], ['String']);
       }
-      if (data.hasOwnProperty('created_at')) {
-        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+      if (data.hasOwnProperty('created-at')) {
+        obj['created-at'] = ApiClient.convertToType(data['created-at'], 'Date');
       }
-      if (data.hasOwnProperty('updated_at')) {
-        obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+      if (data.hasOwnProperty('updated-at')) {
+        obj['updated-at'] = ApiClient.convertToType(data['updated-at'], 'Date');
       }
     }
     return obj;
@@ -127,9 +127,9 @@
   exports.prototype['url'] = undefined;
   /**
    * A URL to an image of the content provider's logo.
-   * @member {String} image_url
+   * @member {String} image-url
    */
-  exports.prototype['image_url'] = undefined;
+  exports.prototype['image-url'] = undefined;
   /**
    * A list of freetext keywords to describe the content provider.
    * @member {Array.<String>} keywords
@@ -137,14 +137,14 @@
   exports.prototype['keywords'] = undefined;
   /**
    * The date the content provider was first created on TeSS
-   * @member {Date} created_at
+   * @member {Date} created-at
    */
-  exports.prototype['created_at'] = undefined;
+  exports.prototype['created-at'] = undefined;
   /**
    * The date the content provider was last updated on TeSS
-   * @member {Date} updated_at
+   * @member {Date} updated-at
    */
-  exports.prototype['updated_at'] = undefined;
+  exports.prototype['updated-at'] = undefined;
 
 
 

@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -83,7 +83,7 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property workflowContent (base name: "workflow_content")', function() {
+    it('should have the property workflowContent (base name: "workflow-content")', function() {
       // uncomment below and update the code to test the property workflowContent
       //var instane = new TessJsonApi.WorkflowAttributes();
       //expect(instance).to.be();
@@ -95,13 +95,13 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
+    it('should have the property createdAt (base name: "created-at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new TessJsonApi.WorkflowAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updated_at")', function() {
+    it('should have the property updatedAt (base name: "updated-at")', function() {
       // uncomment below and update the code to test the property updatedAt
       //var instane = new TessJsonApi.WorkflowAttributes();
       //expect(instance).to.be();
@@ -119,7 +119,7 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property difficultyLevel (base name: "difficulty_level")', function() {
+    it('should have the property difficultyLevel (base name: "difficulty-level")', function() {
       // uncomment below and update the code to test the property difficultyLevel
       //var instane = new TessJsonApi.WorkflowAttributes();
       //expect(instance).to.be();
@@ -137,13 +137,13 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property targetAudience (base name: "target_audience")', function() {
+    it('should have the property targetAudience (base name: "target-audience")', function() {
       // uncomment below and update the code to test the property targetAudience
       //var instane = new TessJsonApi.WorkflowAttributes();
       //expect(instance).to.be();
     });
 
-    it('should have the property scientificTopics (base name: "scientific_topics")', function() {
+    it('should have the property scientificTopics (base name: "scientific-topics")', function() {
       // uncomment below and update the code to test the property scientificTopics
       //var instane = new TessJsonApi.WorkflowAttributes();
       //expect(instance).to.be();

@@ -1,7 +1,7 @@
 {
   "name": "tess_json_api",
   "version": "0.0.1",
-  "description": "Testing_the_JSON_API_API_for_TeSS_",
+  "description": "An_implementation_of_the_API_for_ELIXIRs_TeSS_following_JSON_API__httpjsonapi_org_standards_",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -144,20 +144,20 @@
       if (data.hasOwnProperty('longitude')) {
         obj['longitude'] = ApiClient.convertToType(data['longitude'], 'String');
       }
-      if (data.hasOwnProperty('created_at')) {
-        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+      if (data.hasOwnProperty('created-at')) {
+        obj['created-at'] = ApiClient.convertToType(data['created-at'], 'Date');
       }
-      if (data.hasOwnProperty('updated_at')) {
-        obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+      if (data.hasOwnProperty('updated-at')) {
+        obj['updated-at'] = ApiClient.convertToType(data['updated-at'], 'Date');
       }
       if (data.hasOwnProperty('keywords')) {
         obj['keywords'] = ApiClient.convertToType(data['keywords'], ['String']);
       }
-      if (data.hasOwnProperty('event_types')) {
-        obj['event_types'] = ApiClient.convertToType(data['event_types'], ['String']);
+      if (data.hasOwnProperty('event-types')) {
+        obj['event-types'] = ApiClient.convertToType(data['event-types'], ['String']);
       }
-      if (data.hasOwnProperty('target_audience')) {
-        obj['target_audience'] = ApiClient.convertToType(data['target_audience'], ['String']);
+      if (data.hasOwnProperty('target-audience')) {
+        obj['target-audience'] = ApiClient.convertToType(data['target-audience'], ['String']);
       }
       if (data.hasOwnProperty('capacity')) {
         obj['capacity'] = ApiClient.convertToType(data['capacity'], 'Number');
@@ -168,14 +168,14 @@
       if (data.hasOwnProperty('contact')) {
         obj['contact'] = ApiClient.convertToType(data['contact'], 'String');
       }
-      if (data.hasOwnProperty('host_institutions')) {
-        obj['host_institutions'] = ApiClient.convertToType(data['host_institutions'], ['String']);
+      if (data.hasOwnProperty('host-institutions')) {
+        obj['host-institutions'] = ApiClient.convertToType(data['host-institutions'], ['String']);
       }
-      if (data.hasOwnProperty('scientific_topics')) {
-        obj['scientific_topics'] = ApiClient.convertToType(data['scientific_topics'], [ScientificTopic]);
+      if (data.hasOwnProperty('scientific-topics')) {
+        obj['scientific-topics'] = ApiClient.convertToType(data['scientific-topics'], [ScientificTopic]);
       }
-      if (data.hasOwnProperty('external_resources')) {
-        obj['external_resources'] = ApiClient.convertToType(data['external_resources'], [ExternalResource]);
+      if (data.hasOwnProperty('external-resources')) {
+        obj['external-resources'] = ApiClient.convertToType(data['external-resources'], [ExternalResource]);
       }
     }
     return obj;
@@ -263,14 +263,14 @@
   exports.prototype['longitude'] = undefined;
   /**
    * The date the event was first created on TeSS.
-   * @member {Date} created_at
+   * @member {Date} created-at
    */
-  exports.prototype['created_at'] = undefined;
+  exports.prototype['created-at'] = undefined;
   /**
    * The date the event was last updated on TeSS.
-   * @member {Date} updated_at
+   * @member {Date} updated-at
    */
-  exports.prototype['updated_at'] = undefined;
+  exports.prototype['updated-at'] = undefined;
   /**
    * A series of freetext words used to describe an event.
    * @member {Array.<String>} keywords
@@ -278,14 +278,14 @@
   exports.prototype['keywords'] = undefined;
   /**
    * The category of the event. This could be a meeting or a course; or if unknown or neither, an event.
-   * @member {Array.<String>} event_types
+   * @member {Array.<String>} event-types
    */
-  exports.prototype['event_types'] = undefined;
+  exports.prototype['event-types'] = undefined;
   /**
    * The intended audience of the event. This can includes things like scientific discpline and expertise level.
-   * @member {Array.<String>} target_audience
+   * @member {Array.<String>} target-audience
    */
-  exports.prototype['target_audience'] = undefined;
+  exports.prototype['target-audience'] = undefined;
   /**
    * The number of people allowed to attend the event.
    * @member {Number} capacity
@@ -303,19 +303,19 @@
   exports.prototype['contact'] = undefined;
   /**
    * The institution physically hosting the event.
-   * @member {Array.<String>} host_institutions
+   * @member {Array.<String>} host-institutions
    */
-  exports.prototype['host_institutions'] = undefined;
+  exports.prototype['host-institutions'] = undefined;
   /**
-   * The classification of the event based on the EDAM ontologies scientific topics.
-   * @member {Array.<module:model/ScientificTopic>} scientific_topics
+   * The classification of the event based on the EDAM ontology's scientific topics.
+   * @member {Array.<module:model/ScientificTopic>} scientific-topics
    */
-  exports.prototype['scientific_topics'] = undefined;
+  exports.prototype['scientific-topics'] = undefined;
   /**
    * A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything.
-   * @member {Array.<module:model/ExternalResource>} external_resources
+   * @member {Array.<module:model/ExternalResource>} external-resources
    */
-  exports.prototype['external_resources'] = undefined;
+  exports.prototype['external-resources'] = undefined;
 
 
 

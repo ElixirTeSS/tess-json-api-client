@@ -1,6 +1,6 @@
 /**
  * TeSS JSON-API
- * Testing the JSON-API API for TeSS. 
+ * An implementation of the API for ELIXIR's TeSS, following JSON-API (http://jsonapi.org/) standards.
  *
  * OpenAPI spec version: 0.0.1
  * Contact: tess-support@googlegroups.com
@@ -96,26 +96,26 @@
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
       }
-      if (data.hasOwnProperty('short_description')) {
-        obj['short_description'] = ApiClient.convertToType(data['short_description'], 'String');
+      if (data.hasOwnProperty('short-description')) {
+        obj['short-description'] = ApiClient.convertToType(data['short-description'], 'String');
       }
-      if (data.hasOwnProperty('long_description')) {
-        obj['long_description'] = ApiClient.convertToType(data['long_description'], 'String');
+      if (data.hasOwnProperty('long-description')) {
+        obj['long-description'] = ApiClient.convertToType(data['long-description'], 'String');
       }
       if (data.hasOwnProperty('doi')) {
         obj['doi'] = ApiClient.convertToType(data['doi'], 'String');
       }
-      if (data.hasOwnProperty('remote_updated_date')) {
-        obj['remote_updated_date'] = ApiClient.convertToType(data['remote_updated_date'], 'Date');
+      if (data.hasOwnProperty('remote-updated-date')) {
+        obj['remote-updated-date'] = ApiClient.convertToType(data['remote-updated-date'], 'Date');
       }
-      if (data.hasOwnProperty('remote_created_date')) {
-        obj['remote_created_date'] = ApiClient.convertToType(data['remote_created_date'], 'Date');
+      if (data.hasOwnProperty('remote-created-date')) {
+        obj['remote-created-date'] = ApiClient.convertToType(data['remote-created-date'], 'Date');
       }
-      if (data.hasOwnProperty('created_at')) {
-        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+      if (data.hasOwnProperty('created-at')) {
+        obj['created-at'] = ApiClient.convertToType(data['created-at'], 'Date');
       }
-      if (data.hasOwnProperty('updated_at')) {
-        obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+      if (data.hasOwnProperty('updated-at')) {
+        obj['updated-at'] = ApiClient.convertToType(data['updated-at'], 'Date');
       }
       if (data.hasOwnProperty('keywords')) {
         obj['keywords'] = ApiClient.convertToType(data['keywords'], ['String']);
@@ -123,8 +123,8 @@
       if (data.hasOwnProperty('licence')) {
         obj['licence'] = ApiClient.convertToType(data['licence'], 'String');
       }
-      if (data.hasOwnProperty('difficulty_level')) {
-        obj['difficulty_level'] = ApiClient.convertToType(data['difficulty_level'], 'String');
+      if (data.hasOwnProperty('difficulty-level')) {
+        obj['difficulty-level'] = ApiClient.convertToType(data['difficulty-level'], 'String');
       }
       if (data.hasOwnProperty('authors')) {
         obj['authors'] = ApiClient.convertToType(data['authors'], ['String']);
@@ -132,14 +132,14 @@
       if (data.hasOwnProperty('contributors')) {
         obj['contributors'] = ApiClient.convertToType(data['contributors'], ['String']);
       }
-      if (data.hasOwnProperty('target_audience')) {
-        obj['target_audience'] = ApiClient.convertToType(data['target_audience'], ['String']);
+      if (data.hasOwnProperty('target-audience')) {
+        obj['target-audience'] = ApiClient.convertToType(data['target-audience'], ['String']);
       }
-      if (data.hasOwnProperty('scientific_topics')) {
-        obj['scientific_topics'] = ApiClient.convertToType(data['scientific_topics'], [ScientificTopic]);
+      if (data.hasOwnProperty('scientific-topics')) {
+        obj['scientific-topics'] = ApiClient.convertToType(data['scientific-topics'], [ScientificTopic]);
       }
-      if (data.hasOwnProperty('external_resources')) {
-        obj['external_resources'] = ApiClient.convertToType(data['external_resources'], [ExternalResource]);
+      if (data.hasOwnProperty('external-resources')) {
+        obj['external-resources'] = ApiClient.convertToType(data['external-resources'], [ExternalResource]);
       }
     }
     return obj;
@@ -162,14 +162,14 @@
   exports.prototype['url'] = undefined;
   /**
    * A succinct description of what the training material is about.
-   * @member {String} short_description
+   * @member {String} short-description
    */
-  exports.prototype['short_description'] = undefined;
+  exports.prototype['short-description'] = undefined;
   /**
    * A longer, more indepth explanation of the content of the training material.
-   * @member {String} long_description
+   * @member {String} long-description
    */
-  exports.prototype['long_description'] = undefined;
+  exports.prototype['long-description'] = undefined;
   /**
    * The DOI of the material (if it has one).
    * @member {String} doi
@@ -177,24 +177,24 @@
   exports.prototype['doi'] = undefined;
   /**
    * The date the material was last updated on its original site.
-   * @member {Date} remote_updated_date
+   * @member {Date} remote-updated-date
    */
-  exports.prototype['remote_updated_date'] = undefined;
+  exports.prototype['remote-updated-date'] = undefined;
   /**
    * The date the material was first created on its original site.
-   * @member {Date} remote_created_date
+   * @member {Date} remote-created-date
    */
-  exports.prototype['remote_created_date'] = undefined;
+  exports.prototype['remote-created-date'] = undefined;
   /**
    * The date the material was first created on TeSS.
-   * @member {Date} created_at
+   * @member {Date} created-at
    */
-  exports.prototype['created_at'] = undefined;
+  exports.prototype['created-at'] = undefined;
   /**
    * The date the material was last updated on TeSS.
-   * @member {Date} updated_at
+   * @member {Date} updated-at
    */
-  exports.prototype['updated_at'] = undefined;
+  exports.prototype['updated-at'] = undefined;
   /**
    * A list of freetext keywords to describe the material.
    * @member {Array.<String>} keywords
@@ -207,9 +207,9 @@
   exports.prototype['licence'] = undefined;
   /**
    * The difficulty level comprehension of the material requires. Can be Beginner, Intermediate, Advanced, or Not specified.
-   * @member {String} difficulty_level
+   * @member {String} difficulty-level
    */
-  exports.prototype['difficulty_level'] = undefined;
+  exports.prototype['difficulty-level'] = undefined;
   /**
    * A list of people who wrote or helped write the material.
    * @member {Array.<String>} authors
@@ -222,19 +222,19 @@
   exports.prototype['contributors'] = undefined;
   /**
    * The audience the material was intended for.
-   * @member {Array.<String>} target_audience
+   * @member {Array.<String>} target-audience
    */
-  exports.prototype['target_audience'] = undefined;
+  exports.prototype['target-audience'] = undefined;
   /**
-   * The classification of the workflow based on the EDAM ontologies scientific topics.
-   * @member {Array.<module:model/ScientificTopic>} scientific_topics
+   * The classification of the event based on the EDAM ontology's scientific topics.
+   * @member {Array.<module:model/ScientificTopic>} scientific-topics
    */
-  exports.prototype['scientific_topics'] = undefined;
+  exports.prototype['scientific-topics'] = undefined;
   /**
    * A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything.
-   * @member {Array.<module:model/ExternalResource>} external_resources
+   * @member {Array.<module:model/ExternalResource>} external-resources
    */
-  exports.prototype['external_resources'] = undefined;
+  exports.prototype['external-resources'] = undefined;
 
 
 
