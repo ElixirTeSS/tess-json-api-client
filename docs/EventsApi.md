@@ -1,6 +1,6 @@
 # TessJsonApi.EventsApi
 
-All URIs are relative to *https://tess.oerc.ox.ac.uk*
+All URIs are relative to *https://tess.elixir-europe.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,7 +24,21 @@ var opts = {
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
-  'sort': "sort_example" // String | Field to sort by.
+  'sort': "sort_example", // String | Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
+  'contentProvider': ["contentProvider_example"], // [String] | Filter by content provider name.
+  'keywords': ["keywords_example"], // [String] | Filter by keywords.
+  'node': ["node_example"], // [String] | Filter by ELIXIR node name.
+  'scientificTopics': ["scientificTopics_example"], // [String] | Filter by scientific topics.
+  'targetAudience': ["targetAudience_example"], // [String] | Filter by who the intended target audience is.
+  'tools': ["tools_example"], // [String] | Filter by what tools are involved.
+  'eventTypes': ["eventTypes_example"], // [String] | Filter by event type.
+  'city': ["city_example"], // [String] | Filter by city.
+  'country': ["country_example"], // [String] | Filter by country.
+  'venue': ["venue_example"], // [String] | Filter by venue
+  'organizer': ["organizer_example"], // [String] | Filter by organizer.
+  'online': true, // Boolean | Only show online events?
+  'sponsor': ["sponsor_example"], // [String] | Filter by sponsor.
+  'includeExpired': true // Boolean | Include events that have finished.
 };
 
 var callback = function(error, data, response) {
@@ -44,7 +58,21 @@ Name | Type | Description  | Notes
  **q** | **String**| Search keywords. | [optional] 
  **pageNumber** | **Number**| The page of the collection to view. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return per page. | [optional] [default to 30]
- **sort** | **String**| Field to sort by. | [optional] 
+ **sort** | **String**| Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only).  | [optional] 
+ **contentProvider** | [**[String]**](String.md)| Filter by content provider name. | [optional] 
+ **keywords** | [**[String]**](String.md)| Filter by keywords. | [optional] 
+ **node** | [**[String]**](String.md)| Filter by ELIXIR node name. | [optional] 
+ **scientificTopics** | [**[String]**](String.md)| Filter by scientific topics. | [optional] 
+ **targetAudience** | [**[String]**](String.md)| Filter by who the intended target audience is. | [optional] 
+ **tools** | [**[String]**](String.md)| Filter by what tools are involved. | [optional] 
+ **eventTypes** | [**[String]**](String.md)| Filter by event type. | [optional] 
+ **city** | [**[String]**](String.md)| Filter by city. | [optional] 
+ **country** | [**[String]**](String.md)| Filter by country. | [optional] 
+ **venue** | [**[String]**](String.md)| Filter by venue | [optional] 
+ **organizer** | [**[String]**](String.md)| Filter by organizer. | [optional] 
+ **online** | **Boolean**| Only show online events? | [optional] 
+ **sponsor** | [**[String]**](String.md)| Filter by sponsor. | [optional] 
+ **includeExpired** | **Boolean**| Include events that have finished. | [optional] 
 
 ### Return type
 

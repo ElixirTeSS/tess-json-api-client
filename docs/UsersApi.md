@@ -1,6 +1,6 @@
 # TessJsonApi.UsersApi
 
-All URIs are relative to *https://tess.oerc.ox.ac.uk*
+All URIs are relative to *https://tess.elixir-europe.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

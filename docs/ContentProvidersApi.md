@@ -1,6 +1,6 @@
 # TessJsonApi.ContentProvidersApi
 
-All URIs are relative to *https://tess.oerc.ox.ac.uk*
+All URIs are relative to *https://tess.elixir-europe.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,7 +24,10 @@ var opts = {
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
-  'sort': "sort_example" // String | Field to sort by.
+  'sort': "sort_example", // String | Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
+  'keywords': ["keywords_example"], // [String] | Filter by keywords.
+  'node': ["node_example"], // [String] | Filter by ELIXIR node name.
+  'contentProviderType': ["contentProviderType_example"] // [String] | Filter by content provider type.
 };
 
 var callback = function(error, data, response) {
@@ -44,7 +47,10 @@ Name | Type | Description  | Notes
  **q** | **String**| Search keywords. | [optional] 
  **pageNumber** | **Number**| The page of the collection to view. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return per page. | [optional] [default to 30]
- **sort** | **String**| Field to sort by. | [optional] 
+ **sort** | **String**| Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only).  | [optional] 
+ **keywords** | [**[String]**](String.md)| Filter by keywords. | [optional] 
+ **node** | [**[String]**](String.md)| Filter by ELIXIR node name. | [optional] 
+ **contentProviderType** | [**[String]**](String.md)| Filter by content provider type. | [optional] 
 
 ### Return type
 

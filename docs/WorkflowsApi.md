@@ -1,6 +1,6 @@
 # TessJsonApi.WorkflowsApi
 
-All URIs are relative to *https://tess.oerc.ox.ac.uk*
+All URIs are relative to *https://tess.elixir-europe.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,7 +24,14 @@ var opts = {
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
-  'sort': "sort_example" // String | Field to sort by.
+  'sort': "sort_example", // String | Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
+  'authors': ["authors_example"], // [String] | Filter by author.
+  'contributors': ["contributors_example"], // [String] | Filter by contributor.
+  'difficultyLevel': ["difficultyLevel_example"], // [String] | Filter by difficulty level.
+  'keywords': ["keywords_example"], // [String] | Filter by keywords.
+  'licence': ["licence_example"], // [String] | Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json
+  'scientificTopics': ["scientificTopics_example"], // [String] | Filter by scientific topics.
+  'targetAudience': ["targetAudience_example"] // [String] | Filter by who the intended target audience is.
 };
 
 var callback = function(error, data, response) {
@@ -44,7 +51,14 @@ Name | Type | Description  | Notes
  **q** | **String**| Search keywords. | [optional] 
  **pageNumber** | **Number**| The page of the collection to view. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return per page. | [optional] [default to 30]
- **sort** | **String**| Field to sort by. | [optional] 
+ **sort** | **String**| Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only).  | [optional] 
+ **authors** | [**[String]**](String.md)| Filter by author. | [optional] 
+ **contributors** | [**[String]**](String.md)| Filter by contributor. | [optional] 
+ **difficultyLevel** | [**[String]**](String.md)| Filter by difficulty level. | [optional] 
+ **keywords** | [**[String]**](String.md)| Filter by keywords. | [optional] 
+ **licence** | [**[String]**](String.md)| Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json | [optional] 
+ **scientificTopics** | [**[String]**](String.md)| Filter by scientific topics. | [optional] 
+ **targetAudience** | [**[String]**](String.md)| Filter by who the intended target audience is. | [optional] 
 
 ### Return type
 

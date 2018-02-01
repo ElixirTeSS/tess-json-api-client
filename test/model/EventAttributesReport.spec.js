@@ -42,7 +42,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TessJsonApi.UserAttributes();
+    instance = new TessJsonApi.EventAttributesReport();
   });
 
   var getProperty = function(object, getter, property) {
@@ -61,40 +61,46 @@
       object[property] = value;
   }
 
-  describe('UserAttributes', function() {
-    it('should create an instance of UserAttributes', function() {
-      // uncomment below and update the code to test UserAttributes
-      //var instane = new TessJsonApi.UserAttributes();
-      //expect(instance).to.be.a(TessJsonApi.UserAttributes);
+  describe('EventAttributesReport', function() {
+    it('should create an instance of EventAttributesReport', function() {
+      // uncomment below and update the code to test EventAttributesReport
+      //var instane = new TessJsonApi.EventAttributesReport();
+      //expect(instance).to.be.a(TessJsonApi.EventAttributesReport);
     });
 
-    it('should have the property slug (base name: "slug")', function() {
-      // uncomment below and update the code to test the property slug
-      //var instane = new TessJsonApi.UserAttributes();
+    it('should have the property funding (base name: "funding")', function() {
+      // uncomment below and update the code to test the property funding
+      //var instane = new TessJsonApi.EventAttributesReport();
       //expect(instance).to.be();
     });
 
-    it('should have the property firstname (base name: "firstname")', function() {
-      // uncomment below and update the code to test the property firstname
-      //var instane = new TessJsonApi.UserAttributes();
+    it('should have the property attendeeCount (base name: "attendee_count")', function() {
+      // uncomment below and update the code to test the property attendeeCount
+      //var instane = new TessJsonApi.EventAttributesReport();
       //expect(instance).to.be();
     });
 
-    it('should have the property surname (base name: "surname")', function() {
-      // uncomment below and update the code to test the property surname
-      //var instane = new TessJsonApi.UserAttributes();
+    it('should have the property applicantCount (base name: "applicant_count")', function() {
+      // uncomment below and update the code to test the property applicantCount
+      //var instane = new TessJsonApi.EventAttributesReport();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created-at")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instane = new TessJsonApi.UserAttributes();
+    it('should have the property trainerCount (base name: "trainer_count")', function() {
+      // uncomment below and update the code to test the property trainerCount
+      //var instane = new TessJsonApi.EventAttributesReport();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updated-at")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instane = new TessJsonApi.UserAttributes();
+    it('should have the property feedback (base name: "feedback")', function() {
+      // uncomment below and update the code to test the property feedback
+      //var instane = new TessJsonApi.EventAttributesReport();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property notes (base name: "notes")', function() {
+      // uncomment below and update the code to test the property notes
+      //var instane = new TessJsonApi.EventAttributesReport();
       //expect(instance).to.be();
     });
 

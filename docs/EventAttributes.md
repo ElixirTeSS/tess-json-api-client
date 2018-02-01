@@ -30,5 +30,6 @@ Name | Type | Description | Notes
 **hostInstitutions** | **[String]** | The institution physically hosting the event. | [optional] 
 **scientificTopics** | [**[ScientificTopic]**](ScientificTopic.md) | The classification of the event based on the EDAM ontology&#39;s scientific topics. | [optional] 
 **externalResources** | [**[ExternalResource]**](ExternalResource.md) | A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything. | [optional] 
+**report** | [**EventAttributesReport**](EventAttributesReport.md) |  | [optional] 
 
 
