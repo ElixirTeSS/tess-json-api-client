@@ -103,10 +103,10 @@
         'page_size': opts['pageSize'],
         'sort': opts['sort'],
         'online': opts['online'],
-        'include-expired': opts['includeExpired'],
+        'include_expired': opts['includeExpired'],
       };
       var collectionQueryParams = {
-        'content-provider[]': {
+        'content_provider[]': {
           value: opts['contentProvider'],
           collectionFormat: 'multi'
         },
@@ -118,11 +118,11 @@
           value: opts['node'],
           collectionFormat: 'multi'
         },
-        'scientific-topics[]': {
+        'scientific_topics[]': {
           value: opts['scientificTopics'],
           collectionFormat: 'multi'
         },
-        'target-audience[]': {
+        'target_audience[]': {
           value: opts['targetAudience'],
           collectionFormat: 'multi'
         },
@@ -130,7 +130,7 @@
           value: opts['tools'],
           collectionFormat: 'multi'
         },
-        'event-types[]': {
+        'event_types[]': {
           value: opts['eventTypes'],
           collectionFormat: 'multi'
         },

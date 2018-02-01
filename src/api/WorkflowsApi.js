@@ -117,11 +117,11 @@
           value: opts['licence'],
           collectionFormat: 'multi'
         },
-        'scientific-topics[]': {
+        'scientific_topics[]': {
           value: opts['scientificTopics'],
           collectionFormat: 'multi'
         },
-        'target-audience[]': {
+        'target_audience[]': {
           value: opts['targetAudience'],
           collectionFormat: 'multi'
         },
