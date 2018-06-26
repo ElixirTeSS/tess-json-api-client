@@ -1,6 +1,6 @@
 {
   "name": "tess_json_api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An_implementation_of_the_API_for_ELIXIRs_TeSS_following_JSON_API__httpjsonapi_org_standards_",
   "license": "BSD 3-Clause License",
   "main": "src/index.js",

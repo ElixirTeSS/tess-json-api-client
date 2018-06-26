@@ -42,7 +42,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TessJsonApi.PaginationLinks();
+    instance = new TessJsonApi.OntologyTerm();
   });
 
   var getProperty = function(object, getter, property) {
@@ -61,34 +61,22 @@
       object[property] = value;
   }
 
-  describe('PaginationLinks', function() {
-    it('should create an instance of PaginationLinks', function() {
-      // uncomment below and update the code to test PaginationLinks
-      //var instane = new TessJsonApi.PaginationLinks();
-      //expect(instance).to.be.a(TessJsonApi.PaginationLinks);
+  describe('OntologyTerm', function() {
+    it('should create an instance of OntologyTerm', function() {
+      // uncomment below and update the code to test OntologyTerm
+      //var instane = new TessJsonApi.OntologyTerm();
+      //expect(instance).to.be.a(TessJsonApi.OntologyTerm);
     });
 
-    it('should have the property prev (base name: "prev")', function() {
-      // uncomment below and update the code to test the property prev
-      //var instane = new TessJsonApi.PaginationLinks();
+    it('should have the property preferredLabel (base name: "preferred-label")', function() {
+      // uncomment below and update the code to test the property preferredLabel
+      //var instane = new TessJsonApi.OntologyTerm();
       //expect(instance).to.be();
     });
 
-    it('should have the property next (base name: "next")', function() {
-      // uncomment below and update the code to test the property next
-      //var instane = new TessJsonApi.PaginationLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property first (base name: "first")', function() {
-      // uncomment below and update the code to test the property first
-      //var instane = new TessJsonApi.PaginationLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property last (base name: "last")', function() {
-      // uncomment below and update the code to test the property last
-      //var instane = new TessJsonApi.PaginationLinks();
+    it('should have the property uri (base name: "uri")', function() {
+      // uncomment below and update the code to test the property uri
+      //var instane = new TessJsonApi.OntologyTerm();
       //expect(instance).to.be();
     });
 

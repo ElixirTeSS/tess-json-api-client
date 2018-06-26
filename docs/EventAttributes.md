@@ -28,7 +28,8 @@ Name | Type | Description | Notes
 **eligibility** | **[String]** | Various criteria require to participate in the event. | [optional] 
 **contact** | **String** | The name and/or contact details of a person or institution organizing the event. | [optional] 
 **hostInstitutions** | **[String]** | The institution physically hosting the event. | [optional] 
-**scientificTopics** | [**[ScientificTopic]**](ScientificTopic.md) | The classification of the event based on the EDAM ontology&#39;s scientific topics. | [optional] 
+**scientificTopics** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the event based on the EDAM ontology&#39;s scientific topics. | [optional] 
+**operations** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the event based on the EDAM ontology&#39;s operations. | [optional] 
 **externalResources** | [**[ExternalResource]**](ExternalResource.md) | A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything. | [optional] 
 **report** | [**EventAttributesReport**](EventAttributesReport.md) |  | [optional] 
 

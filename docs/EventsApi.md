@@ -29,6 +29,7 @@ var opts = {
   'keywords': ["keywords_example"], // [String] | Filter by keywords.
   'node': ["node_example"], // [String] | Filter by ELIXIR node name.
   'scientificTopics': ["scientificTopics_example"], // [String] | Filter by scientific topics.
+  'operations': ["operations_example"], // [String] | Filter by operations.
   'targetAudience': ["targetAudience_example"], // [String] | Filter by who the intended target audience is.
   'tools': ["tools_example"], // [String] | Filter by what tools are involved.
   'eventTypes': ["eventTypes_example"], // [String] | Filter by event type.
@@ -63,6 +64,7 @@ Name | Type | Description  | Notes
  **keywords** | [**[String]**](String.md)| Filter by keywords. | [optional] 
  **node** | [**[String]**](String.md)| Filter by ELIXIR node name. | [optional] 
  **scientificTopics** | [**[String]**](String.md)| Filter by scientific topics. | [optional] 
+ **operations** | [**[String]**](String.md)| Filter by operations. | [optional] 
  **targetAudience** | [**[String]**](String.md)| Filter by who the intended target audience is. | [optional] 
  **tools** | [**[String]**](String.md)| Filter by what tools are involved. | [optional] 
  **eventTypes** | [**[String]**](String.md)| Filter by event type. | [optional] 

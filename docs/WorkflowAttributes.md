@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **difficultyLevel** | **String** | The difficulty level comprehension of the workflow requires. Can be Beginner, Intermediate, Advanced, or Not specified. | [optional] 
 **authors** | **[String]** | A list of people who wrote or helped write the workflow. | [optional] 
 **contributors** | **[String]** | Any person who was not the author but contributed in some way. Maybe they produced some software used, reviewed the paper, or helped inspire the author. | [optional] 
-**targetAudience** | **[String]** | The audience the material was intended for. | [optional] 
-**scientificTopics** | [**[ScientificTopic]**](ScientificTopic.md) | The classification of the event based on the EDAM ontology&#39;s scientific topics. | [optional] 
+**targetAudience** | **[String]** | The audience the workflow was intended for. | [optional] 
+**scientificTopics** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the workflow based on the EDAM ontology&#39;s scientific topics. | [optional] 
 
 

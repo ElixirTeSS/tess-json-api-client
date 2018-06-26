@@ -33,6 +33,7 @@ var opts = {
   'licence': ["licence_example"], // [String] | Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json
   'node': ["node_example"], // [String] | Filter by ELIXIR node name.
   'scientificTopics': ["scientificTopics_example"], // [String] | Filter by scientific topics.
+  'operations': ["operations_example"], // [String] | Filter by operations.
   'targetAudience': ["targetAudience_example"], // [String] | Filter by who the intended target audience is.
   'tools': ["tools_example"], // [String] | Filter by what tools are involved.
   'resourceType': ["resourceType_example"] // [String] | Filter by resource type, e.g. \"Lecture\" etc.
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
  **licence** | [**[String]**](String.md)| Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json | [optional] 
  **node** | [**[String]**](String.md)| Filter by ELIXIR node name. | [optional] 
  **scientificTopics** | [**[String]**](String.md)| Filter by scientific topics. | [optional] 
+ **operations** | [**[String]**](String.md)| Filter by operations. | [optional] 
  **targetAudience** | [**[String]**](String.md)| Filter by who the intended target audience is. | [optional] 
  **tools** | [**[String]**](String.md)| Filter by what tools are involved. | [optional] 
  **resourceType** | [**[String]**](String.md)| Filter by resource type, e.g. \&quot;Lecture\&quot; etc. | [optional] 
