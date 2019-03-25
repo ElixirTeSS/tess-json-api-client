@@ -4,5 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **meta** | [**FacetedCollectionMeta**](FacetedCollectionMeta.md) |  | [optional] 
+**links** | **Object** |  | [optional] 
 
 

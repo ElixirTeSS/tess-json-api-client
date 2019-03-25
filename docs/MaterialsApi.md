@@ -34,7 +34,7 @@ var opts = {
   'node': ["node_example"], // [String] | Filter by ELIXIR node name.
   'scientificTopics': ["scientificTopics_example"], // [String] | Filter by scientific topics.
   'operations': ["operations_example"], // [String] | Filter by operations.
-  'targetAudience': ["targetAudience_example"], // [String] | Filter by who the intended target audience is.
+  'targetAudience': ["targetAudience_example"] // [String] | Filter by who the intended target audience is.
   'tools': ["tools_example"], // [String] | Filter by what tools are involved.
   'resourceType': ["resourceType_example"] // [String] | Filter by resource type, e.g. \"Lecture\" etc.
 };
