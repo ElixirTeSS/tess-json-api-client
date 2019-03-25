@@ -16,18 +16,17 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.UsersApi();
+let apiInstance = new TessJsonApi.UsersApi();
 
-var callback = function(error, data, response) {
+apiInstance.usersGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.usersGet(callback);
+});
 ```
 
 ### Parameters
@@ -54,21 +53,20 @@ No authorization required
 
 ### Example
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.UsersApi();
+let apiInstance = new TessJsonApi.UsersApi();
 
-var slug = "slug_example"; // String | The _slug_ id of an user e.g. niall.beard
+let slug = "slug_example"; // String | The _slug_ id of an user e.g. niall.beard
 
 
-var callback = function(error, data, response) {
+apiInstance.usersSlugGet(slug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.usersSlugGet(slug, callback);
+});
 ```
 
 ### Parameters

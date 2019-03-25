@@ -16,11 +16,11 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.MaterialsApi();
+let apiInstance = new TessJsonApi.MaterialsApi();
 
-var opts = { 
+let opts = { 
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
@@ -39,14 +39,13 @@ var opts = {
   'resourceType': ["resourceType_example"] // [String] | Filter by resource type, e.g. \"Lecture\" etc.
 };
 
-var callback = function(error, data, response) {
+apiInstance.materialsGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.materialsGet(opts, callback);
+});
 ```
 
 ### Parameters
@@ -91,21 +90,20 @@ No authorization required
 
 ### Example
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.MaterialsApi();
+let apiInstance = new TessJsonApi.MaterialsApi();
 
-var slug = "slug_example"; // String | The _slug_ id of an material e.g. python-tutorial
+let slug = "slug_example"; // String | The _slug_ id of an material e.g. python-tutorial
 
 
-var callback = function(error, data, response) {
+apiInstance.materialsSlugGet(slug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.materialsSlugGet(slug, callback);
+});
 ```
 
 ### Parameters

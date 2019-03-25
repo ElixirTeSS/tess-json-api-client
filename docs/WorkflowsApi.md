@@ -16,11 +16,11 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.WorkflowsApi();
+let apiInstance = new TessJsonApi.WorkflowsApi();
 
-var opts = { 
+let opts = { 
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
@@ -34,14 +34,13 @@ var opts = {
   'targetAudience': ["targetAudience_example"] // [String] | Filter by who the intended target audience is.
 };
 
-var callback = function(error, data, response) {
+apiInstance.workflowsGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.workflowsGet(opts, callback);
+});
 ```
 
 ### Parameters
@@ -81,21 +80,20 @@ No authorization required
 
 ### Example
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.WorkflowsApi();
+let apiInstance = new TessJsonApi.WorkflowsApi();
 
-var slug = "slug_example"; // String | The _slug_ id of an workflow e.g. ember
+let slug = "slug_example"; // String | The _slug_ id of an workflow e.g. ember
 
 
-var callback = function(error, data, response) {
+apiInstance.workflowsSlugGet(slug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.workflowsSlugGet(slug, callback);
+});
 ```
 
 ### Parameters

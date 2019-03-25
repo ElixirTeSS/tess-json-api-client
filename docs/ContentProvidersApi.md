@@ -16,11 +16,11 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.ContentProvidersApi();
+let apiInstance = new TessJsonApi.ContentProvidersApi();
 
-var opts = { 
+let opts = { 
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
@@ -30,14 +30,13 @@ var opts = {
   'contentProviderType': ["contentProviderType_example"] // [String] | Filter by content provider type.
 };
 
-var callback = function(error, data, response) {
+apiInstance.contentProvidersGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.contentProvidersGet(opts, callback);
+});
 ```
 
 ### Parameters
@@ -73,21 +72,20 @@ No authorization required
 
 ### Example
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.ContentProvidersApi();
+let apiInstance = new TessJsonApi.ContentProvidersApi();
 
-var slug = "slug_example"; // String | The _slug_ id of an content provider e.g. goblet
+let slug = "slug_example"; // String | The _slug_ id of an content provider e.g. goblet
 
 
-var callback = function(error, data, response) {
+apiInstance.contentProvidersSlugGet(slug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.contentProvidersSlugGet(slug, callback);
+});
 ```
 
 ### Parameters
