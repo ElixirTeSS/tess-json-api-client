@@ -142,17 +142,13 @@ Class | Method | HTTP request | Description
  - [TessJsonApi.ContentProviderAttributes](docs/ContentProviderAttributes.md)
  - [TessJsonApi.ContentProviderCollection](docs/ContentProviderCollection.md)
  - [TessJsonApi.ContentProviderResource](docs/ContentProviderResource.md)
- - [TessJsonApi.ContentProviderResourceRelationships](docs/ContentProviderResourceRelationships.md)
  - [TessJsonApi.Event](docs/Event.md)
  - [TessJsonApi.EventAttributes](docs/EventAttributes.md)
- - [TessJsonApi.EventAttributesReport](docs/EventAttributesReport.md)
  - [TessJsonApi.EventCollection](docs/EventCollection.md)
  - [TessJsonApi.EventResource](docs/EventResource.md)
- - [TessJsonApi.EventResourceRelationships](docs/EventResourceRelationships.md)
  - [TessJsonApi.ExternalResource](docs/ExternalResource.md)
  - [TessJsonApi.Facet](docs/Facet.md)
  - [TessJsonApi.FacetedCollection](docs/FacetedCollection.md)
- - [TessJsonApi.FacetedCollectionMeta](docs/FacetedCollectionMeta.md)
  - [TessJsonApi.JsonApiResponse](docs/JsonApiResponse.md)
  - [TessJsonApi.Links](docs/Links.md)
  - [TessJsonApi.Material](docs/Material.md)
@@ -173,7 +169,6 @@ Class | Method | HTTP request | Description
  - [TessJsonApi.WorkflowAttributes](docs/WorkflowAttributes.md)
  - [TessJsonApi.WorkflowCollection](docs/WorkflowCollection.md)
  - [TessJsonApi.WorkflowResource](docs/WorkflowResource.md)
- - [TessJsonApi.WorkflowResourceRelationships](docs/WorkflowResourceRelationships.md)
 
 
 ## Documentation for Authorization

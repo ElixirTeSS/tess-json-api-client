@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**slug** | **String** | The \&quot;friendly\&quot; identifier of the event. | [optional] 
+**slug** | **String** | The \"friendly\" identifier of the event. | [optional] 
 **title** | **String** | The title of the event. | [optional] 
 **subtitle** | **String** | The subtitle of the event. | [optional] 
 **url** | **String** | The URL where the actual event can be found. | [optional] 
@@ -28,9 +28,9 @@ Name | Type | Description | Notes
 **eligibility** | **[String]** | Various criteria require to participate in the event. | [optional] 
 **contact** | **String** | The name and/or contact details of a person or institution organizing the event. | [optional] 
 **hostInstitutions** | **[String]** | The institution physically hosting the event. | [optional] 
-**scientificTopics** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the event based on the EDAM ontology&#39;s scientific topics. | [optional] 
-**operations** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the event based on the EDAM ontology&#39;s operations. | [optional] 
+**scientificTopics** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the event based on the EDAM ontology's scientific topics. | [optional] 
+**operations** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the event based on the EDAM ontology's operations. | [optional] 
 **externalResources** | [**[ExternalResource]**](ExternalResource.md) | A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything. | [optional] 
-**report** | [**EventAttributesReport**](EventAttributesReport.md) |  | [optional] 
+**report** | **Object** | An after-the-fact report of what happened at the event. Only visible to privileged users. | [optional] 
 
 

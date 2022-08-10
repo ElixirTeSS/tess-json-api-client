@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**EventAttributes**](EventAttributes.md) |  | [optional] 
-**relationships** | [**EventResourceRelationships**](EventResourceRelationships.md) |  | [optional] 
+**relationships** | **Object** |  | [optional] 
 **links** | **Object** |  | [optional] 
 
 

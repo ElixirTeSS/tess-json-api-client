@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
  **operations** | [**[String]**](String.md)| Filter by operations. | [optional] 
  **targetAudience** | [**[String]**](String.md)| Filter by who the intended target audience is. | [optional] 
  **tools** | [**[String]**](String.md)| Filter by what tools are involved. | [optional] 
- **resourceType** | [**[String]**](String.md)| Filter by resource type, e.g. \&quot;Lecture\&quot; etc. | [optional] 
+ **resourceType** | [**[String]**](String.md)| Filter by resource type, e.g. \"Lecture\" etc. | [optional] 
 
 ### Return type
 

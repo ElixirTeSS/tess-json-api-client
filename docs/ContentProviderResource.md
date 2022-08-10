@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**ContentProviderAttributes**](ContentProviderAttributes.md) |  | [optional] 
-**relationships** | [**ContentProviderResourceRelationships**](ContentProviderResourceRelationships.md) |  | [optional] 
+**relationships** | **Object** |  | [optional] 
 **links** | **Object** |  | [optional] 
 
 

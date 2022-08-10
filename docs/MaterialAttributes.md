@@ -3,11 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**slug** | **String** | The \&quot;friendly\&quot; identifier of the material. | [optional] 
+**slug** | **String** | The \"friendly\" identifier of the material. | [optional] 
 **title** | **String** | The title of the material. | [optional] 
 **url** | **String** | The URL where the actual material can be found. | [optional] 
-**shortDescription** | **String** | A succinct description of what the training material is about. | [optional] 
-**longDescription** | **String** | A longer, more indepth explanation of the content of the training material. | [optional] 
+**description** | **String** | A description of what the training material is about. | [optional] 
 **doi** | **String** | The DOI of the material (if it has one). | [optional] 
 **remoteUpdatedDate** | **Date** | The date the material was last updated on its original site. | [optional] 
 **remoteCreatedDate** | **Date** | The date the material was first created on its original site. | [optional] 
@@ -19,8 +18,8 @@ Name | Type | Description | Notes
 **authors** | **[String]** | A list of people who wrote or helped write the material. | [optional] 
 **contributors** | **[String]** | Any person who was not the author but contributed in some way. Maybe they produced some software used, reviewed the paper, or helped inspire the author. | [optional] 
 **targetAudience** | **[String]** | The audience the material was intended for. | [optional] 
-**scientificTopics** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the material based on the EDAM ontology&#39;s scientific topics. | [optional] 
-**operations** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the material based on the EDAM ontology&#39;s operations. | [optional] 
+**scientificTopics** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the material based on the EDAM ontology's scientific topics. | [optional] 
+**operations** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the material based on the EDAM ontology's operations. | [optional] 
 **externalResources** | [**[ExternalResource]**](ExternalResource.md) | A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything. | [optional] 
 
 
