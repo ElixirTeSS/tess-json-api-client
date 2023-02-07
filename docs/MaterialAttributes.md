@@ -22,5 +22,16 @@ Name | Type | Description | Notes
 **scientificTopics** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the material based on the EDAM ontology&#39;s scientific topics. | [optional] 
 **operations** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the material based on the EDAM ontology&#39;s operations. | [optional] 
 **externalResources** | [**[ExternalResource]**](ExternalResource.md) | A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything. | [optional] 
+**resourceType** | **[String]** | The type(s) of this training material, e.g. Video, Poster. | [optional] 
+**fields** | **[String]** | ARDC Fields of Research codes that describe the material. | [optional] 
+**version** | **String** | The current version identifier of the training material. | [optional] 
+**contact** | **String** | The name and/or contact details of a person or institution responsible for this training material. | [optional] 
+**prerequisites** | **String** | A description of what knowledge attendees should have before accessing this training material. | [optional] 
+**syllabus** | **String** | The syllabus of this training, or an overview of the topics covered by the training material. | [optional] 
+**learningObjectives** | **String** | A description of what knowledge, skills, or abilities are gained from this training material. | [optional] 
+**subsets** | **[String]** | Identifier URLs or DOIs for each subset of the training material. | [optional] 
+**dateCreated** | **String** | The date that the training material was created. | [optional] 
+**dateModified** | **String** | The date that the training material was last updated. | [optional] 
+**datePublished** | **String** | The date that the training material was published. | [optional] 
 
 

@@ -33,5 +33,17 @@ Name | Type | Description | Notes
 **operations** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the event based on the EDAM ontology&#39;s operations. | [optional] 
 **externalResources** | [**[ExternalResource]**](ExternalResource.md) | A list of external resources associated with this tool. These are largely tools from bio.tools, and standards, databases, and policies from biosharing.org - but can be anything. | [optional] 
 **report** | [**EventAttributesReport**](EventAttributesReport.md) |  | [optional] 
+**fields** | **[String]** | ARDC Fields of Research codes that describe the event. | [optional] 
+**duration** | **String** | How long the event lasts. | [optional] 
+**timezone** | **String** | The timezone in which the event takes place. e.g. Europe/Brussels | [optional] 
+**sponsors** | **[String]** | Who sponsored, or funded the event. | [optional] 
+**online** | **Boolean** | Does the event take place online? | [optional] 
+**costBasis** | **String** | Whether costs are incurred by the event, and who needs to pay | [optional] 
+**costValue** | **String** | The cost of attending the event. | [optional] 
+**costCurrency** | **String** | The currency of the event&#39;s cost. | [optional] 
+**recognition** | **String** | A description of any qualifications, awards, certificates, diplomas, or other educational credentials that will be awarded on successful completion of the training event. | [optional] 
+**learningObjectives** | **String** | A description of what knowledge, skills, or abilities are gained from attending the event. | [optional] 
+**prerequisites** | **String** | A description of what knowledge attendees should have before attending the event. | [optional] 
+**techRequirements** | **String** | What technical requirements (e.g. software, hardware) are needed for participants of the event. | [optional] 
 
 
