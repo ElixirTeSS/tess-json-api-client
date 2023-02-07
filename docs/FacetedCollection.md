@@ -1,9 +1,13 @@
 # TessJsonApi.FacetedCollection
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | **Object** |  | [optional] 
-**links** | **Object** |  | [optional] 
+**errors** | **Object** |  | [optional] 
+**meta** | [**FacetedCollectionAllOfMeta**](FacetedCollectionAllOfMeta.md) |  | [optional] 
+**links** | [**Links**](Links.md) |  | [optional] 
+**included** | **Object** |  | [optional] 
+**jsonapi** | **Object** |  | [optional] 
 
 

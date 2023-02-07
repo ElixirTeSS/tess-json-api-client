@@ -1,6 +1,7 @@
 # TessJsonApi.JsonApiResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **errors** | **Object** |  | [optional] 

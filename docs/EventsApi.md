@@ -8,51 +8,51 @@ Method | HTTP request | Description
 [**eventsSlugGet**](EventsApi.md#eventsSlugGet) | **GET** /events/{slug} | 
 
 
-<a name="eventsGet"></a>
-# **eventsGet**
+
+## eventsGet
+
 > EventCollection eventsGet(opts)
 
 
 
 ### Example
+
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.EventsApi();
-
-var opts = { 
+let apiInstance = new TessJsonApi.EventsApi();
+let opts = {
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
   'sort': "sort_example", // String | Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
-  'contentProvider': ["contentProvider_example"], // [String] | Filter by content provider name.
-  'keywords': ["keywords_example"], // [String] | Filter by keywords.
-  'node': ["node_example"], // [String] | Filter by ELIXIR node name.
-  'scientificTopics': ["scientificTopics_example"], // [String] | Filter by scientific topics.
-  'operations': ["operations_example"], // [String] | Filter by operations.
-  'targetAudience': ["targetAudience_example"] // [String] | Filter by who the intended target audience is.
-  'tools': ["tools_example"], // [String] | Filter by what tools are involved.
-  'eventTypes': ["eventTypes_example"], // [String] | Filter by event type.
-  'city': ["city_example"], // [String] | Filter by city.
-  'country': ["country_example"], // [String] | Filter by country.
-  'venue': ["venue_example"], // [String] | Filter by venue
-  'organizer': ["organizer_example"], // [String] | Filter by organizer.
+  'contentProvider': ["null"], // [String] | Filter by content provider name.
+  'keywords': ["null"], // [String] | Filter by keywords.
+  'node': ["null"], // [String] | Filter by ELIXIR node name.
+  'scientificTopics': ["null"], // [String] | Filter by scientific topics.
+  'operations': ["null"], // [String] | Filter by operations.
+  'targetAudience': ["null"], // [String] | Filter by who the intended target audience is.
+  'tools': ["null"], // [String] | Filter by what tools are involved.
+  'eventTypes': ["null"], // [String] | Filter by event type.
+  'city': ["null"], // [String] | Filter by city.
+  'country': ["null"], // [String] | Filter by country.
+  'venue': ["null"], // [String] | Filter by venue
+  'organizer': ["null"], // [String] | Filter by organizer.
   'online': true, // Boolean | Only show online events?
-  'sponsor': ["sponsor_example"], // [String] | Filter by sponsor.
+  'sponsor': ["null"], // [String] | Filter by sponsor.
   'includeExpired': true // Boolean | Include events that have finished.
 };
-
-var callback = function(error, data, response) {
+apiInstance.eventsGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.eventsGet(opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -86,35 +86,34 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.api+json
- - **Accept**: application/vnd.api+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
 
-<a name="eventsSlugGet"></a>
-# **eventsSlugGet**
+
+## eventsSlugGet
+
 > Event eventsSlugGet(slug)
 
 
 
 ### Example
+
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.EventsApi();
-
-var slug = "slug_example"; // String | The _slug_ id of an event e.g. python-training-2017
-
-
-var callback = function(error, data, response) {
+let apiInstance = new TessJsonApi.EventsApi();
+let slug = "slug_example"; // String | The _slug_ id of an event e.g. python-training-2017
+apiInstance.eventsSlugGet(slug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.eventsSlugGet(slug, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,6 +129,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.api+json
- - **Accept**: application/vnd.api+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
 

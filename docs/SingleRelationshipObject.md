@@ -1,6 +1,7 @@
 # TessJsonApi.SingleRelationshipObject
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | **Object** |  | [optional] 

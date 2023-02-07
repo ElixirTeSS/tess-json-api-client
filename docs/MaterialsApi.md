@@ -8,48 +8,48 @@ Method | HTTP request | Description
 [**materialsSlugGet**](MaterialsApi.md#materialsSlugGet) | **GET** /materials/{slug} | 
 
 
-<a name="materialsGet"></a>
-# **materialsGet**
+
+## materialsGet
+
 > MaterialCollection materialsGet(opts)
 
 
 
 ### Example
+
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.MaterialsApi();
-
-var opts = { 
+let apiInstance = new TessJsonApi.MaterialsApi();
+let opts = {
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
   'sort': "sort_example", // String | Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
-  'authors': ["authors_example"], // [String] | Filter by author.
-  'contentProvider': ["contentProvider_example"], // [String] | Filter by content provider name.
-  'contributors': ["contributors_example"], // [String] | Filter by contributor.
-  'difficultyLevel': ["difficultyLevel_example"], // [String] | Filter by difficulty level.
-  'keywords': ["keywords_example"], // [String] | Filter by keywords.
-  'licence': ["licence_example"], // [String] | Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json
-  'node': ["node_example"], // [String] | Filter by ELIXIR node name.
-  'scientificTopics': ["scientificTopics_example"], // [String] | Filter by scientific topics.
-  'operations': ["operations_example"], // [String] | Filter by operations.
-  'targetAudience': ["targetAudience_example"] // [String] | Filter by who the intended target audience is.
-  'tools': ["tools_example"], // [String] | Filter by what tools are involved.
-  'resourceType': ["resourceType_example"] // [String] | Filter by resource type, e.g. \"Lecture\" etc.
+  'authors': ["null"], // [String] | Filter by author.
+  'contentProvider': ["null"], // [String] | Filter by content provider name.
+  'contributors': ["null"], // [String] | Filter by contributor.
+  'difficultyLevel': ["null"], // [String] | Filter by difficulty level.
+  'keywords': ["null"], // [String] | Filter by keywords.
+  'licence': ["null"], // [String] | Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json
+  'node': ["null"], // [String] | Filter by ELIXIR node name.
+  'scientificTopics': ["null"], // [String] | Filter by scientific topics.
+  'operations': ["null"], // [String] | Filter by operations.
+  'targetAudience': ["null"], // [String] | Filter by who the intended target audience is.
+  'tools': ["null"], // [String] | Filter by what tools are involved.
+  'resourceType': ["null"] // [String] | Filter by resource type, e.g. \"Lecture\" etc.
 };
-
-var callback = function(error, data, response) {
+apiInstance.materialsGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.materialsGet(opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
  **operations** | [**[String]**](String.md)| Filter by operations. | [optional] 
  **targetAudience** | [**[String]**](String.md)| Filter by who the intended target audience is. | [optional] 
  **tools** | [**[String]**](String.md)| Filter by what tools are involved. | [optional] 
- **resourceType** | [**[String]**](String.md)| Filter by resource type, e.g. \"Lecture\" etc. | [optional] 
+ **resourceType** | [**[String]**](String.md)| Filter by resource type, e.g. \&quot;Lecture\&quot; etc. | [optional] 
 
 ### Return type
 
@@ -80,39 +80,38 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.api+json
- - **Accept**: application/vnd.api+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
 
-<a name="materialsSlugGet"></a>
-# **materialsSlugGet**
+
+## materialsSlugGet
+
 > Material materialsSlugGet(slug)
 
 
 
 ### Example
+
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.MaterialsApi();
-
-var slug = "slug_example"; // String | The _slug_ id of an material e.g. python-tutorial
-
-
-var callback = function(error, data, response) {
+let apiInstance = new TessJsonApi.MaterialsApi();
+let slug = "slug_example"; // String | The _slug_ id of a material e.g. python-tutorial
+apiInstance.materialsSlugGet(slug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.materialsSlugGet(slug, callback);
+});
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slug** | **String**| The _slug_ id of an material e.g. python-tutorial | 
+ **slug** | **String**| The _slug_ id of a material e.g. python-tutorial | 
 
 ### Return type
 
@@ -124,6 +123,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.api+json
- - **Accept**: application/vnd.api+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
 

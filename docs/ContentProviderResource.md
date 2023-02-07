@@ -1,10 +1,13 @@
 # TessJsonApi.ContentProviderResource
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
 **attributes** | [**ContentProviderAttributes**](ContentProviderAttributes.md) |  | [optional] 
-**relationships** | **Object** |  | [optional] 
-**links** | **Object** |  | [optional] 
+**relationships** | [**ContentProviderResourceAllOfRelationships**](ContentProviderResourceAllOfRelationships.md) |  | [optional] 
+**links** | [**Links**](Links.md) |  | [optional] 
 
 

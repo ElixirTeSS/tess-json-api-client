@@ -8,39 +8,39 @@ Method | HTTP request | Description
 [**contentProvidersSlugGet**](ContentProvidersApi.md#contentProvidersSlugGet) | **GET** /content_providers/{slug} | 
 
 
-<a name="contentProvidersGet"></a>
-# **contentProvidersGet**
+
+## contentProvidersGet
+
 > ContentProviderCollection contentProvidersGet(opts)
 
 
 
 ### Example
+
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.ContentProvidersApi();
-
-var opts = { 
+let apiInstance = new TessJsonApi.ContentProvidersApi();
+let opts = {
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
   'sort': "sort_example", // String | Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
-  'keywords': ["keywords_example"], // [String] | Filter by keywords.
-  'node': ["node_example"], // [String] | Filter by ELIXIR node name.
-  'contentProviderType': ["contentProviderType_example"] // [String] | Filter by content provider type.
+  'keywords': ["null"], // [String] | Filter by keywords.
+  'node': ["null"], // [String] | Filter by ELIXIR node name.
+  'contentProviderType': ["null"] // [String] | Filter by content provider type.
 };
-
-var callback = function(error, data, response) {
+apiInstance.contentProvidersGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.contentProvidersGet(opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -62,39 +62,38 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.api+json
- - **Accept**: application/vnd.api+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
 
-<a name="contentProvidersSlugGet"></a>
-# **contentProvidersSlugGet**
+
+## contentProvidersSlugGet
+
 > ContentProvider contentProvidersSlugGet(slug)
 
 
 
 ### Example
+
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.ContentProvidersApi();
-
-var slug = "slug_example"; // String | The _slug_ id of an content provider e.g. goblet
-
-
-var callback = function(error, data, response) {
+let apiInstance = new TessJsonApi.ContentProvidersApi();
+let slug = "slug_example"; // String | The _slug_ id of a content provider e.g. goblet
+apiInstance.contentProvidersSlugGet(slug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.contentProvidersSlugGet(slug, callback);
+});
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slug** | **String**| The _slug_ id of an content provider e.g. goblet | 
+ **slug** | **String**| The _slug_ id of a content provider e.g. goblet | 
 
 ### Return type
 
@@ -106,6 +105,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.api+json
- - **Accept**: application/vnd.api+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
 

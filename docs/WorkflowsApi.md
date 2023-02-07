@@ -8,43 +8,43 @@ Method | HTTP request | Description
 [**workflowsSlugGet**](WorkflowsApi.md#workflowsSlugGet) | **GET** /workflows/{slug} | 
 
 
-<a name="workflowsGet"></a>
-# **workflowsGet**
+
+## workflowsGet
+
 > WorkflowCollection workflowsGet(opts)
 
 
 
 ### Example
+
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.WorkflowsApi();
-
-var opts = { 
+let apiInstance = new TessJsonApi.WorkflowsApi();
+let opts = {
   'q': "q_example", // String | Search keywords.
   'pageNumber': 1, // Number | The page of the collection to view.
   'pageSize': 30, // Number | The number of results to return per page.
   'sort': "sort_example", // String | Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
-  'authors': ["authors_example"], // [String] | Filter by author.
-  'contributors': ["contributors_example"], // [String] | Filter by contributor.
-  'difficultyLevel': ["difficultyLevel_example"], // [String] | Filter by difficulty level.
-  'keywords': ["keywords_example"], // [String] | Filter by keywords.
-  'licence': ["licence_example"], // [String] | Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json
-  'scientificTopics': ["scientificTopics_example"], // [String] | Filter by scientific topics.
-  'targetAudience': ["targetAudience_example"] // [String] | Filter by who the intended target audience is.
+  'authors': ["null"], // [String] | Filter by author.
+  'contributors': ["null"], // [String] | Filter by contributor.
+  'difficultyLevel': ["null"], // [String] | Filter by difficulty level.
+  'keywords': ["null"], // [String] | Filter by keywords.
+  'licence': ["null"], // [String] | Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json
+  'scientificTopics': ["null"], // [String] | Filter by scientific topics.
+  'targetAudience': ["null"] // [String] | Filter by who the intended target audience is.
 };
-
-var callback = function(error, data, response) {
+apiInstance.workflowsGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.workflowsGet(opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -70,39 +70,38 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.api+json
- - **Accept**: application/vnd.api+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
 
-<a name="workflowsSlugGet"></a>
-# **workflowsSlugGet**
+
+## workflowsSlugGet
+
 > Workflow workflowsSlugGet(slug)
 
 
 
 ### Example
+
 ```javascript
-var TessJsonApi = require('tess_json_api');
+import TessJsonApi from 'tess_json_api';
 
-var apiInstance = new TessJsonApi.WorkflowsApi();
-
-var slug = "slug_example"; // String | The _slug_ id of an workflow e.g. ember
-
-
-var callback = function(error, data, response) {
+let apiInstance = new TessJsonApi.WorkflowsApi();
+let slug = "slug_example"; // String | The _slug_ id of a workflow e.g. ember
+apiInstance.workflowsSlugGet(slug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.workflowsSlugGet(slug, callback);
+});
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slug** | **String**| The _slug_ id of an workflow e.g. ember | 
+ **slug** | **String**| The _slug_ id of a workflow e.g. ember | 
 
 ### Return type
 
@@ -114,6 +113,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.api+json
- - **Accept**: application/vnd.api+json
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
 
