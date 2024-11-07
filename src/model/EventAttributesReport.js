@@ -51,14 +51,14 @@ class EventAttributesReport {
             if (data.hasOwnProperty('funding')) {
                 obj['funding'] = ApiClient.convertToType(data['funding'], 'String');
             }
-            if (data.hasOwnProperty('attendee_count')) {
-                obj['attendee_count'] = ApiClient.convertToType(data['attendee_count'], 'Number');
+            if (data.hasOwnProperty('attendee-count')) {
+                obj['attendee-count'] = ApiClient.convertToType(data['attendee-count'], 'Number');
             }
-            if (data.hasOwnProperty('applicant_count')) {
-                obj['applicant_count'] = ApiClient.convertToType(data['applicant_count'], 'Number');
+            if (data.hasOwnProperty('applicant-count')) {
+                obj['applicant-count'] = ApiClient.convertToType(data['applicant-count'], 'Number');
             }
-            if (data.hasOwnProperty('trainer_count')) {
-                obj['trainer_count'] = ApiClient.convertToType(data['trainer_count'], 'Number');
+            if (data.hasOwnProperty('trainer-count')) {
+                obj['trainer-count'] = ApiClient.convertToType(data['trainer-count'], 'Number');
             }
             if (data.hasOwnProperty('feedback')) {
                 obj['feedback'] = ApiClient.convertToType(data['feedback'], 'String');
@@ -105,21 +105,21 @@ EventAttributesReport.prototype['funding'] = undefined;
 
 /**
  * The number of people who attended the event.
- * @member {Number} attendee_count
+ * @member {Number} attendee-count
  */
-EventAttributesReport.prototype['attendee_count'] = undefined;
+EventAttributesReport.prototype['attendee-count'] = undefined;
 
 /**
  * The number of people who applied to attend the event.
- * @member {Number} applicant_count
+ * @member {Number} applicant-count
  */
-EventAttributesReport.prototype['applicant_count'] = undefined;
+EventAttributesReport.prototype['applicant-count'] = undefined;
 
 /**
  * The number of trainers who were involved with the event.
- * @member {Number} trainer_count
+ * @member {Number} trainer-count
  */
-EventAttributesReport.prototype['trainer_count'] = undefined;
+EventAttributesReport.prototype['trainer-count'] = undefined;
 
 /**
  * Notes, or a link to feedback for the event.

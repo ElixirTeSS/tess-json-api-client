@@ -49,6 +49,9 @@ class FacetedCollectionAllOf {
         if (data) {
             obj = obj || new FacetedCollectionAllOf();
 
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+            }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = FacetedCollectionAllOfMeta.constructFromObject(data['meta']);
             }
@@ -65,6 +68,10 @@ class FacetedCollectionAllOf {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>FacetedCollectionAllOf</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is an array
+        if (!Array.isArray(data['data'])) {
+            throw new Error("Expected the field `data` to be an array in the JSON data but got " + data['data']);
+        }
         // validate the optional field `meta`
         if (data['meta']) { // data not null
           FacetedCollectionAllOfMeta.validateJSON(data['meta']);
@@ -81,6 +88,11 @@ class FacetedCollectionAllOf {
 }
 
 
+
+/**
+ * @member {Array.<Object>} data
+ */
+FacetedCollectionAllOf.prototype['data'] = undefined;
 
 /**
  * @member {module:model/FacetedCollectionAllOfMeta} meta

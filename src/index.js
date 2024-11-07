@@ -51,6 +51,7 @@ import MaterialCollection from './model/MaterialCollection';
 import MaterialCollectionAllOf from './model/MaterialCollectionAllOf';
 import MaterialResource from './model/MaterialResource';
 import MaterialResourceAllOf from './model/MaterialResourceAllOf';
+import MaterialResourceAllOfRelationships from './model/MaterialResourceAllOfRelationships';
 import MultiRelationshipObject from './model/MultiRelationshipObject';
 import Node from './model/Node';
 import NodeAllOf from './model/NodeAllOf';
@@ -60,6 +61,7 @@ import NodeCollection from './model/NodeCollection';
 import NodeCollectionAllOf from './model/NodeCollectionAllOf';
 import NodeResource from './model/NodeResource';
 import NodeResourceAllOf from './model/NodeResourceAllOf';
+import NodeResourceAllOfRelationships from './model/NodeResourceAllOfRelationships';
 import OntologyTerm from './model/OntologyTerm';
 import OptionalRelationshipObject from './model/OptionalRelationshipObject';
 import OptionalResourceIdentifierObject from './model/OptionalResourceIdentifierObject';
@@ -359,6 +361,12 @@ export {
     MaterialResourceAllOf,
 
     /**
+     * The MaterialResourceAllOfRelationships model constructor.
+     * @property {module:model/MaterialResourceAllOfRelationships}
+     */
+    MaterialResourceAllOfRelationships,
+
+    /**
      * The MultiRelationshipObject model constructor.
      * @property {module:model/MultiRelationshipObject}
      */
@@ -411,6 +419,12 @@ export {
      * @property {module:model/NodeResourceAllOf}
      */
     NodeResourceAllOf,
+
+    /**
+     * The NodeResourceAllOfRelationships model constructor.
+     * @property {module:model/NodeResourceAllOfRelationships}
+     */
+    NodeResourceAllOfRelationships,
 
     /**
      * The OntologyTerm model constructor.

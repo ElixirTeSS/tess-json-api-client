@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import ContentProviderResourceAllOfRelationships from './ContentProviderResourceAllOfRelationships';
 import Links from './Links';
 import NodeAttributes from './NodeAttributes';
+import NodeResourceAllOfRelationships from './NodeResourceAllOfRelationships';
 
 /**
  * The NodeResourceAllOf model module.
@@ -54,7 +54,7 @@ class NodeResourceAllOf {
                 obj['attributes'] = NodeAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ContentProviderResourceAllOfRelationships.constructFromObject(data['relationships']);
+                obj['relationships'] = NodeResourceAllOfRelationships.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('links')) {
                 obj['links'] = Links.constructFromObject(data['links']);
@@ -75,7 +75,7 @@ class NodeResourceAllOf {
         }
         // validate the optional field `relationships`
         if (data['relationships']) { // data not null
-          ContentProviderResourceAllOfRelationships.validateJSON(data['relationships']);
+          NodeResourceAllOfRelationships.validateJSON(data['relationships']);
         }
         // validate the optional field `links`
         if (data['links']) { // data not null
@@ -96,7 +96,7 @@ class NodeResourceAllOf {
 NodeResourceAllOf.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/ContentProviderResourceAllOfRelationships} relationships
+ * @member {module:model/NodeResourceAllOfRelationships} relationships
  */
 NodeResourceAllOf.prototype['relationships'] = undefined;
 

@@ -54,7 +54,7 @@ export default class MaterialsApi {
      * @param {Array.<String>} opts.contributors Filter by contributor.
      * @param {Array.<module:model/String>} opts.difficultyLevel Filter by difficulty level.
      * @param {Array.<String>} opts.keywords Filter by keywords.
-     * @param {Array.<String>} opts.licence Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json
+     * @param {Array.<String>} opts.licence Filter by licence. Uses SPDX identifiers.
      * @param {Array.<String>} opts.node Filter by ELIXIR node name.
      * @param {Array.<String>} opts.scientificTopics Filter by scientific topics.
      * @param {Array.<String>} opts.operations Filter by operations.

@@ -43,6 +43,7 @@ docs/MaterialCollection.md
 docs/MaterialCollectionAllOf.md
 docs/MaterialResource.md
 docs/MaterialResourceAllOf.md
+docs/MaterialResourceAllOfRelationships.md
 docs/MaterialsApi.md
 docs/MultiRelationshipObject.md
 docs/Node.md
@@ -53,6 +54,7 @@ docs/NodeCollection.md
 docs/NodeCollectionAllOf.md
 docs/NodeResource.md
 docs/NodeResourceAllOf.md
+docs/NodeResourceAllOfRelationships.md
 docs/NodesApi.md
 docs/OntologyTerm.md
 docs/OptionalRelationshipObject.md
@@ -129,6 +131,7 @@ src/model/MaterialCollection.js
 src/model/MaterialCollectionAllOf.js
 src/model/MaterialResource.js
 src/model/MaterialResourceAllOf.js
+src/model/MaterialResourceAllOfRelationships.js
 src/model/MultiRelationshipObject.js
 src/model/Node.js
 src/model/NodeAllOf.js
@@ -138,6 +141,7 @@ src/model/NodeCollection.js
 src/model/NodeCollectionAllOf.js
 src/model/NodeResource.js
 src/model/NodeResourceAllOf.js
+src/model/NodeResourceAllOfRelationships.js
 src/model/OntologyTerm.js
 src/model/OptionalRelationshipObject.js
 src/model/OptionalResourceIdentifierObject.js

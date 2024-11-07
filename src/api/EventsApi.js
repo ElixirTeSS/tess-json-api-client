@@ -61,9 +61,10 @@ export default class EventsApi {
      * @param {Array.<String>} opts.country Filter by country.
      * @param {Array.<String>} opts.venue Filter by venue
      * @param {Array.<String>} opts.organizer Filter by organizer.
-     * @param {Boolean} opts.online Only show online events?
+     * @param {Boolean} opts.online Only show events with online access?
      * @param {Array.<String>} opts.sponsor Filter by sponsor.
      * @param {Boolean} opts.includeExpired Include events that have finished.
+     * @param {Boolean} opts.includeDisabled Include events that are disabled.
      * @param {module:api/EventsApi~eventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EventCollection}
      */
@@ -92,7 +93,8 @@ export default class EventsApi {
         'organizer[]': this.apiClient.buildCollectionParam(opts['organizer'], 'multi'),
         'online': opts['online'],
         'sponsor[]': this.apiClient.buildCollectionParam(opts['sponsor'], 'multi'),
-        'include_expired': opts['includeExpired']
+        'include_expired': opts['includeExpired'],
+        'include_disabled': opts['includeDisabled']
       };
       let headerParams = {
       };

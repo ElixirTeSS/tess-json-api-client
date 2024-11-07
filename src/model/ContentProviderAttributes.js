@@ -71,6 +71,9 @@ class ContentProviderAttributes {
             if (data.hasOwnProperty('updated-at')) {
                 obj['updated-at'] = ApiClient.convertToType(data['updated-at'], 'Date');
             }
+            if (data.hasOwnProperty('contact')) {
+                obj['contact'] = ApiClient.convertToType(data['contact'], 'String');
+            }
         }
         return obj;
     }
@@ -104,6 +107,10 @@ class ContentProviderAttributes {
         // ensure the json data is an array
         if (!Array.isArray(data['keywords'])) {
             throw new Error("Expected the field `keywords` to be an array in the JSON data but got " + data['keywords']);
+        }
+        // ensure the json data is a string
+        if (data['contact'] && !(typeof data['contact'] === 'string' || data['contact'] instanceof String)) {
+            throw new Error("Expected the field `contact` to be a primitive type in the JSON string but got " + data['contact']);
         }
 
         return true;
@@ -151,16 +158,22 @@ ContentProviderAttributes.prototype['image-url'] = undefined;
 ContentProviderAttributes.prototype['keywords'] = undefined;
 
 /**
- * The date the content provider was first created on TeSS
+ * The date the content provider was first created on TeSS.
  * @member {Date} created-at
  */
 ContentProviderAttributes.prototype['created-at'] = undefined;
 
 /**
- * The date the content provider was last updated on TeSS
+ * The date the content provider was last updated on TeSS.
  * @member {Date} updated-at
  */
 ContentProviderAttributes.prototype['updated-at'] = undefined;
+
+/**
+ * A point of contact for this content provider.
+ * @member {String} contact
+ */
+ContentProviderAttributes.prototype['contact'] = undefined;
 
 
 

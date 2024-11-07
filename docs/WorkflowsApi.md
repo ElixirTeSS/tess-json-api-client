@@ -30,7 +30,7 @@ let opts = {
   'contributors': ["null"], // [String] | Filter by contributor.
   'difficultyLevel': ["null"], // [String] | Filter by difficulty level.
   'keywords': ["null"], // [String] | Filter by keywords.
-  'licence': ["null"], // [String] | Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json
+  'licence': ["null"], // [String] | Filter by licence. Uses SPDX identifiers.
   'scientificTopics': ["null"], // [String] | Filter by scientific topics.
   'targetAudience': ["null"] // [String] | Filter by who the intended target audience is.
 };
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
  **contributors** | [**[String]**](String.md)| Filter by contributor. | [optional] 
  **difficultyLevel** | [**[String]**](String.md)| Filter by difficulty level. | [optional] 
  **keywords** | [**[String]**](String.md)| Filter by keywords. | [optional] 
- **licence** | [**[String]**](String.md)| Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json | [optional] 
+ **licence** | [**[String]**](String.md)| Filter by licence. Uses SPDX identifiers. | [optional] 
  **scientificTopics** | [**[String]**](String.md)| Filter by scientific topics. | [optional] 
  **targetAudience** | [**[String]**](String.md)| Filter by who the intended target audience is. | [optional] 
 

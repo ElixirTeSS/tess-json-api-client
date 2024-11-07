@@ -128,13 +128,25 @@ class MaterialAttributes {
                 obj['subsets'] = ApiClient.convertToType(data['subsets'], ['String']);
             }
             if (data.hasOwnProperty('date-created')) {
-                obj['date-created'] = ApiClient.convertToType(data['date-created'], 'String');
+                obj['date-created'] = ApiClient.convertToType(data['date-created'], 'Date');
             }
             if (data.hasOwnProperty('date-modified')) {
-                obj['date-modified'] = ApiClient.convertToType(data['date-modified'], 'String');
+                obj['date-modified'] = ApiClient.convertToType(data['date-modified'], 'Date');
             }
             if (data.hasOwnProperty('date-published')) {
-                obj['date-published'] = ApiClient.convertToType(data['date-published'], 'String');
+                obj['date-published'] = ApiClient.convertToType(data['date-published'], 'Date');
+            }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('other-types')) {
+                obj['other-types'] = ApiClient.convertToType(data['other-types'], 'String');
+            }
+            if (data.hasOwnProperty('last-scraped')) {
+                obj['last-scraped'] = ApiClient.convertToType(data['last-scraped'], 'Date');
+            }
+            if (data.hasOwnProperty('scraper-record')) {
+                obj['scraper-record'] = ApiClient.convertToType(data['scraper-record'], 'Boolean');
             }
         }
         return obj;
@@ -253,16 +265,12 @@ class MaterialAttributes {
             throw new Error("Expected the field `subsets` to be an array in the JSON data but got " + data['subsets']);
         }
         // ensure the json data is a string
-        if (data['date-created'] && !(typeof data['date-created'] === 'string' || data['date-created'] instanceof String)) {
-            throw new Error("Expected the field `date-created` to be a primitive type in the JSON string but got " + data['date-created']);
+        if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
+            throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
         }
         // ensure the json data is a string
-        if (data['date-modified'] && !(typeof data['date-modified'] === 'string' || data['date-modified'] instanceof String)) {
-            throw new Error("Expected the field `date-modified` to be a primitive type in the JSON string but got " + data['date-modified']);
-        }
-        // ensure the json data is a string
-        if (data['date-published'] && !(typeof data['date-published'] === 'string' || data['date-published'] instanceof String)) {
-            throw new Error("Expected the field `date-published` to be a primitive type in the JSON string but got " + data['date-published']);
+        if (data['other-types'] && !(typeof data['other-types'] === 'string' || data['other-types'] instanceof String)) {
+            throw new Error("Expected the field `other-types` to be a primitive type in the JSON string but got " + data['other-types']);
         }
 
         return true;
@@ -364,13 +372,13 @@ MaterialAttributes.prototype['contributors'] = undefined;
 MaterialAttributes.prototype['target-audience'] = undefined;
 
 /**
- * The classification of the material based on the EDAM ontology's scientific topics.
+ * The classification of the material based on the EDAM ontology's topics branch.
  * @member {Array.<module:model/OntologyTerm>} scientific-topics
  */
 MaterialAttributes.prototype['scientific-topics'] = undefined;
 
 /**
- * The classification of the material based on the EDAM ontology's operations.
+ * The classification of the material based on the EDAM ontology's operations branch.
  * @member {Array.<module:model/OntologyTerm>} operations
  */
 MaterialAttributes.prototype['operations'] = undefined;
@@ -431,21 +439,44 @@ MaterialAttributes.prototype['subsets'] = undefined;
 
 /**
  * The date that the training material was created.
- * @member {String} date-created
+ * @member {Date} date-created
  */
 MaterialAttributes.prototype['date-created'] = undefined;
 
 /**
  * The date that the training material was last updated.
- * @member {String} date-modified
+ * @member {Date} date-modified
  */
 MaterialAttributes.prototype['date-modified'] = undefined;
 
 /**
  * The date that the training material was published.
- * @member {String} date-published
+ * @member {Date} date-published
  */
 MaterialAttributes.prototype['date-published'] = undefined;
+
+/**
+ * The status, or maturity, of the material.
+ * @member {String} status
+ */
+MaterialAttributes.prototype['status'] = undefined;
+
+/**
+ * @member {String} other-types
+ */
+MaterialAttributes.prototype['other-types'] = undefined;
+
+/**
+ * The date that the training material was last harvested by TeSS.
+ * @member {Date} last-scraped
+ */
+MaterialAttributes.prototype['last-scraped'] = undefined;
+
+/**
+ * Was this material automatically harvested (as opposed to being submitted manually)?
+ * @member {Boolean} scraper-record
+ */
+MaterialAttributes.prototype['scraper-record'] = undefined;
 
 
 

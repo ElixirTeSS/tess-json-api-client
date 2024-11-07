@@ -38,9 +38,10 @@ let opts = {
   'country': ["null"], // [String] | Filter by country.
   'venue': ["null"], // [String] | Filter by venue
   'organizer': ["null"], // [String] | Filter by organizer.
-  'online': true, // Boolean | Only show online events?
+  'online': true, // Boolean | Only show events with online access?
   'sponsor': ["null"], // [String] | Filter by sponsor.
-  'includeExpired': true // Boolean | Include events that have finished.
+  'includeExpired': true, // Boolean | Include events that have finished.
+  'includeDisabled': true // Boolean | Include events that are disabled.
 };
 apiInstance.eventsGet(opts, (error, data, response) => {
   if (error) {
@@ -72,9 +73,10 @@ Name | Type | Description  | Notes
  **country** | [**[String]**](String.md)| Filter by country. | [optional] 
  **venue** | [**[String]**](String.md)| Filter by venue | [optional] 
  **organizer** | [**[String]**](String.md)| Filter by organizer. | [optional] 
- **online** | **Boolean**| Only show online events? | [optional] 
+ **online** | **Boolean**| Only show events with online access? | [optional] 
  **sponsor** | [**[String]**](String.md)| Filter by sponsor. | [optional] 
  **includeExpired** | **Boolean**| Include events that have finished. | [optional] 
+ **includeDisabled** | **Boolean**| Include events that are disabled. | [optional] 
 
 ### Return type
 

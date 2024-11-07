@@ -156,6 +156,9 @@ class EventAttributes {
             if (data.hasOwnProperty('online')) {
                 obj['online'] = ApiClient.convertToType(data['online'], 'Boolean');
             }
+            if (data.hasOwnProperty('presence')) {
+                obj['presence'] = ApiClient.convertToType(data['presence'], 'String');
+            }
             if (data.hasOwnProperty('cost-basis')) {
                 obj['cost-basis'] = ApiClient.convertToType(data['cost-basis'], 'String');
             }
@@ -176,6 +179,15 @@ class EventAttributes {
             }
             if (data.hasOwnProperty('tech-requirements')) {
                 obj['tech-requirements'] = ApiClient.convertToType(data['tech-requirements'], 'String');
+            }
+            if (data.hasOwnProperty('external-id')) {
+                obj['external-id'] = ApiClient.convertToType(data['external-id'], 'String');
+            }
+            if (data.hasOwnProperty('last-scraped')) {
+                obj['last-scraped'] = ApiClient.convertToType(data['last-scraped'], 'Date');
+            }
+            if (data.hasOwnProperty('scraper-record')) {
+                obj['scraper-record'] = ApiClient.convertToType(data['scraper-record'], 'Boolean');
             }
         }
         return obj;
@@ -324,6 +336,10 @@ class EventAttributes {
             throw new Error("Expected the field `sponsors` to be an array in the JSON data but got " + data['sponsors']);
         }
         // ensure the json data is a string
+        if (data['presence'] && !(typeof data['presence'] === 'string' || data['presence'] instanceof String)) {
+            throw new Error("Expected the field `presence` to be a primitive type in the JSON string but got " + data['presence']);
+        }
+        // ensure the json data is a string
         if (data['cost-basis'] && !(typeof data['cost-basis'] === 'string' || data['cost-basis'] instanceof String)) {
             throw new Error("Expected the field `cost-basis` to be a primitive type in the JSON string but got " + data['cost-basis']);
         }
@@ -350,6 +366,10 @@ class EventAttributes {
         // ensure the json data is a string
         if (data['tech-requirements'] && !(typeof data['tech-requirements'] === 'string' || data['tech-requirements'] instanceof String)) {
             throw new Error("Expected the field `tech-requirements` to be a primitive type in the JSON string but got " + data['tech-requirements']);
+        }
+        // ensure the json data is a string
+        if (data['external-id'] && !(typeof data['external-id'] === 'string' || data['external-id'] instanceof String)) {
+            throw new Error("Expected the field `external-id` to be a primitive type in the JSON string but got " + data['external-id']);
         }
 
         return true;
@@ -511,13 +531,13 @@ EventAttributes.prototype['contact'] = undefined;
 EventAttributes.prototype['host-institutions'] = undefined;
 
 /**
- * The classification of the event based on the EDAM ontology's scientific topics.
+ * The classification of the event based on the EDAM ontology's topics branch.
  * @member {Array.<module:model/OntologyTerm>} scientific-topics
  */
 EventAttributes.prototype['scientific-topics'] = undefined;
 
 /**
- * The classification of the event based on the EDAM ontology's operations.
+ * The classification of the event based on the EDAM ontology's operations branch.
  * @member {Array.<module:model/OntologyTerm>} operations
  */
 EventAttributes.prototype['operations'] = undefined;
@@ -564,6 +584,12 @@ EventAttributes.prototype['sponsors'] = undefined;
 EventAttributes.prototype['online'] = undefined;
 
 /**
+ * Is the event onsite (face-to-face), online or hybrid?
+ * @member {module:model/EventAttributes.PresenceEnum} presence
+ */
+EventAttributes.prototype['presence'] = undefined;
+
+/**
  * Whether costs are incurred by the event, and who needs to pay
  * @member {String} cost-basis
  */
@@ -605,8 +631,53 @@ EventAttributes.prototype['prerequisites'] = undefined;
  */
 EventAttributes.prototype['tech-requirements'] = undefined;
 
+/**
+ * If the event is from an external source, this is the unique identifier of the event in that source.
+ * @member {String} external-id
+ */
+EventAttributes.prototype['external-id'] = undefined;
+
+/**
+ * The date that the event was last harvested by TeSS.
+ * @member {Date} last-scraped
+ */
+EventAttributes.prototype['last-scraped'] = undefined;
+
+/**
+ * Was this event automatically harvested (as opposed to being submitted manually)?
+ * @member {Boolean} scraper-record
+ */
+EventAttributes.prototype['scraper-record'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>presence</code> property.
+ * @enum {String}
+ * @readonly
+ */
+EventAttributes['PresenceEnum'] = {
+
+    /**
+     * value: "onsite"
+     * @const
+     */
+    "onsite": "onsite",
+
+    /**
+     * value: "online"
+     * @const
+     */
+    "online": "online",
+
+    /**
+     * value: "hybrid"
+     * @const
+     */
+    "hybrid": "hybrid"
+};
 
 
 

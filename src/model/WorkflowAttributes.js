@@ -238,7 +238,7 @@ WorkflowAttributes.prototype['contributors'] = undefined;
 WorkflowAttributes.prototype['target-audience'] = undefined;
 
 /**
- * The classification of the workflow based on the EDAM ontology's scientific topics.
+ * The classification of the workflow based on the EDAM ontology's topics branch.
  * @member {Array.<module:model/OntologyTerm>} scientific-topics
  */
 WorkflowAttributes.prototype['scientific-topics'] = undefined;

@@ -17,6 +17,6 @@ Name | Type | Description | Notes
 **authors** | **[String]** | A list of people who wrote or helped write the workflow. | [optional] 
 **contributors** | **[String]** | Any person who was not the author but contributed in some way. Maybe they produced some software used, reviewed the paper, or helped inspire the author. | [optional] 
 **targetAudience** | **[String]** | The audience the workflow was intended for. | [optional] 
-**scientificTopics** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the workflow based on the EDAM ontology&#39;s scientific topics. | [optional] 
+**scientificTopics** | [**[OntologyTerm]**](OntologyTerm.md) | The classification of the workflow based on the EDAM ontology&#39;s topics branch. | [optional] 
 
 

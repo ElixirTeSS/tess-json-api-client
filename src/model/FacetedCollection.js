@@ -70,6 +70,9 @@ class FacetedCollection {
             if (data.hasOwnProperty('jsonapi')) {
                 obj['jsonapi'] = ApiClient.convertToType(data['jsonapi'], Object);
             }
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+            }
         }
         return obj;
     }
@@ -87,6 +90,10 @@ class FacetedCollection {
         // validate the optional field `links`
         if (data['links']) { // data not null
           Links.validateJSON(data['links']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['data'])) {
+            throw new Error("Expected the field `data` to be an array in the JSON data but got " + data['data']);
         }
 
         return true;
@@ -122,6 +129,11 @@ FacetedCollection.prototype['included'] = undefined;
  */
 FacetedCollection.prototype['jsonapi'] = undefined;
 
+/**
+ * @member {Array.<Object>} data
+ */
+FacetedCollection.prototype['data'] = undefined;
+
 
 // Implement JsonApiResponse interface:
 /**
@@ -145,6 +157,10 @@ JsonApiResponse.prototype['included'] = undefined;
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
 // Implement FacetedCollectionAllOf interface:
+/**
+ * @member {Array.<Object>} data
+ */
+FacetedCollectionAllOf.prototype['data'] = undefined;
 /**
  * @member {module:model/FacetedCollectionAllOfMeta} meta
  */

@@ -125,7 +125,7 @@ ExternalResource.prototype['created-at'] = undefined;
 ExternalResource.prototype['updated-at'] = undefined;
 
 /**
- * A URL that resolves to more information about the external resource represented in a common exchange format (e.g. JSON or XML)
+ * A URL that resolves to more information about the external resource represented in a common exchange format (e.g. JSON or XML).
  * @member {String} api-url
  */
 ExternalResource.prototype['api-url'] = undefined;

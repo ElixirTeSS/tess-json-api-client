@@ -59,6 +59,12 @@ class EventResourceAllOfRelationships {
             if (data.hasOwnProperty('nodes')) {
                 obj['nodes'] = MultiRelationshipObject.constructFromObject(data['nodes']);
             }
+            if (data.hasOwnProperty('collections')) {
+                obj['collections'] = MultiRelationshipObject.constructFromObject(data['collections']);
+            }
+            if (data.hasOwnProperty('materials')) {
+                obj['materials'] = MultiRelationshipObject.constructFromObject(data['materials']);
+            }
         }
         return obj;
     }
@@ -80,6 +86,14 @@ class EventResourceAllOfRelationships {
         // validate the optional field `nodes`
         if (data['nodes']) { // data not null
           MultiRelationshipObject.validateJSON(data['nodes']);
+        }
+        // validate the optional field `collections`
+        if (data['collections']) { // data not null
+          MultiRelationshipObject.validateJSON(data['collections']);
+        }
+        // validate the optional field `materials`
+        if (data['materials']) { // data not null
+          MultiRelationshipObject.validateJSON(data['materials']);
         }
 
         return true;
@@ -104,6 +118,16 @@ EventResourceAllOfRelationships.prototype['content-provider'] = undefined;
  * @member {module:model/MultiRelationshipObject} nodes
  */
 EventResourceAllOfRelationships.prototype['nodes'] = undefined;
+
+/**
+ * @member {module:model/MultiRelationshipObject} collections
+ */
+EventResourceAllOfRelationships.prototype['collections'] = undefined;
+
+/**
+ * @member {module:model/MultiRelationshipObject} materials
+ */
+EventResourceAllOfRelationships.prototype['materials'] = undefined;
 
 
 

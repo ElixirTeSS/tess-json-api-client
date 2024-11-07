@@ -163,6 +163,10 @@ FacetedCollection.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 FacetedCollection.prototype['jsonapi'] = undefined;
+/**
+ * @member {Array.<Object>} data
+ */
+FacetedCollection.prototype['data'] = undefined;
 // Implement CollectionCollectionAllOf interface:
 /**
  * @member {Array.<module:model/CollectionResource>} data

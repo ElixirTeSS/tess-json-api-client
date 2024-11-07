@@ -31,7 +31,7 @@ let opts = {
   'contributors': ["null"], // [String] | Filter by contributor.
   'difficultyLevel': ["null"], // [String] | Filter by difficulty level.
   'keywords': ["null"], // [String] | Filter by keywords.
-  'licence': ["null"], // [String] | Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json
+  'licence': ["null"], // [String] | Filter by licence. Uses SPDX identifiers.
   'node': ["null"], // [String] | Filter by ELIXIR node name.
   'scientificTopics': ["null"], // [String] | Filter by scientific topics.
   'operations': ["null"], // [String] | Filter by operations.
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
  **contributors** | [**[String]**](String.md)| Filter by contributor. | [optional] 
  **difficultyLevel** | [**[String]**](String.md)| Filter by difficulty level. | [optional] 
  **keywords** | [**[String]**](String.md)| Filter by keywords. | [optional] 
- **licence** | [**[String]**](String.md)| Filter by licence. See http://licenses.opendefinition.org/licenses/groups/all.json | [optional] 
+ **licence** | [**[String]**](String.md)| Filter by licence. Uses SPDX identifiers. | [optional] 
  **node** | [**[String]**](String.md)| Filter by ELIXIR node name. | [optional] 
  **scientificTopics** | [**[String]**](String.md)| Filter by scientific topics. | [optional] 
  **operations** | [**[String]**](String.md)| Filter by operations. | [optional] 

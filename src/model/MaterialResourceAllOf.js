@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import EventResourceAllOfRelationships from './EventResourceAllOfRelationships';
 import Links from './Links';
 import MaterialAttributes from './MaterialAttributes';
+import MaterialResourceAllOfRelationships from './MaterialResourceAllOfRelationships';
 
 /**
  * The MaterialResourceAllOf model module.
@@ -54,7 +54,7 @@ class MaterialResourceAllOf {
                 obj['attributes'] = MaterialAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = EventResourceAllOfRelationships.constructFromObject(data['relationships']);
+                obj['relationships'] = MaterialResourceAllOfRelationships.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('links')) {
                 obj['links'] = Links.constructFromObject(data['links']);
@@ -75,7 +75,7 @@ class MaterialResourceAllOf {
         }
         // validate the optional field `relationships`
         if (data['relationships']) { // data not null
-          EventResourceAllOfRelationships.validateJSON(data['relationships']);
+          MaterialResourceAllOfRelationships.validateJSON(data['relationships']);
         }
         // validate the optional field `links`
         if (data['links']) { // data not null
@@ -96,7 +96,7 @@ class MaterialResourceAllOf {
 MaterialResourceAllOf.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/EventResourceAllOfRelationships} relationships
+ * @member {module:model/MaterialResourceAllOfRelationships} relationships
  */
 MaterialResourceAllOf.prototype['relationships'] = undefined;
 

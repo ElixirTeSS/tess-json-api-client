@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **links** | [**Links**](Links.md) |  | [optional] 
 **included** | **Object** |  | [optional] 
 **jsonapi** | **Object** |  | [optional] 
+**data** | **[Object]** |  | [optional] 
 
 

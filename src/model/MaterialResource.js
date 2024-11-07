@@ -12,10 +12,10 @@
  */
 
 import ApiClient from '../ApiClient';
-import EventResourceAllOfRelationships from './EventResourceAllOfRelationships';
 import Links from './Links';
 import MaterialAttributes from './MaterialAttributes';
 import MaterialResourceAllOf from './MaterialResourceAllOf';
+import MaterialResourceAllOfRelationships from './MaterialResourceAllOfRelationships';
 import ResourceObject from './ResourceObject';
 
 /**
@@ -66,7 +66,7 @@ class MaterialResource {
                 obj['attributes'] = MaterialAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = EventResourceAllOfRelationships.constructFromObject(data['relationships']);
+                obj['relationships'] = MaterialResourceAllOfRelationships.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('links')) {
                 obj['links'] = Links.constructFromObject(data['links']);
@@ -95,7 +95,7 @@ class MaterialResource {
         }
         // validate the optional field `relationships`
         if (data['relationships']) { // data not null
-          EventResourceAllOfRelationships.validateJSON(data['relationships']);
+          MaterialResourceAllOfRelationships.validateJSON(data['relationships']);
         }
         // validate the optional field `links`
         if (data['links']) { // data not null
@@ -126,7 +126,7 @@ MaterialResource.prototype['type'] = undefined;
 MaterialResource.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/EventResourceAllOfRelationships} relationships
+ * @member {module:model/MaterialResourceAllOfRelationships} relationships
  */
 MaterialResource.prototype['relationships'] = undefined;
 
@@ -163,7 +163,7 @@ ResourceObject.prototype['links'] = undefined;
  */
 MaterialResourceAllOf.prototype['attributes'] = undefined;
 /**
- * @member {module:model/EventResourceAllOfRelationships} relationships
+ * @member {module:model/MaterialResourceAllOfRelationships} relationships
  */
 MaterialResourceAllOf.prototype['relationships'] = undefined;
 /**
