@@ -15,18 +15,18 @@ import ApiClient from '../ApiClient';
 import MultiRelationshipObject from './MultiRelationshipObject';
 
 /**
- * The ContentProviderResourceAllOfRelationships model module.
- * @module model/ContentProviderResourceAllOfRelationships
+ * The NodeResourceAllOfRelationships model module.
+ * @module model/NodeResourceAllOfRelationships
  * @version 1.4.0
  */
-class ContentProviderResourceAllOfRelationships {
+class NodeResourceAllOfRelationships {
     /**
-     * Constructs a new <code>ContentProviderResourceAllOfRelationships</code>.
-     * @alias module:model/ContentProviderResourceAllOfRelationships
+     * Constructs a new <code>NodeResourceAllOfRelationships</code>.
+     * @alias module:model/NodeResourceAllOfRelationships
      */
     constructor() { 
         
-        ContentProviderResourceAllOfRelationships.initialize(this);
+        NodeResourceAllOfRelationships.initialize(this);
     }
 
     /**
@@ -38,15 +38,15 @@ class ContentProviderResourceAllOfRelationships {
     }
 
     /**
-     * Constructs a <code>ContentProviderResourceAllOfRelationships</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>NodeResourceAllOfRelationships</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ContentProviderResourceAllOfRelationships} obj Optional instance to populate.
-     * @return {module:model/ContentProviderResourceAllOfRelationships} The populated <code>ContentProviderResourceAllOfRelationships</code> instance.
+     * @param {module:model/NodeResourceAllOfRelationships} obj Optional instance to populate.
+     * @return {module:model/NodeResourceAllOfRelationships} The populated <code>NodeResourceAllOfRelationships</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ContentProviderResourceAllOfRelationships();
+            obj = obj || new NodeResourceAllOfRelationships();
 
             if (data.hasOwnProperty('events')) {
                 obj['events'] = MultiRelationshipObject.constructFromObject(data['events']);
@@ -54,14 +54,17 @@ class ContentProviderResourceAllOfRelationships {
             if (data.hasOwnProperty('materials')) {
                 obj['materials'] = MultiRelationshipObject.constructFromObject(data['materials']);
             }
+            if (data.hasOwnProperty('content-providers')) {
+                obj['content-providers'] = MultiRelationshipObject.constructFromObject(data['content-providers']);
+            }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>ContentProviderResourceAllOfRelationships</code>.
+     * Validates the JSON data with respect to <code>NodeResourceAllOfRelationships</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ContentProviderResourceAllOfRelationships</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>NodeResourceAllOfRelationships</code>.
      */
     static validateJSON(data) {
         // validate the optional field `events`
@@ -71,6 +74,10 @@ class ContentProviderResourceAllOfRelationships {
         // validate the optional field `materials`
         if (data['materials']) { // data not null
           MultiRelationshipObject.validateJSON(data['materials']);
+        }
+        // validate the optional field `content-providers`
+        if (data['content-providers']) { // data not null
+          MultiRelationshipObject.validateJSON(data['content-providers']);
         }
 
         return true;
@@ -84,17 +91,22 @@ class ContentProviderResourceAllOfRelationships {
 /**
  * @member {module:model/MultiRelationshipObject} events
  */
-ContentProviderResourceAllOfRelationships.prototype['events'] = undefined;
+NodeResourceAllOfRelationships.prototype['events'] = undefined;
 
 /**
  * @member {module:model/MultiRelationshipObject} materials
  */
-ContentProviderResourceAllOfRelationships.prototype['materials'] = undefined;
+NodeResourceAllOfRelationships.prototype['materials'] = undefined;
+
+/**
+ * @member {module:model/MultiRelationshipObject} content-providers
+ */
+NodeResourceAllOfRelationships.prototype['content-providers'] = undefined;
 
 
 
 
 
 
-export default ContentProviderResourceAllOfRelationships;
+export default NodeResourceAllOfRelationships;
 

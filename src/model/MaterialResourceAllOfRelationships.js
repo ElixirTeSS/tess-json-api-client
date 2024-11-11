@@ -17,18 +17,18 @@ import OptionalRelationshipObject from './OptionalRelationshipObject';
 import SingleRelationshipObject from './SingleRelationshipObject';
 
 /**
- * The EventResourceAllOfRelationships model module.
- * @module model/EventResourceAllOfRelationships
+ * The MaterialResourceAllOfRelationships model module.
+ * @module model/MaterialResourceAllOfRelationships
  * @version 1.4.0
  */
-class EventResourceAllOfRelationships {
+class MaterialResourceAllOfRelationships {
     /**
-     * Constructs a new <code>EventResourceAllOfRelationships</code>.
-     * @alias module:model/EventResourceAllOfRelationships
+     * Constructs a new <code>MaterialResourceAllOfRelationships</code>.
+     * @alias module:model/MaterialResourceAllOfRelationships
      */
     constructor() { 
         
-        EventResourceAllOfRelationships.initialize(this);
+        MaterialResourceAllOfRelationships.initialize(this);
     }
 
     /**
@@ -40,15 +40,15 @@ class EventResourceAllOfRelationships {
     }
 
     /**
-     * Constructs a <code>EventResourceAllOfRelationships</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>MaterialResourceAllOfRelationships</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EventResourceAllOfRelationships} obj Optional instance to populate.
-     * @return {module:model/EventResourceAllOfRelationships} The populated <code>EventResourceAllOfRelationships</code> instance.
+     * @param {module:model/MaterialResourceAllOfRelationships} obj Optional instance to populate.
+     * @return {module:model/MaterialResourceAllOfRelationships} The populated <code>MaterialResourceAllOfRelationships</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new EventResourceAllOfRelationships();
+            obj = obj || new MaterialResourceAllOfRelationships();
 
             if (data.hasOwnProperty('user')) {
                 obj['user'] = SingleRelationshipObject.constructFromObject(data['user']);
@@ -62,17 +62,17 @@ class EventResourceAllOfRelationships {
             if (data.hasOwnProperty('collections')) {
                 obj['collections'] = MultiRelationshipObject.constructFromObject(data['collections']);
             }
-            if (data.hasOwnProperty('materials')) {
-                obj['materials'] = MultiRelationshipObject.constructFromObject(data['materials']);
+            if (data.hasOwnProperty('events')) {
+                obj['events'] = MultiRelationshipObject.constructFromObject(data['events']);
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>EventResourceAllOfRelationships</code>.
+     * Validates the JSON data with respect to <code>MaterialResourceAllOfRelationships</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EventResourceAllOfRelationships</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>MaterialResourceAllOfRelationships</code>.
      */
     static validateJSON(data) {
         // validate the optional field `user`
@@ -91,9 +91,9 @@ class EventResourceAllOfRelationships {
         if (data['collections']) { // data not null
           MultiRelationshipObject.validateJSON(data['collections']);
         }
-        // validate the optional field `materials`
-        if (data['materials']) { // data not null
-          MultiRelationshipObject.validateJSON(data['materials']);
+        // validate the optional field `events`
+        if (data['events']) { // data not null
+          MultiRelationshipObject.validateJSON(data['events']);
         }
 
         return true;
@@ -107,32 +107,32 @@ class EventResourceAllOfRelationships {
 /**
  * @member {module:model/SingleRelationshipObject} user
  */
-EventResourceAllOfRelationships.prototype['user'] = undefined;
+MaterialResourceAllOfRelationships.prototype['user'] = undefined;
 
 /**
  * @member {module:model/OptionalRelationshipObject} content-provider
  */
-EventResourceAllOfRelationships.prototype['content-provider'] = undefined;
+MaterialResourceAllOfRelationships.prototype['content-provider'] = undefined;
 
 /**
  * @member {module:model/MultiRelationshipObject} nodes
  */
-EventResourceAllOfRelationships.prototype['nodes'] = undefined;
+MaterialResourceAllOfRelationships.prototype['nodes'] = undefined;
 
 /**
  * @member {module:model/MultiRelationshipObject} collections
  */
-EventResourceAllOfRelationships.prototype['collections'] = undefined;
+MaterialResourceAllOfRelationships.prototype['collections'] = undefined;
 
 /**
- * @member {module:model/MultiRelationshipObject} materials
+ * @member {module:model/MultiRelationshipObject} events
  */
-EventResourceAllOfRelationships.prototype['materials'] = undefined;
+MaterialResourceAllOfRelationships.prototype['events'] = undefined;
 
 
 
 
 
 
-export default EventResourceAllOfRelationships;
+export default MaterialResourceAllOfRelationships;
 

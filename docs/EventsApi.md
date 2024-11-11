@@ -36,12 +36,16 @@ let opts = {
   'eventTypes': ["null"], // [String] | Filter by event type.
   'city': ["null"], // [String] | Filter by city.
   'country': ["null"], // [String] | Filter by country.
-  'venue': ["null"], // [String] | Filter by venue
+  'venue': ["null"], // [String] | Filter by venue.
   'organizer': ["null"], // [String] | Filter by organizer.
   'online': true, // Boolean | Only show events with online access?
-  'sponsor': ["null"], // [String] | Filter by sponsor.
+  'sponsors': ["null"], // [String] | Filter by sponsor.
   'includeExpired': true, // Boolean | Include events that have finished.
-  'includeDisabled': true // Boolean | Include events that are disabled.
+  'includeDisabled': true, // Boolean | Include events that are disabled.
+  'eligibility': ["null"], // [String] | Filter by who is eligible to attend the event.
+  'language': ["null"], // [String] | Filter by events that will use the given language.
+  'collections': ["null"], // [String] | Filter events in a given collection (name).
+  'start': "start_example" // String | Filter for events that occur in the given date range. Either a single YYYY-MM-DD date, or a range separated by a / e.g. 2002-05-03/2012-05-03.
 };
 apiInstance.eventsGet(opts, (error, data, response) => {
   if (error) {
@@ -71,12 +75,16 @@ Name | Type | Description  | Notes
  **eventTypes** | [**[String]**](String.md)| Filter by event type. | [optional] 
  **city** | [**[String]**](String.md)| Filter by city. | [optional] 
  **country** | [**[String]**](String.md)| Filter by country. | [optional] 
- **venue** | [**[String]**](String.md)| Filter by venue | [optional] 
+ **venue** | [**[String]**](String.md)| Filter by venue. | [optional] 
  **organizer** | [**[String]**](String.md)| Filter by organizer. | [optional] 
  **online** | **Boolean**| Only show events with online access? | [optional] 
- **sponsor** | [**[String]**](String.md)| Filter by sponsor. | [optional] 
+ **sponsors** | [**[String]**](String.md)| Filter by sponsor. | [optional] 
  **includeExpired** | **Boolean**| Include events that have finished. | [optional] 
  **includeDisabled** | **Boolean**| Include events that are disabled. | [optional] 
+ **eligibility** | [**[String]**](String.md)| Filter by who is eligible to attend the event. | [optional] 
+ **language** | [**[String]**](String.md)| Filter by events that will use the given language. | [optional] 
+ **collections** | [**[String]**](String.md)| Filter events in a given collection (name). | [optional] 
+ **start** | **String**| Filter for events that occur in the given date range. Either a single YYYY-MM-DD date, or a range separated by a / e.g. 2002-05-03/2012-05-03. | [optional] 
 
 ### Return type
 

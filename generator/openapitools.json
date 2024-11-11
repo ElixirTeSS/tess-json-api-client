@@ -6,7 +6,7 @@
     "generators": {
       "client": {
         "generatorName": "javascript",
-        "inputSpec": "https://raw.githubusercontent.com/ElixirTeSS/TeSS/master/public/api/definitions/tess.yml",
+        "inputSpec": "https://raw.githubusercontent.com/ElixirTeSS/TeSS/api-spec-updates-2/public/api/definitions/tess.yml",
         "output": "..",
         "additionalProperties": {
           "moduleName": "TessJsonApi",

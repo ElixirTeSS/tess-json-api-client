@@ -37,7 +37,9 @@ let opts = {
   'operations': ["null"], // [String] | Filter by operations.
   'targetAudience': ["null"], // [String] | Filter by who the intended target audience is.
   'tools': ["null"], // [String] | Filter by what tools are involved.
-  'resourceType': ["null"] // [String] | Filter by resource type, e.g. \"Lecture\" etc.
+  'resourceType': ["null"], // [String] | Filter by resource type, e.g. \"Lecture\" etc.
+  'collections': ["null"], // [String] | Filter materials in a given collection (name).
+  'status': ["null"] // [String] | Filter by maturity status.
 };
 apiInstance.materialsGet(opts, (error, data, response) => {
   if (error) {
@@ -69,6 +71,8 @@ Name | Type | Description  | Notes
  **targetAudience** | [**[String]**](String.md)| Filter by who the intended target audience is. | [optional] 
  **tools** | [**[String]**](String.md)| Filter by what tools are involved. | [optional] 
  **resourceType** | [**[String]**](String.md)| Filter by resource type, e.g. \&quot;Lecture\&quot; etc. | [optional] 
+ **collections** | [**[String]**](String.md)| Filter materials in a given collection (name). | [optional] 
+ **status** | [**[String]**](String.md)| Filter by maturity status. | [optional] 
 
 ### Return type
 
