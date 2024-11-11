@@ -12,10 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import FacetedCollectionAllOf from './FacetedCollectionAllOf';
 import FacetedCollectionAllOfMeta from './FacetedCollectionAllOfMeta';
 import JsonApiResponse from './JsonApiResponse';
-import Links from './Links';
 
 /**
  * The FacetedCollection model module.
@@ -27,10 +25,9 @@ class FacetedCollection {
      * Constructs a new <code>FacetedCollection</code>.
      * @alias module:model/FacetedCollection
      * @implements module:model/JsonApiResponse
-     * @implements module:model/FacetedCollectionAllOf
      */
     constructor() { 
-        JsonApiResponse.initialize(this);FacetedCollectionAllOf.initialize(this);
+        JsonApiResponse.initialize(this);
         FacetedCollection.initialize(this);
     }
 
@@ -53,7 +50,6 @@ class FacetedCollection {
         if (data) {
             obj = obj || new FacetedCollection();
             JsonApiResponse.constructFromObject(data, obj);
-            FacetedCollectionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -62,7 +58,7 @@ class FacetedCollection {
                 obj['meta'] = FacetedCollectionAllOfMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('links')) {
-                obj['links'] = ApiClient.convertToType(data['links'], Links);
+                obj['links'] = ApiClient.convertToType(data['links'], Object);
             }
             if (data.hasOwnProperty('included')) {
                 obj['included'] = ApiClient.convertToType(data['included'], Object);
@@ -86,10 +82,6 @@ class FacetedCollection {
         // validate the optional field `meta`
         if (data['meta']) { // data not null
           FacetedCollectionAllOfMeta.validateJSON(data['meta']);
-        }
-        // validate the optional field `links`
-        if (data['links']) { // data not null
-          Links.validateJSON(data['links']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['data'])) {
@@ -115,7 +107,7 @@ FacetedCollection.prototype['errors'] = undefined;
 FacetedCollection.prototype['meta'] = undefined;
 
 /**
- * @member {module:model/Links} links
+ * @member {Object} links
  */
 FacetedCollection.prototype['links'] = undefined;
 
@@ -156,19 +148,6 @@ JsonApiResponse.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
-// Implement FacetedCollectionAllOf interface:
-/**
- * @member {Array.<Object>} data
- */
-FacetedCollectionAllOf.prototype['data'] = undefined;
-/**
- * @member {module:model/FacetedCollectionAllOfMeta} meta
- */
-FacetedCollectionAllOf.prototype['meta'] = undefined;
-/**
- * @member {module:model/Links} links
- */
-FacetedCollectionAllOf.prototype['links'] = undefined;
 
 
 

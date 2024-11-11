@@ -13,9 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import EventAttributes from './EventAttributes';
-import EventResourceAllOf from './EventResourceAllOf';
 import EventResourceAllOfRelationships from './EventResourceAllOfRelationships';
-import Links from './Links';
 import ResourceObject from './ResourceObject';
 
 /**
@@ -28,10 +26,9 @@ class EventResource {
      * Constructs a new <code>EventResource</code>.
      * @alias module:model/EventResource
      * @implements module:model/ResourceObject
-     * @implements module:model/EventResourceAllOf
      */
     constructor() { 
-        ResourceObject.initialize(this);EventResourceAllOf.initialize(this);
+        ResourceObject.initialize(this);
         EventResource.initialize(this);
     }
 
@@ -54,7 +51,6 @@ class EventResource {
         if (data) {
             obj = obj || new EventResource();
             ResourceObject.constructFromObject(data, obj);
-            EventResourceAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -69,7 +65,7 @@ class EventResource {
                 obj['relationships'] = EventResourceAllOfRelationships.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('links')) {
-                obj['links'] = ApiClient.convertToType(data['links'], Links);
+                obj['links'] = ApiClient.convertToType(data['links'], Object);
             }
         }
         return obj;
@@ -96,10 +92,6 @@ class EventResource {
         // validate the optional field `relationships`
         if (data['relationships']) { // data not null
           EventResourceAllOfRelationships.validateJSON(data['relationships']);
-        }
-        // validate the optional field `links`
-        if (data['links']) { // data not null
-          Links.validateJSON(data['links']);
         }
 
         return true;
@@ -131,7 +123,7 @@ EventResource.prototype['attributes'] = undefined;
 EventResource.prototype['relationships'] = undefined;
 
 /**
- * @member {module:model/Links} links
+ * @member {Object} links
  */
 EventResource.prototype['links'] = undefined;
 
@@ -157,19 +149,6 @@ ResourceObject.prototype['relationships'] = undefined;
  * @member {module:model/Links} links
  */
 ResourceObject.prototype['links'] = undefined;
-// Implement EventResourceAllOf interface:
-/**
- * @member {module:model/EventAttributes} attributes
- */
-EventResourceAllOf.prototype['attributes'] = undefined;
-/**
- * @member {module:model/EventResourceAllOfRelationships} relationships
- */
-EventResourceAllOf.prototype['relationships'] = undefined;
-/**
- * @member {module:model/Links} links
- */
-EventResourceAllOf.prototype['links'] = undefined;
 
 
 

@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import ContentProviderAttributes from './ContentProviderAttributes';
-import ContentProviderResourceAllOf from './ContentProviderResourceAllOf';
 import ContentProviderResourceAllOfRelationships from './ContentProviderResourceAllOfRelationships';
 import Links from './Links';
 import ResourceObject from './ResourceObject';
@@ -28,10 +27,9 @@ class ContentProviderResource {
      * Constructs a new <code>ContentProviderResource</code>.
      * @alias module:model/ContentProviderResource
      * @implements module:model/ResourceObject
-     * @implements module:model/ContentProviderResourceAllOf
      */
     constructor() { 
-        ResourceObject.initialize(this);ContentProviderResourceAllOf.initialize(this);
+        ResourceObject.initialize(this);
         ContentProviderResource.initialize(this);
     }
 
@@ -54,7 +52,6 @@ class ContentProviderResource {
         if (data) {
             obj = obj || new ContentProviderResource();
             ResourceObject.constructFromObject(data, obj);
-            ContentProviderResourceAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -157,19 +154,6 @@ ResourceObject.prototype['relationships'] = undefined;
  * @member {module:model/Links} links
  */
 ResourceObject.prototype['links'] = undefined;
-// Implement ContentProviderResourceAllOf interface:
-/**
- * @member {module:model/ContentProviderAttributes} attributes
- */
-ContentProviderResourceAllOf.prototype['attributes'] = undefined;
-/**
- * @member {module:model/ContentProviderResourceAllOfRelationships} relationships
- */
-ContentProviderResourceAllOf.prototype['relationships'] = undefined;
-/**
- * @member {module:model/Links} links
- */
-ContentProviderResourceAllOf.prototype['links'] = undefined;
 
 
 

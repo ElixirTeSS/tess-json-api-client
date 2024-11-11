@@ -14,8 +14,6 @@
 import ApiClient from '../ApiClient';
 import FacetedCollection from './FacetedCollection';
 import FacetedCollectionAllOfMeta from './FacetedCollectionAllOfMeta';
-import Links from './Links';
-import MaterialCollectionAllOf from './MaterialCollectionAllOf';
 import MaterialResource from './MaterialResource';
 
 /**
@@ -28,10 +26,9 @@ class MaterialCollection {
      * Constructs a new <code>MaterialCollection</code>.
      * @alias module:model/MaterialCollection
      * @implements module:model/FacetedCollection
-     * @implements module:model/MaterialCollectionAllOf
      */
     constructor() { 
-        FacetedCollection.initialize(this);MaterialCollectionAllOf.initialize(this);
+        FacetedCollection.initialize(this);
         MaterialCollection.initialize(this);
     }
 
@@ -54,7 +51,6 @@ class MaterialCollection {
         if (data) {
             obj = obj || new MaterialCollection();
             FacetedCollection.constructFromObject(data, obj);
-            MaterialCollectionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -63,7 +59,7 @@ class MaterialCollection {
                 obj['meta'] = FacetedCollectionAllOfMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('links')) {
-                obj['links'] = ApiClient.convertToType(data['links'], Links);
+                obj['links'] = ApiClient.convertToType(data['links'], Object);
             }
             if (data.hasOwnProperty('included')) {
                 obj['included'] = ApiClient.convertToType(data['included'], Object);
@@ -88,10 +84,6 @@ class MaterialCollection {
         if (data['meta']) { // data not null
           FacetedCollectionAllOfMeta.validateJSON(data['meta']);
         }
-        // validate the optional field `links`
-        if (data['links']) { // data not null
-          Links.validateJSON(data['links']);
-        }
         if (data['data']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['data'])) {
@@ -99,7 +91,7 @@ class MaterialCollection {
             }
             // validate the optional field `data` (array)
             for (const item of data['data']) {
-                MaterialResource.validateJsonObject(item);
+                MaterialResource.validateJSON(item);
             };
         }
 
@@ -122,7 +114,7 @@ MaterialCollection.prototype['errors'] = undefined;
 MaterialCollection.prototype['meta'] = undefined;
 
 /**
- * @member {module:model/Links} links
+ * @member {Object} links
  */
 MaterialCollection.prototype['links'] = undefined;
 
@@ -152,7 +144,7 @@ FacetedCollection.prototype['errors'] = undefined;
  */
 FacetedCollection.prototype['meta'] = undefined;
 /**
- * @member {module:model/Links} links
+ * @member {Object} links
  */
 FacetedCollection.prototype['links'] = undefined;
 /**
@@ -167,11 +159,6 @@ FacetedCollection.prototype['jsonapi'] = undefined;
  * @member {Array.<Object>} data
  */
 FacetedCollection.prototype['data'] = undefined;
-// Implement MaterialCollectionAllOf interface:
-/**
- * @member {Array.<module:model/MaterialResource>} data
- */
-MaterialCollectionAllOf.prototype['data'] = undefined;
 
 
 

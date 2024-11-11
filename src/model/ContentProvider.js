@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ContentProviderAllOf from './ContentProviderAllOf';
 import ContentProviderResource from './ContentProviderResource';
 import JsonApiResponse from './JsonApiResponse';
 
@@ -26,10 +25,9 @@ class ContentProvider {
      * Constructs a new <code>ContentProvider</code>.
      * @alias module:model/ContentProvider
      * @implements module:model/JsonApiResponse
-     * @implements module:model/ContentProviderAllOf
      */
     constructor() { 
-        JsonApiResponse.initialize(this);ContentProviderAllOf.initialize(this);
+        JsonApiResponse.initialize(this);
         ContentProvider.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class ContentProvider {
         if (data) {
             obj = obj || new ContentProvider();
             JsonApiResponse.constructFromObject(data, obj);
-            ContentProviderAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -147,11 +144,6 @@ JsonApiResponse.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
-// Implement ContentProviderAllOf interface:
-/**
- * @member {module:model/ContentProviderResource} data
- */
-ContentProviderAllOf.prototype['data'] = undefined;
 
 
 

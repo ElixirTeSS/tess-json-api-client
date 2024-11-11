@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import EventAllOf from './EventAllOf';
 import EventResource from './EventResource';
 import JsonApiResponse from './JsonApiResponse';
 
@@ -26,10 +25,9 @@ class Event {
      * Constructs a new <code>Event</code>.
      * @alias module:model/Event
      * @implements module:model/JsonApiResponse
-     * @implements module:model/EventAllOf
      */
     constructor() { 
-        JsonApiResponse.initialize(this);EventAllOf.initialize(this);
+        JsonApiResponse.initialize(this);
         Event.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class Event {
         if (data) {
             obj = obj || new Event();
             JsonApiResponse.constructFromObject(data, obj);
-            EventAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -147,11 +144,6 @@ JsonApiResponse.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
-// Implement EventAllOf interface:
-/**
- * @member {module:model/EventResource} data
- */
-EventAllOf.prototype['data'] = undefined;
 
 
 

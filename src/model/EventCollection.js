@@ -12,11 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import EventCollectionAllOf from './EventCollectionAllOf';
 import EventResource from './EventResource';
 import FacetedCollection from './FacetedCollection';
 import FacetedCollectionAllOfMeta from './FacetedCollectionAllOfMeta';
-import Links from './Links';
 
 /**
  * The EventCollection model module.
@@ -28,10 +26,9 @@ class EventCollection {
      * Constructs a new <code>EventCollection</code>.
      * @alias module:model/EventCollection
      * @implements module:model/FacetedCollection
-     * @implements module:model/EventCollectionAllOf
      */
     constructor() { 
-        FacetedCollection.initialize(this);EventCollectionAllOf.initialize(this);
+        FacetedCollection.initialize(this);
         EventCollection.initialize(this);
     }
 
@@ -54,7 +51,6 @@ class EventCollection {
         if (data) {
             obj = obj || new EventCollection();
             FacetedCollection.constructFromObject(data, obj);
-            EventCollectionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -63,7 +59,7 @@ class EventCollection {
                 obj['meta'] = FacetedCollectionAllOfMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('links')) {
-                obj['links'] = ApiClient.convertToType(data['links'], Links);
+                obj['links'] = ApiClient.convertToType(data['links'], Object);
             }
             if (data.hasOwnProperty('included')) {
                 obj['included'] = ApiClient.convertToType(data['included'], Object);
@@ -88,10 +84,6 @@ class EventCollection {
         if (data['meta']) { // data not null
           FacetedCollectionAllOfMeta.validateJSON(data['meta']);
         }
-        // validate the optional field `links`
-        if (data['links']) { // data not null
-          Links.validateJSON(data['links']);
-        }
         if (data['data']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['data'])) {
@@ -99,7 +91,7 @@ class EventCollection {
             }
             // validate the optional field `data` (array)
             for (const item of data['data']) {
-                EventResource.validateJsonObject(item);
+                EventResource.validateJSON(item);
             };
         }
 
@@ -122,7 +114,7 @@ EventCollection.prototype['errors'] = undefined;
 EventCollection.prototype['meta'] = undefined;
 
 /**
- * @member {module:model/Links} links
+ * @member {Object} links
  */
 EventCollection.prototype['links'] = undefined;
 
@@ -152,7 +144,7 @@ FacetedCollection.prototype['errors'] = undefined;
  */
 FacetedCollection.prototype['meta'] = undefined;
 /**
- * @member {module:model/Links} links
+ * @member {Object} links
  */
 FacetedCollection.prototype['links'] = undefined;
 /**
@@ -167,11 +159,6 @@ FacetedCollection.prototype['jsonapi'] = undefined;
  * @member {Array.<Object>} data
  */
 FacetedCollection.prototype['data'] = undefined;
-// Implement EventCollectionAllOf interface:
-/**
- * @member {Array.<module:model/EventResource>} data
- */
-EventCollectionAllOf.prototype['data'] = undefined;
 
 
 

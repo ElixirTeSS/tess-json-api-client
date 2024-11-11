@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import Links from './Links';
 import ResourceObject from './ResourceObject';
 import UserAttributes from './UserAttributes';
-import UserResourceAllOf from './UserResourceAllOf';
 
 /**
  * The UserResource model module.
@@ -27,10 +26,9 @@ class UserResource {
      * Constructs a new <code>UserResource</code>.
      * @alias module:model/UserResource
      * @implements module:model/ResourceObject
-     * @implements module:model/UserResourceAllOf
      */
     constructor() { 
-        ResourceObject.initialize(this);UserResourceAllOf.initialize(this);
+        ResourceObject.initialize(this);
         UserResource.initialize(this);
     }
 
@@ -53,7 +51,6 @@ class UserResource {
         if (data) {
             obj = obj || new UserResource();
             ResourceObject.constructFromObject(data, obj);
-            UserResourceAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -152,15 +149,6 @@ ResourceObject.prototype['relationships'] = undefined;
  * @member {module:model/Links} links
  */
 ResourceObject.prototype['links'] = undefined;
-// Implement UserResourceAllOf interface:
-/**
- * @member {module:model/UserAttributes} attributes
- */
-UserResourceAllOf.prototype['attributes'] = undefined;
-/**
- * @member {module:model/Links} links
- */
-UserResourceAllOf.prototype['links'] = undefined;
 
 
 

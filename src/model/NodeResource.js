@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import Links from './Links';
 import NodeAttributes from './NodeAttributes';
-import NodeResourceAllOf from './NodeResourceAllOf';
 import NodeResourceAllOfRelationships from './NodeResourceAllOfRelationships';
 import ResourceObject from './ResourceObject';
 
@@ -28,10 +27,9 @@ class NodeResource {
      * Constructs a new <code>NodeResource</code>.
      * @alias module:model/NodeResource
      * @implements module:model/ResourceObject
-     * @implements module:model/NodeResourceAllOf
      */
     constructor() { 
-        ResourceObject.initialize(this);NodeResourceAllOf.initialize(this);
+        ResourceObject.initialize(this);
         NodeResource.initialize(this);
     }
 
@@ -54,7 +52,6 @@ class NodeResource {
         if (data) {
             obj = obj || new NodeResource();
             ResourceObject.constructFromObject(data, obj);
-            NodeResourceAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -157,19 +154,6 @@ ResourceObject.prototype['relationships'] = undefined;
  * @member {module:model/Links} links
  */
 ResourceObject.prototype['links'] = undefined;
-// Implement NodeResourceAllOf interface:
-/**
- * @member {module:model/NodeAttributes} attributes
- */
-NodeResourceAllOf.prototype['attributes'] = undefined;
-/**
- * @member {module:model/NodeResourceAllOfRelationships} relationships
- */
-NodeResourceAllOf.prototype['relationships'] = undefined;
-/**
- * @member {module:model/Links} links
- */
-NodeResourceAllOf.prototype['links'] = undefined;
 
 
 

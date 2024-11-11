@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import JsonApiResponse from './JsonApiResponse';
-import MaterialAllOf from './MaterialAllOf';
 import MaterialResource from './MaterialResource';
 
 /**
@@ -26,10 +25,9 @@ class Material {
      * Constructs a new <code>Material</code>.
      * @alias module:model/Material
      * @implements module:model/JsonApiResponse
-     * @implements module:model/MaterialAllOf
      */
     constructor() { 
-        JsonApiResponse.initialize(this);MaterialAllOf.initialize(this);
+        JsonApiResponse.initialize(this);
         Material.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class Material {
         if (data) {
             obj = obj || new Material();
             JsonApiResponse.constructFromObject(data, obj);
-            MaterialAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -147,11 +144,6 @@ JsonApiResponse.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
-// Implement MaterialAllOf interface:
-/**
- * @member {module:model/MaterialResource} data
- */
-MaterialAllOf.prototype['data'] = undefined;
 
 
 

@@ -147,7 +147,7 @@ class WorkflowAttributes {
             }
             // validate the optional field `scientific-topics` (array)
             for (const item of data['scientific-topics']) {
-                OntologyTerm.validateJsonObject(item);
+                OntologyTerm.validateJSON(item);
             };
         }
 

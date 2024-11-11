@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import Links from './Links';
 import ResourceObject from './ResourceObject';
 import WorkflowAttributes from './WorkflowAttributes';
-import WorkflowResourceAllOf from './WorkflowResourceAllOf';
 import WorkflowResourceAllOfRelationships from './WorkflowResourceAllOfRelationships';
 
 /**
@@ -28,10 +27,9 @@ class WorkflowResource {
      * Constructs a new <code>WorkflowResource</code>.
      * @alias module:model/WorkflowResource
      * @implements module:model/ResourceObject
-     * @implements module:model/WorkflowResourceAllOf
      */
     constructor() { 
-        ResourceObject.initialize(this);WorkflowResourceAllOf.initialize(this);
+        ResourceObject.initialize(this);
         WorkflowResource.initialize(this);
     }
 
@@ -54,7 +52,6 @@ class WorkflowResource {
         if (data) {
             obj = obj || new WorkflowResource();
             ResourceObject.constructFromObject(data, obj);
-            WorkflowResourceAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -157,19 +154,6 @@ ResourceObject.prototype['relationships'] = undefined;
  * @member {module:model/Links} links
  */
 ResourceObject.prototype['links'] = undefined;
-// Implement WorkflowResourceAllOf interface:
-/**
- * @member {module:model/WorkflowAttributes} attributes
- */
-WorkflowResourceAllOf.prototype['attributes'] = undefined;
-/**
- * @member {module:model/WorkflowResourceAllOfRelationships} relationships
- */
-WorkflowResourceAllOf.prototype['relationships'] = undefined;
-/**
- * @member {module:model/Links} links
- */
-WorkflowResourceAllOf.prototype['links'] = undefined;
 
 
 

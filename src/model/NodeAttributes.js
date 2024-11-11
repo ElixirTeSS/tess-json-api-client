@@ -89,7 +89,7 @@ class NodeAttributes {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of NodeAttributes.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -120,7 +120,7 @@ class NodeAttributes {
             }
             // validate the optional field `staff` (array)
             for (const item of data['staff']) {
-                NodeAttributesStaffInner.validateJsonObject(item);
+                NodeAttributesStaffInner.validateJSON(item);
             };
         }
         // ensure the json data is a string

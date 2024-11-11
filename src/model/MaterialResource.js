@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import Links from './Links';
 import MaterialAttributes from './MaterialAttributes';
-import MaterialResourceAllOf from './MaterialResourceAllOf';
 import MaterialResourceAllOfRelationships from './MaterialResourceAllOfRelationships';
 import ResourceObject from './ResourceObject';
 
@@ -28,10 +27,9 @@ class MaterialResource {
      * Constructs a new <code>MaterialResource</code>.
      * @alias module:model/MaterialResource
      * @implements module:model/ResourceObject
-     * @implements module:model/MaterialResourceAllOf
      */
     constructor() { 
-        ResourceObject.initialize(this);MaterialResourceAllOf.initialize(this);
+        ResourceObject.initialize(this);
         MaterialResource.initialize(this);
     }
 
@@ -54,7 +52,6 @@ class MaterialResource {
         if (data) {
             obj = obj || new MaterialResource();
             ResourceObject.constructFromObject(data, obj);
-            MaterialResourceAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -157,19 +154,6 @@ ResourceObject.prototype['relationships'] = undefined;
  * @member {module:model/Links} links
  */
 ResourceObject.prototype['links'] = undefined;
-// Implement MaterialResourceAllOf interface:
-/**
- * @member {module:model/MaterialAttributes} attributes
- */
-MaterialResourceAllOf.prototype['attributes'] = undefined;
-/**
- * @member {module:model/MaterialResourceAllOfRelationships} relationships
- */
-MaterialResourceAllOf.prototype['relationships'] = undefined;
-/**
- * @member {module:model/Links} links
- */
-MaterialResourceAllOf.prototype['links'] = undefined;
 
 
 

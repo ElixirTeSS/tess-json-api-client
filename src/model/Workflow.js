@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import JsonApiResponse from './JsonApiResponse';
-import WorkflowAllOf from './WorkflowAllOf';
 import WorkflowResource from './WorkflowResource';
 
 /**
@@ -26,10 +25,9 @@ class Workflow {
      * Constructs a new <code>Workflow</code>.
      * @alias module:model/Workflow
      * @implements module:model/JsonApiResponse
-     * @implements module:model/WorkflowAllOf
      */
     constructor() { 
-        JsonApiResponse.initialize(this);WorkflowAllOf.initialize(this);
+        JsonApiResponse.initialize(this);
         Workflow.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class Workflow {
         if (data) {
             obj = obj || new Workflow();
             JsonApiResponse.constructFromObject(data, obj);
-            WorkflowAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -147,11 +144,6 @@ JsonApiResponse.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
-// Implement WorkflowAllOf interface:
-/**
- * @member {module:model/WorkflowResource} data
- */
-WorkflowAllOf.prototype['data'] = undefined;
 
 
 

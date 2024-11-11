@@ -45,11 +45,11 @@ export default class CollectionsApi {
 
     /**
      * @param {Object} opts Optional parameters
-     * @param {String} opts.q Search keywords.
-     * @param {Number} opts.pageNumber The page of the collection index to view. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return per page. (default to 30)
-     * @param {module:model/String} opts.sort Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
-     * @param {Array.<String>} opts.keywords Filter by keywords.
+     * @param {String} [q] Search keywords.
+     * @param {Number} [pageNumber = 1)] The page of the collection index to view.
+     * @param {Number} [pageSize = 30)] The number of results to return per page.
+     * @param {module:model/String} [sort] Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
+     * @param {Array.<String>} [keywords] Filter by keywords.
      * @param {module:api/CollectionsApi~collectionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CollectionCollection}
      */

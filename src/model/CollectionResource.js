@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CollectionAttributes from './CollectionAttributes';
-import CollectionResourceAllOf from './CollectionResourceAllOf';
 import ContentProviderResourceAllOfRelationships from './ContentProviderResourceAllOfRelationships';
 import Links from './Links';
 import ResourceObject from './ResourceObject';
@@ -28,10 +27,9 @@ class CollectionResource {
      * Constructs a new <code>CollectionResource</code>.
      * @alias module:model/CollectionResource
      * @implements module:model/ResourceObject
-     * @implements module:model/CollectionResourceAllOf
      */
     constructor() { 
-        ResourceObject.initialize(this);CollectionResourceAllOf.initialize(this);
+        ResourceObject.initialize(this);
         CollectionResource.initialize(this);
     }
 
@@ -54,7 +52,6 @@ class CollectionResource {
         if (data) {
             obj = obj || new CollectionResource();
             ResourceObject.constructFromObject(data, obj);
-            CollectionResourceAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -157,19 +154,6 @@ ResourceObject.prototype['relationships'] = undefined;
  * @member {module:model/Links} links
  */
 ResourceObject.prototype['links'] = undefined;
-// Implement CollectionResourceAllOf interface:
-/**
- * @member {module:model/CollectionAttributes} attributes
- */
-CollectionResourceAllOf.prototype['attributes'] = undefined;
-/**
- * @member {module:model/ContentProviderResourceAllOfRelationships} relationships
- */
-CollectionResourceAllOf.prototype['relationships'] = undefined;
-/**
- * @member {module:model/Links} links
- */
-CollectionResourceAllOf.prototype['links'] = undefined;
 
 
 

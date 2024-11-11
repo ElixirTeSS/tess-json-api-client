@@ -74,7 +74,7 @@ class MultiRelationshipObject {
             }
             // validate the optional field `data` (array)
             for (const item of data['data']) {
-                ResourceIdentifierObject.validateJsonObject(item);
+                ResourceIdentifierObject.validateJSON(item);
             };
         }
 

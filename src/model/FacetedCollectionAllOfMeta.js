@@ -35,6 +35,7 @@ class FacetedCollectionAllOfMeta {
      * Only for internal use.
      */
     static initialize(obj) { 
+        obj['query'] = '';
     }
 
     /**

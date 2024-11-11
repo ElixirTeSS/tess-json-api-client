@@ -45,17 +45,17 @@ export default class WorkflowsApi {
 
     /**
      * @param {Object} opts Optional parameters
-     * @param {String} opts.q Search keywords.
-     * @param {Number} opts.pageNumber The page of the collection to view. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return per page. (default to 30)
-     * @param {module:model/String} opts.sort Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
-     * @param {Array.<String>} opts.authors Filter by author.
-     * @param {Array.<String>} opts.contributors Filter by contributor.
-     * @param {Array.<module:model/String>} opts.difficultyLevel Filter by difficulty level.
-     * @param {Array.<String>} opts.keywords Filter by keywords.
-     * @param {Array.<String>} opts.licence Filter by licence. Uses SPDX identifiers.
-     * @param {Array.<String>} opts.scientificTopics Filter by scientific topics.
-     * @param {Array.<String>} opts.targetAudience Filter by who the intended target audience is.
+     * @param {String} [q] Search keywords.
+     * @param {Number} [pageNumber = 1)] The page of the collection to view.
+     * @param {Number} [pageSize = 30)] The number of results to return per page.
+     * @param {module:model/String} [sort] Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
+     * @param {Array.<String>} [authors] Filter by author.
+     * @param {Array.<String>} [contributors] Filter by contributor.
+     * @param {Array.<module:model/String>} [difficultyLevel] Filter by difficulty level.
+     * @param {Array.<String>} [keywords] Filter by keywords.
+     * @param {Array.<String>} [licence] Filter by licence. Uses SPDX identifiers.
+     * @param {Array.<String>} [scientificTopics] Filter by scientific topics.
+     * @param {Array.<String>} [targetAudience] Filter by who the intended target audience is.
      * @param {module:api/WorkflowsApi~workflowsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WorkflowCollection}
      */

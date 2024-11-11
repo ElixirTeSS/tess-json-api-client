@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **attributes** | [**EventAttributes**](EventAttributes.md) |  | [optional] 
 **relationships** | [**EventResourceAllOfRelationships**](EventResourceAllOfRelationships.md) |  | [optional] 
-**links** | [**Links**](Links.md) |  | [optional] 
+**links** | **Object** |  | [optional] 
 
 

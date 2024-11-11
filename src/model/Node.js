@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import JsonApiResponse from './JsonApiResponse';
-import NodeAllOf from './NodeAllOf';
 import NodeResource from './NodeResource';
 
 /**
@@ -26,10 +25,9 @@ class Node {
      * Constructs a new <code>Node</code>.
      * @alias module:model/Node
      * @implements module:model/JsonApiResponse
-     * @implements module:model/NodeAllOf
      */
     constructor() { 
-        JsonApiResponse.initialize(this);NodeAllOf.initialize(this);
+        JsonApiResponse.initialize(this);
         Node.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class Node {
         if (data) {
             obj = obj || new Node();
             JsonApiResponse.constructFromObject(data, obj);
-            NodeAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -147,11 +144,6 @@ JsonApiResponse.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
-// Implement NodeAllOf interface:
-/**
- * @member {module:model/NodeResource} data
- */
-NodeAllOf.prototype['data'] = undefined;
 
 
 

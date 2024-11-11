@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import JsonApiResponse from './JsonApiResponse';
-import UserAllOf from './UserAllOf';
 import UserResource from './UserResource';
 
 /**
@@ -26,10 +25,9 @@ class User {
      * Constructs a new <code>User</code>.
      * @alias module:model/User
      * @implements module:model/JsonApiResponse
-     * @implements module:model/UserAllOf
      */
     constructor() { 
-        JsonApiResponse.initialize(this);UserAllOf.initialize(this);
+        JsonApiResponse.initialize(this);
         User.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class User {
         if (data) {
             obj = obj || new User();
             JsonApiResponse.constructFromObject(data, obj);
-            UserAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -147,11 +144,6 @@ JsonApiResponse.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
-// Implement UserAllOf interface:
-/**
- * @member {module:model/UserResource} data
- */
-UserAllOf.prototype['data'] = undefined;
 
 
 

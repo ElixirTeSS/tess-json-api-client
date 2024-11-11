@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CollectionAllOf from './CollectionAllOf';
 import CollectionResource from './CollectionResource';
 import JsonApiResponse from './JsonApiResponse';
 
@@ -26,10 +25,9 @@ class Collection {
      * Constructs a new <code>Collection</code>.
      * @alias module:model/Collection
      * @implements module:model/JsonApiResponse
-     * @implements module:model/CollectionAllOf
      */
     constructor() { 
-        JsonApiResponse.initialize(this);CollectionAllOf.initialize(this);
+        JsonApiResponse.initialize(this);
         Collection.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class Collection {
         if (data) {
             obj = obj || new Collection();
             JsonApiResponse.constructFromObject(data, obj);
-            CollectionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -147,11 +144,6 @@ JsonApiResponse.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
-// Implement CollectionAllOf interface:
-/**
- * @member {module:model/CollectionResource} data
- */
-CollectionAllOf.prototype['data'] = undefined;
 
 
 

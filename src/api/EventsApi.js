@@ -45,30 +45,30 @@ export default class EventsApi {
 
     /**
      * @param {Object} opts Optional parameters
-     * @param {String} opts.q Search keywords.
-     * @param {Number} opts.pageNumber The page of the collection to view. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return per page. (default to 30)
-     * @param {module:model/String} opts.sort Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
-     * @param {Array.<String>} opts.contentProvider Filter by content provider name.
-     * @param {Array.<String>} opts.keywords Filter by keywords.
-     * @param {Array.<String>} opts.node Filter by ELIXIR node name.
-     * @param {Array.<String>} opts.scientificTopics Filter by scientific topics.
-     * @param {Array.<String>} opts.operations Filter by operations.
-     * @param {Array.<String>} opts.targetAudience Filter by who the intended target audience is.
-     * @param {Array.<String>} opts.tools Filter by what tools are involved.
-     * @param {Array.<module:model/String>} opts.eventTypes Filter by event type.
-     * @param {Array.<String>} opts.city Filter by city.
-     * @param {Array.<String>} opts.country Filter by country.
-     * @param {Array.<String>} opts.venue Filter by venue.
-     * @param {Array.<String>} opts.organizer Filter by organizer.
-     * @param {Boolean} opts.online Only show events with online access?
-     * @param {Array.<String>} opts.sponsors Filter by sponsor.
-     * @param {Boolean} opts.includeExpired Include events that have finished.
-     * @param {Boolean} opts.includeDisabled Include events that are disabled.
-     * @param {Array.<String>} opts.eligibility Filter by who is eligible to attend the event.
-     * @param {Array.<String>} opts.language Filter by events that will use the given language.
-     * @param {Array.<String>} opts.collections Filter events in a given collection (name).
-     * @param {String} opts.start Filter for events that occur in the given date range. Either a single YYYY-MM-DD date, or a range separated by a / e.g. 2002-05-03/2012-05-03.
+     * @param {String} [q] Search keywords.
+     * @param {Number} [pageNumber = 1)] The page of the collection to view.
+     * @param {Number} [pageSize = 30)] The number of results to return per page.
+     * @param {module:model/String} [sort] Sort order:  * default - sort by date (for Events), sort by number of resources (for Content Providers) otherwise sort by title (default).  * new - Sort by when the entry was created.  * mod - Sort by when the entry was last modified.  * rel - Sort by search query relevance.  * early - Sort by date, earliest to latest (Events only).  * late - Sort by date, latest to earliest (Events only). 
+     * @param {Array.<String>} [contentProvider] Filter by content provider name.
+     * @param {Array.<String>} [keywords] Filter by keywords.
+     * @param {Array.<String>} [node] Filter by ELIXIR node name.
+     * @param {Array.<String>} [scientificTopics] Filter by scientific topics.
+     * @param {Array.<String>} [operations] Filter by operations.
+     * @param {Array.<String>} [targetAudience] Filter by who the intended target audience is.
+     * @param {Array.<String>} [tools] Filter by what tools are involved.
+     * @param {Array.<module:model/String>} [eventTypes] Filter by event type.
+     * @param {Array.<String>} [city] Filter by city.
+     * @param {Array.<String>} [country] Filter by country.
+     * @param {Array.<String>} [venue] Filter by venue.
+     * @param {Array.<String>} [organizer] Filter by organizer.
+     * @param {Boolean} [online] Only show events with online access?
+     * @param {Array.<String>} [sponsors] Filter by sponsor.
+     * @param {Boolean} [includeExpired] Include events that have finished.
+     * @param {Boolean} [includeDisabled] Include events that are disabled.
+     * @param {Array.<String>} [eligibility] Filter by who is eligible to attend the event.
+     * @param {Array.<String>} [language] Filter by events that will use the given language.
+     * @param {Array.<String>} [collections] Filter events in a given collection (name).
+     * @param {String} [start] Filter for events that occur in the given date range. Either a single YYYY-MM-DD date, or a range separated by a / e.g. 2002-05-03/2012-05-03.
      * @param {module:api/EventsApi~eventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EventCollection}
      */

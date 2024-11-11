@@ -201,7 +201,7 @@ class EventAttributes {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EventAttributes.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -292,7 +292,7 @@ class EventAttributes {
             }
             // validate the optional field `scientific-topics` (array)
             for (const item of data['scientific-topics']) {
-                OntologyTerm.validateJsonObject(item);
+                OntologyTerm.validateJSON(item);
             };
         }
         if (data['operations']) { // data not null
@@ -302,7 +302,7 @@ class EventAttributes {
             }
             // validate the optional field `operations` (array)
             for (const item of data['operations']) {
-                OntologyTerm.validateJsonObject(item);
+                OntologyTerm.validateJSON(item);
             };
         }
         if (data['external-resources']) { // data not null
@@ -312,7 +312,7 @@ class EventAttributes {
             }
             // validate the optional field `external-resources` (array)
             for (const item of data['external-resources']) {
-                ExternalResource.validateJsonObject(item);
+                ExternalResource.validateJSON(item);
             };
         }
         // validate the optional field `report`

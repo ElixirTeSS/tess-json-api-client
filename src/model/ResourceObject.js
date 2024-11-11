@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import Links from './Links';
 import ResourceIdentifierObject from './ResourceIdentifierObject';
-import ResourceObjectAllOf from './ResourceObjectAllOf';
 
 /**
  * The ResourceObject model module.
@@ -26,10 +25,9 @@ class ResourceObject {
      * Constructs a new <code>ResourceObject</code>.
      * @alias module:model/ResourceObject
      * @implements module:model/ResourceIdentifierObject
-     * @implements module:model/ResourceObjectAllOf
      */
     constructor() { 
-        ResourceIdentifierObject.initialize(this);ResourceObjectAllOf.initialize(this);
+        ResourceIdentifierObject.initialize(this);
         ResourceObject.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class ResourceObject {
         if (data) {
             obj = obj || new ResourceObject();
             ResourceIdentifierObject.constructFromObject(data, obj);
-            ResourceObjectAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -135,19 +132,6 @@ ResourceIdentifierObject.prototype['id'] = undefined;
  * @member {String} type
  */
 ResourceIdentifierObject.prototype['type'] = undefined;
-// Implement ResourceObjectAllOf interface:
-/**
- * @member {Object} attributes
- */
-ResourceObjectAllOf.prototype['attributes'] = undefined;
-/**
- * @member {Object} relationships
- */
-ResourceObjectAllOf.prototype['relationships'] = undefined;
-/**
- * @member {module:model/Links} links
- */
-ResourceObjectAllOf.prototype['links'] = undefined;
 
 
 

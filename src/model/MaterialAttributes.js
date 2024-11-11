@@ -209,7 +209,7 @@ class MaterialAttributes {
             }
             // validate the optional field `scientific-topics` (array)
             for (const item of data['scientific-topics']) {
-                OntologyTerm.validateJsonObject(item);
+                OntologyTerm.validateJSON(item);
             };
         }
         if (data['operations']) { // data not null
@@ -219,7 +219,7 @@ class MaterialAttributes {
             }
             // validate the optional field `operations` (array)
             for (const item of data['operations']) {
-                OntologyTerm.validateJsonObject(item);
+                OntologyTerm.validateJSON(item);
             };
         }
         if (data['external-resources']) { // data not null
@@ -229,7 +229,7 @@ class MaterialAttributes {
             }
             // validate the optional field `external-resources` (array)
             for (const item of data['external-resources']) {
-                ExternalResource.validateJsonObject(item);
+                ExternalResource.validateJSON(item);
             };
         }
         // ensure the json data is an array

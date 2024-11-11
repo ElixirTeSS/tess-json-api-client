@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import JsonApiResponse from './JsonApiResponse';
-import UserCollectionAllOf from './UserCollectionAllOf';
 import UserResource from './UserResource';
 
 /**
@@ -26,10 +25,9 @@ class UserCollection {
      * Constructs a new <code>UserCollection</code>.
      * @alias module:model/UserCollection
      * @implements module:model/JsonApiResponse
-     * @implements module:model/UserCollectionAllOf
      */
     constructor() { 
-        JsonApiResponse.initialize(this);UserCollectionAllOf.initialize(this);
+        JsonApiResponse.initialize(this);
         UserCollection.initialize(this);
     }
 
@@ -52,7 +50,6 @@ class UserCollection {
         if (data) {
             obj = obj || new UserCollection();
             JsonApiResponse.constructFromObject(data, obj);
-            UserCollectionAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], Object);
@@ -89,7 +86,7 @@ class UserCollection {
             }
             // validate the optional field `data` (array)
             for (const item of data['data']) {
-                UserResource.validateJsonObject(item);
+                UserResource.validateJSON(item);
             };
         }
 
@@ -153,11 +150,6 @@ JsonApiResponse.prototype['included'] = undefined;
  * @member {Object} jsonapi
  */
 JsonApiResponse.prototype['jsonapi'] = undefined;
-// Implement UserCollectionAllOf interface:
-/**
- * @member {Array.<module:model/UserResource>} data
- */
-UserCollectionAllOf.prototype['data'] = undefined;
 
 
 
